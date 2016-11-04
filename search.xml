@@ -4,8 +4,14 @@
   
     
     <entry>
+      <title><![CDATA[菜鸟玩Git之SSH公钥]]></title>
+      <url>/2016/11/04/%E8%8F%9C%E9%B8%9F%E7%8E%A9Git%E4%B9%8BSSH%E5%85%AC%E9%92%A5/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[REST API拾荒记（一）]]></title>
-      <url>http://localhost:4000/2016/11/02/RESTful-Web-APIs-%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</url>
+      <url>/2016/11/02/RESTful-Web-APIs-%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</url>
       <content type="html"><![CDATA[<style>
 #banner{
    width:100%;
@@ -114,7 +120,7 @@
     
     <entry>
       <title><![CDATA[Summary For The Mythical Man-Month]]></title>
-      <url>http://localhost:4000/2016/10/31/Summary-For-The-Mythical-Man-Month/</url>
+      <url>/2016/10/31/Summary-For-The-Mythical-Man-Month/</url>
       <content type="html"><![CDATA[<p>You can see the results clearly in many object-oriented modeling description. Often they are accompanied by fine wolds about modeling the real world. But when you look closely you can see that they are really descriptions of programming objects, pure and simple. Any similarity to real-world objects, living or dead, is purely coincidental…</p>
 <a id="more"></a>
 <h4 id="Two-ways-for-turnning-Program-into-Programming-Product"><a href="#Two-ways-for-turnning-Program-into-Programming-Product" class="headerlink" title="Two ways for turnning Program into Programming Product"></a>Two ways for turnning Program into Programming Product</h4><p>There are two ways to turn Program into Programing Produce. One is by Interface &amp; system integration and the other one is by writing documents, testing, and maintenance. But both of them cost at least 3 times then the program cost.</p>
@@ -151,7 +157,7 @@
     
     <entry>
       <title><![CDATA[The Hexo Guide For Hummingbird]]></title>
-      <url>http://localhost:4000/2016/10/30/The-Hexo-Guide-For-Hummingbird/</url>
+      <url>/2016/10/30/The-Hexo-Guide-For-Hummingbird/</url>
       <content type="html"><![CDATA[<p>This article describes how I created this site step by step. It’s fun to customize your own UI styles &amp; features. For a good visual experience, you must have sufficient knowledge of frontend, such as CSS, JS and so on. So now let’s begin.</p>
 <a id="more"></a>
 <h4 id="Step-1-Prepare-the-environment"><a href="#Step-1-Prepare-the-environment" class="headerlink" title="Step 1: Prepare the environment"></a>Step 1: Prepare the environment</h4><p>Hexo is a static blog framework based on Node. So we must install <strong>node.js</strong> first. Click <a href="https://nodejs.org/en/download/" target="_blank" rel="external">this link</a> to download Node.js.<br>For windows:</p>

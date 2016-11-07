@@ -344,7 +344,8 @@
     <entry>
       <title><![CDATA[Ubuntu 16.04 LTS 问题解决方案]]></title>
       <url>/2016/08/28/Ubuntu-16-04-LTS-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-      <content type="html"><![CDATA[<h4 id="20160828-无法连接WIFI，显示”设备为就绪”"><a href="#20160828-无法连接WIFI，显示”设备为就绪”" class="headerlink" title="20160828 - 无法连接WIFI，显示”设备为就绪”"></a>20160828 - 无法连接WIFI，显示”设备为就绪”</h4><hr>
+      <content type="html"><![CDATA[<p>有一段时间，心血来潮，想玩一把LINUX。于是，在我自己的笔记本上安装了Ubuntu 16.04，顺带学一学LINUX相关的知识。本篇文章收集了笔者在玩转Ubuntu过程中遇到的一些问题。<br><a id="more"></a></p>
+<h4 id="20160828-无法连接WIFI，显示”设备为就绪”"><a href="#20160828-无法连接WIFI，显示”设备为就绪”" class="headerlink" title="20160828 - 无法连接WIFI，显示”设备为就绪”"></a>20160828 - 无法连接WIFI，显示”设备为就绪”</h4><hr>
 <blockquote>
 <p>1 打开更新管理器，选择附加驱动，选择使用Processor Microcode firmware for intel CPUs</p>
 </blockquote>

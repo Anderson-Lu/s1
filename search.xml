@@ -323,6 +323,11 @@
 <p>Then, Adding the following config as need:</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">archive_generator:</span></div><div class="line"><span class="attr">  per_page:</span> <span class="number">40</span></div><div class="line"><span class="attr">  yearly:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  monthly:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  daily:</span> <span class="literal">false</span></div></pre></td></tr></table></figure>
 <p>Done! And now you can have a try.<br><a href="https://github.com/iissnan/hexo-theme-next/issues/30" target="_blank" rel="external">More Details Please Click Here</a></p>
+<h4 id="DNS-Mapping"><a href="#DNS-Mapping" class="headerlink" title="DNS Mapping"></a>DNS Mapping</h4><ul>
+<li>CNAME<br>Map one host name to another host name.</li>
+<li>A<br>Map one host name to another specific IP address.</li>
+<li>URL Mapping<br>Map one url to another specific url.</li>
+</ul>
 <hr>
 <p>For more help, please read the help doc manually. You can find the document under your theme folder.</p>
 ]]></content>

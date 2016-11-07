@@ -329,6 +329,127 @@
     </entry>
     
     <entry>
+      <title><![CDATA[手把手教你设计REST API]]></title>
+      <url>/2016/10/08/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E8%AE%BE%E8%AE%A1REST-API/</url>
+      <content type="html"><![CDATA[<p>API？API是哪厮？可以吃吗？对于开发者行，永远避免不了对API的开发与维护，并根据API写好对应的接口文档。这个时候freshmans就会站出来说话了：只要前端拿到后端传递的数据就好了，何必这么浪费时间、浪费精力呢？曾几何时，我也这样想过，只是在企业中打滚了几个月之后，我再也不这么想，反而对这种想法深恶痛绝。</p>
+<a id="more"></a>
+<p>假设你看到这样的APIs：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[post] http://www.testapi.com/getApis</div><div class="line">[post] http://www.testapi.com/get_apis</div><div class="line">[post] http://www.testapi.com/GetApis</div><div class="line">[post] http://www.testapi.com/getapis</div><div class="line">[post] http://www.testapi.com/apis</div><div class="line">[post] http://www.testapi.com/getallapis</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>很明显在一个团队中，不同的人写出的代码可以说是千差万别。最痛苦的时刻莫过于阅读别人杂乱无章、充满各种无厘头的代码，这种煎熬，相信作为程序猿和攻城狮的你们一定深有感触吧。</p>
+<p>有一次，我写了一个获取全部数据记录的接口，取名为<code>getAllData</code>。后来业务更改，需要对数据进行分页，于是，我又写了一个新的接口，取名为<code>getDataByPage</code>,接收两个参数，一个是<code>page_size</code>，一个是<code>page_index</code>。后来由于业务需要，需要进行对某些数据进行排序，于是，我又写了一个新的接口，取名为<code>getSortedDataByPage</code>,这次又接收了另外一个排序参数<code>sort_by</code>，我去，这不是坑爹么，这么写下去，到底还要多少个接口，还要多少个一大堆copy的代码堆？</p>
+<table>
+<thead>
+<tr>
+<th>接口</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getAllData</td>
+<td>获取所有记录</td>
+</tr>
+<tr>
+<td>getDataByPage</td>
+<td>分页获取数据</td>
+</tr>
+<tr>
+<td>getSortedDataByPage</td>
+<td>获取排好序的数据</td>
+</tr>
+</tbody>
+</table>
+<p>仔细发现之后，我果断的将其归纳为一个接口，这个接口提供可选的参数选项，包括分页，排序。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[post] https://www.testapi.com/api/data</div><div class="line"></div><div class="line">//获取所有记录</div><div class="line">[post] https://www.testapi.com/api/data</div><div class="line"></div><div class="line">//获取部分记录</div><div class="line">[post] https://www.testapi.com/api/data?page_index=1&amp;page_size=2&amp;limit=2&amp;offet=1</div><div class="line"></div><div class="line">//获取排序记录</div><div class="line">[post] https://www.testapi.com/api/data?sort_by=col</div></pre></td></tr></table></figure>
+<h4 id="REST原则一：API提供可扩展参数，用于数据的过滤。"><a href="#REST原则一：API提供可扩展参数，用于数据的过滤。" class="headerlink" title="REST原则一：API提供可扩展参数，用于数据的过滤。"></a>REST原则一：API提供可扩展参数，用于数据的过滤。</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>意义</th>
+<th>是否可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>page_size</td>
+<td>记录条数</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>page_index</td>
+<td>记录页数</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>忽略条数</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>最大条数</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>sort_by</td>
+<td>排序规则</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<p>除此之外，你是否发现在最开始列出的几个API，各种命名方式混在一个，搞了个全家桶。看着实在令人发狂，好吧，原谅我强迫症。但是，一个良好的代码生态应当有统一的代码规范，在RESTful中，也是一样。</p>
+<h4 id="REST原则二：-API命名全部使用名词。"><a href="#REST原则二：-API命名全部使用名词。" class="headerlink" title="REST原则二： API命名全部使用名词。"></a>REST原则二： API命名全部使用名词。</h4><p>网络中的数据交互其实都是通过资源定位实现的，我们熟悉的URI（Unique Resource Identifier），表示网络上的一个实体，这个实体是一个资源，这个资源通过统一资源定位符来标记。比方说，一张图片，一个视频，都是网络上的一个资源(Resource),获取前后端交互中最熟悉的JSON，也可以看做是一个资源。所以，在API设计中，所有的数据交互都是基于资源的，即API的URL只存在名词。对于上述的接口例子，则可描述为：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https:<span class="regexp">//</span>www.testapi.com<span class="regexp">/api/</span>data</div></pre></td></tr></table></figure>
+<p><strong>OK，说了这么多，那么，什么是REST？说了半天，却怎么听不懂REST API?</strong></p>
+<h4 id="REST-扫盲知识"><a href="#REST-扫盲知识" class="headerlink" title="REST 扫盲知识"></a>REST 扫盲知识</h4><p><strong>小红</strong>：什么是REST啊？<br><strong>小明</strong> : REST 是Representation Statue Transfer的英文缩写， 翻译为中文称之为表现层状态转换。</p>
+<p><strong>小红</strong>：那什么是表现层啊？<br><strong>小明</strong>：表现层类似于MVC中视图层的概念。所有的网络资源都是基于视图这个层进行表现的。通俗地说，就是所有的数据交互都是发生在视图层上的。</p>
+<p><strong>小红</strong>：好像有点明白了，那什么是状态转换啊？<br><strong>小明</strong> ： 我们知道，所有的HTTP协议族都是无状态的，但是，我们页面上的数据交互，比如增删改，涉及到了数据的变化，或者说是资源的变化，这种变化是在服务端进行的，数据交互后造成的变化可以笼统地成为状态转化。</p>
+<p><strong>小红</strong>：你说的是什么鬼？我怎么听不懂<br><strong>小明</strong>：听不懂很正常，说明你的还没悟出来其中的精华。</p>
+<p><strong>小红</strong>：那什么是资源啊？<br><strong>小明</strong>：资源就是网络上的一个实体，比如一张图片啊，一个文件啊等等都是一个资源，英文就是Resource啦。</p>
+<p><strong>小红</strong>：那表现层、状态转换、资源都是什么鬼？有啥关系吗？<br><strong>小明</strong>：表现层是资源的载体，状态转换时资源的作用方式，表现层负责状态转换过程中资源的展示。</p>
+<p><strong>小红</strong>：哦哦，小明，你好帅！<br><strong>小明</strong>：谢谢，我知道我很帅啦！</p>
+<p>这样大家应该都知道什么是REST API了吧！</p>
+<h4 id="REST原则三：版本控制"><a href="#REST原则三：版本控制" class="headerlink" title="REST原则三：版本控制"></a>REST原则三：版本控制</h4><p>每个API都有相应的版本，一般来说，我们可以将版本号固定在URL中，这样是很直观的。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https:<span class="regexp">//</span>www.testapi.com<span class="regexp">/api/</span>v1_0_1_2<span class="regexp">/data</span></div></pre></td></tr></table></figure>
+<p>当然，还有另外一种比较推荐的方式，就是将版本信息写入在HTTP头信息中。还有，我们熟悉的Github也是采用这种方式的哦。</p>
+<h4 id="REST原则四：状态反馈"><a href="#REST原则四：状态反馈" class="headerlink" title="REST原则四：状态反馈"></a>REST原则四：状态反馈</h4><p>状态反馈这个词虽然是我自己说的，但是理解起来简单、易懂（突然有点佩服我的聪明才智了，别骂我臭不要脸）。意思就是说，每个API都应该对处理结果进行处理，在HTTP规范中，如下：</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1xx</td>
+<td>请求已经被接收</td>
+</tr>
+<tr>
+<td>2xx</td>
+<td>请求已经成功被服务器接收、理解并接受</td>
+</tr>
+<tr>
+<td>3xx</td>
+<td>请求重定向</td>
+</tr>
+<tr>
+<td>4xx</td>
+<td>客户端错误</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>服务器错误</td>
+</tr>
+</tbody>
+</table>
+<p>也就是说，在客户端错误中，REST需要将错误信息返还给客户端。对于服务端而言，我们需要向客户端开发4xx的错误，隐藏其他的错误。在返还错误中，我们可以向API中提供error属性。如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">     <span class="attr">"error"</span>:<span class="string">"找不到资源"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>好了，这次关于REST的学习总结到这里就结束了。有什么错误的地方记得提出来啊！</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[入职三月]]></title>
       <url>/2016/09/28/%E5%85%A5%E8%81%8C%E4%B8%89%E6%9C%88/</url>
       <content type="html"><![CDATA[<p>早晨，开始觉得有那么一丁点凉了。说来也奇怪，宿舍一直开着空调，也一直保持着26℃的高温，可就在八点睁开疲惫双眼的瞬间，居然会感受到这细微的变化。原来，不知不觉中，已经临近国庆，而我，也已经工作了三个月了！</p>
@@ -364,6 +485,120 @@
 <blockquote>
 <p>3 重启系统就可以了</p>
 </blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[JSON基础知识总结]]></title>
+      <url>/2016/07/17/JSON%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</url>
+      <content type="html"><![CDATA[<p>已经有九天没有发表文章更新了，严重违反了自己定好的“每周至少发表一篇文章”的计划。因为是在太忙了，朝九晚九的，有时下班回家就直接睡觉（感觉给自己找了些许借口==||）。好了，废话不多说了，来看正文。</p>
+<a id="more"></a>
+<h4 id="1-什么是JSON？"><a href="#1-什么是JSON？" class="headerlink" title="1. 什么是JSON？"></a>1. 什么是JSON？</h4><p>什么是JSON？记得刚开始接触JSON这一概念的时候是在大三的时候，由于需要将数据从WEB服务器后台传递到页面中，比如，需要将一个名为name的属性值传递到页面，当然，这很平常、很简单。可是，如果我要传递很多数据，很多有组织性的数据，比如是一个实体类的数据，或者说是数据库中的一条记录，那要如何传递到前端页面呢？其实，在绝大所数的异步请求下，都会使用JSON这种数据格式来实现，对于一些比较单一的数据则可以采用框架自带的功能或者使用像EL/ONGL等类似的标记性语言。当然，这里还是强调一下JSON这种数据格式。</p>
+<p>JSON(Javascript Object Notation)是一种轻量级的数据格式，完全独立于语言的文本格式，也就是说整个JSON文档就是一个文本文档，所以JSON是一种理想的数据交换格式。在非关系型数据库中，也能见到JSON的身影，比如在MongoDB中，也采用了一种类似JSON的数据格式，不过它叫BSON。JSON在Javascript中处理是不需要额外的API或者工具包的，所以效率非常高。</p>
+<h4 id="2-JSON数据格式"><a href="#2-JSON数据格式" class="headerlink" title="2. JSON数据格式"></a>2. JSON数据格式</h4><p>(1)记住，JSON不是一种语言，只是一种数据格式。这种格式在存储的时候最多算是一个字符串数据而已。<br>(2)下面简要介绍一下JSON的数据格式规范</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">demo1 = &#123;&#125;                          //空数据</div><div class="line">demo2 = &#123;"key":"value"&#125;             //JSON是一种键值对的集合格式，每个键对应一个值</div><div class="line">demo3 = &#123;"key":[1,2,3]&#125;             //JSON中可以存储数组元素</div><div class="line">demo4 = &#123;                           //JSON中可以存储无限个键值对数据 </div><div class="line">            "key1":"value1",</div><div class="line">            "key2","value2"</div><div class="line">         &#125;</div><div class="line">demo5 = &#123;                           //理论上，JSON可以进行无限次的嵌套</div><div class="line">           "key1":"value1",</div><div class="line">           "key2":&#123;</div><div class="line">                     "key3":"value3",</div><div class="line">                     "key4":"value4"</div><div class="line">                  &#125;</div><div class="line">         &#125;</div></pre></td></tr></table></figure>
+<h4 id="3-JSON在Javascript中的解析方法"><a href="#3-JSON在Javascript中的解析方法" class="headerlink" title="3. JSON在Javascript中的解析方法"></a>3. JSON在Javascript中的解析方法</h4><p>在Javascript中，主要采用以下两个方法来解析JSON数据：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">eval</span>() 和 <span class="built_in">JSON</span>.parse()</div></pre></td></tr></table></figure>
+<p>基本的使用方式如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> jsonstr = <span class="string">'&#123;"name":"jifeng","company":"taobao"&#125;'</span>;</div><div class="line"></div><div class="line"><span class="comment">//eval function</span></div><div class="line"><span class="keyword">var</span> evalJson = <span class="built_in">eval</span>(<span class="string">'('</span> + jsonstr + <span class="string">')'</span>);</div><div class="line"></div><div class="line"><span class="comment">//json.parse function</span></div><div class="line"><span class="keyword">var</span> jsonParseJson = <span class="built_in">JSON</span>.parse(evalJson);</div></pre></td></tr></table></figure>
+<h4 id="4-JSON-parse-和-eval-的区别"><a href="#4-JSON-parse-和-eval-的区别" class="headerlink" title="4. JSON.parse() 和 eval()的区别"></a>4. JSON.parse() 和 eval()的区别</h4><p>在代码中使用eval()是非常危险的，因为eval()在解析字符串时，会执行该字符串中的代码，特别是用它执行第三方JSON字符串时，可能包含有恶意代码。而JSON.parse()方法解析字符串本身。使用JSON.parse()可以捕捉JSON中的语法错误。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> jsonStr = &#123;<span class="string">"key"</span>:<span class="string">"demo"</span>,<span class="string">"key2"</span>:<span class="string">"demo"</span>&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> jsonObj1 = <span class="built_in">JSON</span>.parse(jsonStr);            <span class="comment">//使用JSON.parse()解析JSON，不会执行jsonStr中的代码</span></div><div class="line"><span class="keyword">var</span> jsonObj2 = <span class="built_in">eval</span>(<span class="string">'('</span>+jsonStr+<span class="string">')'</span>);          <span class="comment">//会执行jsonStr中的代码，非常不安全</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> errJson = &#123;<span class="string">'error json format example'</span>&#125;    <span class="comment">//这是一段错误的JSON格式的数据</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> jsonObj3 = <span class="built_in">JSON</span>.parse(errJson);            <span class="comment">//控制台下会报错并显示堆栈信息</span></div><div class="line"><span class="keyword">var</span> jsonObj4 = <span class="built_in">eval</span>(<span class="string">'('</span>+errJson+<span class="string">')'</span>);          <span class="comment">//控制台下不会报错，jsonObj4 = undefined</span></div></pre></td></tr></table></figure>
+<h4 id="5-谈谈Javascript在解析JSON时存在的坑"><a href="#5-谈谈Javascript在解析JSON时存在的坑" class="headerlink" title="5. 谈谈Javascript在解析JSON时存在的坑"></a>5. 谈谈Javascript在解析JSON时存在的坑</h4><p><strong>(1)转义字符：数据本身存在需要使用转义字符才能表示的字符</strong></p>
+<p>在Javascript中，有一个转义字符就是\,可以说对于没有深入接触过JSON的新手来说，很大概率上会踩这个坑。比如你的JSON数据是这个样子的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="string">"key1"</span>:<span class="string">"\"demo\""</span>&#125;</div></pre></td></tr></table></figure>
+<p>就这个格式的数据，在服务端程序中表示的时候是没有问题的,数据本身就带有双引号，所以这里使用到了转义字符\，但是在Javascript中就不行了，Javascript是不允许出现任何转义字符的。那如果真的要存储需要转义字符才能实现的数据时，比如数据本身就带有双引号，那么这个时候真么解决呢？我想一个比较土的方法就是先替换掉JSON字符串中的所有需要使用转义字符表示的字符，然后再进行解析，解析完成后再将原来的字符替换回去。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var demo = "&#123;"key":"value\""&#125;";        //带有双引号的JSON数据</div><div class="line">var dealDemo = demo.replace('\\','-');      //将数据中的'\'转化为'-'</div><div class="line">var jsonDemo = JSON.parse(dealDemo);        //解析JSON数据</div><div class="line">var data = jsonDemo.key.replace('-','\\'); //将双引号替换回去</div></pre></td></tr></table></figure>
+<p>当然，这种办法也不是有弊端的，那就是你的json数据本身不能出现-这个字符。</p>
+<p><strong>(2)数字&amp;字符串</strong></p>
+<p>这个问题我也是最近才发现的(笔者也是踩坑过来的=.=)。先来看个简单的例子：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//假设某类型的数据有不同的值，可以单个值，也可以多个值，多个值是使用逗号隔开</div><div class="line">var json1 = &#123;"key":"tag","key1":1&#125; ;</div><div class="line">var json2 = &#123;"key":"tag","key1</div><div class="line">![257251_1455763624_2481.png](http://upload-images.jianshu.io/upload_images/1784374-bfb508453e93788b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line">":"1,2"&#125;</div><div class="line"></div><div class="line">//遍历JSON数据集合，同时解析其value值,将其分开</div><div class="line">var demo = JSON.parse(json1);</div><div class="line">var value = demo.tag;</div><div class="line">var values = value.split(',');</div><div class="line"></div><div class="line">//对于json2，是正常的，得到的values = [1,2]</div><div class="line">//对于json1，则报错了，原因是Javascript把'1'看成数字了，数字没有split这个方法</div><div class="line"></div><div class="line">//解决方式：</div><div class="line">//将value强制转化为字符串</div><div class="line">var str = new String(value);            //这样对于json1的数据就不会报错了</div></pre></td></tr></table></figure>
+<p>所以，对于JSON，我觉得格式统一很重要，并且为其value全部加上引号，这样规范后，可以让前端少踩一些不必要的坑。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;"键名称有引号":"键值也有引号"&#125;</div><div class="line">&#123;"key":"value"&#125;</div><div class="line">&#123;"tag":"1"&#125;</div><div class="line"></div><div class="line">//不推荐这种：</div><div class="line">&#123;"tag":1&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[玩转MongoDB之基础杂萃]]></title>
+      <url>/2016/07/08/%E7%8E%A9%E8%BD%ACMongoDB%E4%B9%8B%E5%9F%BA%E7%A1%80%E6%9D%82%E8%90%83/</url>
+      <content type="html"><![CDATA[<p>由于工作需要，最近开始接触MongoDB，对于一个已经习惯了传统SQL的程序员来说，进入NoSQL可以说是需要莫大的勇气的。最大的不适应，是NoSQL和SQL的存储原理与思维方式的不一致。当然，笔者也是NoSQL中的菜鸟，在这里分享一下自己的一些学习总结与心得。</p>
+<a id="more"></a>
+<h4 id="1、数组"><a href="#1、数组" class="headerlink" title="1、数组"></a>1、数组</h4><p>在MongoDB中，文档（Document）即表示数据库中的一个集合中的一条记录，相当于关系型数据库中的行（row）。在MongoDB中，数组是使用JSON语法表示的，在MongoDB中，也称为BSON格式。数组既可以作为有序对象来操作，也可以作为无序对象来操作。有序对象比如列表等，无序对象比如集合等等。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  "a" : 0,               //这明显不是一个数组</div><div class="line">  "b" : [],              //定义一个空的数组 </div><div class="line">  "c" : [ "1","2","3"]   //包含3个元素的数组</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="2、文档嵌套"><a href="#2、文档嵌套" class="headerlink" title="2、文档嵌套"></a>2、文档嵌套</h4><p>在NoSQL中，文档与文档之间是可以随意嵌套的，比如某个字段的值为某个类型的对象。理论上，MongoDB支持无限级的自我嵌套，比如：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"a"</span>: &#123;<span class="attr">"b"</span>:<span class="number">1</span>,<span class="attr">"c"</span>:<span class="number">2</span>&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="3、文档标识"><a href="#3、文档标识" class="headerlink" title="3、文档标识"></a>3、文档标识</h4><p>如果标记当前这个文档，按照关系型数据库的习惯，则可以说，如果保证一条记录在数据库里是唯一的，在传统SQL中，使用主键ID来标识记录的全局唯一性，而在MongoDB中，则使用ObjectId来确保文档的唯一标识，即_id的默认类型。<br>ObjectID是一个12字节的BSON数据类型，格式如下：</p>
+<ul>
+<li>前四个字节表示时间戳</li>
+<li>接下来三个字节是机器标识码</li>
+<li>紧接的两个字节由进程ID组成，即PID</li>
+<li>最后三个字节是随机数</li>
+</ul>
+<p>MongoDB中的每个文档必须有一个名为_id的键，可以是任意类型，默认为ObjectID类型。</p>
+<p>以下是在Shell中关于ObjectId的一些方法:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#生成一个新的ObjectId</div><div class="line">newObjectId = ObjectId()</div><div class="line"></div><div class="line">#返回的id为：ObjectId("5349b4ddd2781d08c09890f3")</div><div class="line"></div><div class="line">#获取文档</div><div class="line">ObjectId("5349b4ddd2781d08c09890f3").getTimestamp()</div><div class="line"></div><div class="line">#返回时间为：ISODate("2016-07-06T21:49:17Z")</div><div class="line"></div><div class="line">#将ObjectId转化为字符串</div><div class="line">new ObjectId().str</div><div class="line"></div><div class="line">#返回结果为：5349b4ddd2781d08c09890f3</div></pre></td></tr></table></figure>
+<h4 id="3、添加文档"><a href="#3、添加文档" class="headerlink" title="3、添加文档"></a>3、添加文档</h4><p>插入文档使用db.col.insert(document)。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">db.Collection_Name.insert(&#123;</div><div class="line">  <span class="string">"name"</span>:<span class="string">"demo"</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ol>
+<li>如果文档不包含_id键，MongoDB会自动创建一个ObjectId类型的_id值</li>
+<li>默认情况下插入操作时，MongoDB只检查传入数据是否包含_id以及数据大小是否超过16MB，所以可以得到更高的性能插入，但同时也可能录入无效数据。</li>
+<li>因为在插入时是不执行任何代码的，所以与传统SQL相比，MongoDB不存在SQL注入风险。</li>
+</ol>
+<h4 id="4、删除文档"><a href="#4、删除文档" class="headerlink" title="4、删除文档"></a>4、删除文档</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">db.Collection_Name.remove();   <span class="comment">//清空集合内的所有文档</span></div><div class="line">db.Collection_Name.remove(    <span class="comment">//清空指定文档</span></div><div class="line">  &#123;</div><div class="line">     <span class="string">"a"</span>：<span class="string">"a"</span></div><div class="line">  &#125;</div><div class="line">);</div></pre></td></tr></table></figure>
+<p>当集合内数据过多时，可以考虑下面这个方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">db.drop_collection(Collection_Name);  <span class="comment">//直接删除集合</span></div><div class="line">db.Collection_Name.ensureIndex();      <span class="comment">//重建索引</span></div></pre></td></tr></table></figure>
+<h4 id="5、更新文档"><a href="#5、更新文档" class="headerlink" title="5、更新文档"></a>5、更新文档</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//update语法定义</span></div><div class="line">db.Collection_Name.update(query,<span class="built_in">document</span>,upsert,multi);</div><div class="line"></div><div class="line"><span class="comment">//设定原文档为：</span></div><div class="line"><span class="keyword">var</span> data = &#123;<span class="attr">_id</span>:<span class="string">"xxxx"</span>,<span class="string">"a"</span>:<span class="number">1</span>,<span class="string">"b"</span>:<span class="number">2</span>&#125;;</div><div class="line"></div><div class="line"><span class="comment">//query 是指查询条件，相当于SQL中的where子句，比如:</span></div><div class="line">db.Collection_Name.update(</div><div class="line">  &#123;<span class="attr">_id</span>:<span class="string">"xxxx"</span>,<span class="string">"a"</span>:<span class="number">1</span>,<span class="string">"b"</span>:<span class="number">2</span>&#125;,       <span class="comment">//定位条件，对符合_id=xxxx，a=1，b=2的文档进行更新</span></div><div class="line">  &#123;<span class="string">"a"</span>:<span class="number">2</span>&#125;,                        <span class="comment">//将a的值改为2，替换整个文档</span></div><div class="line">  <span class="literal">true</span>,                           <span class="comment">//若查询不到符合条件的文档，则新增一个文档</span></div><div class="line">  <span class="literal">true</span>                            <span class="comment">//允许更新多行</span></div><div class="line">);</div></pre></td></tr></table></figure>
+<ul>
+<li>update操作会替换整个匹配的文档。而不是进行某些特定字段的修改。如果需要更新某个特定字段值，则应当使用修改器。</li>
+<li>upsert模式是一个布尔值选项，表示是否文档更新时，如果不存在，能够自动创建。</li>
+<li>multi模式也是一个布尔值选项，默认情况下只更新匹配到的第一个文档，开启了multi模式后(即设置为true),则会更新所有匹配的文档。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//更新文档使用到的一些修改器，由$符号定义</span></div><div class="line"><span class="comment">//$inc 增加或减少数字的值，键不存在时自动创建</span></div><div class="line">db.Collection_Name.update(</div><div class="line">  &#123;<span class="string">"name"</span> : <span class="string">"翘着二郎腿打代码"</span>&#125;,</div><div class="line">  &#123;<span class="string">"$inc"</span> : &#123; <span class="string">"lover"</span> : <span class="number">1</span> &#125;&#125;               <span class="comment">//只将lover字段的值加1</span></div><div class="line">);</div><div class="line"></div><div class="line"><span class="comment">//$set 设置某一项或者多个项目的值</span></div><div class="line">db.Collection_Name.update(</div><div class="line">  &#123;<span class="string">"name"</span> ： <span class="string">"翘着二郎腿打代码"</span>&#125;,</div><div class="line">  &#123;<span class="string">"$set"</span> : &#123;<span class="string">"name"</span> : <span class="string">"打代码"</span> &#125;&#125;</div><div class="line">);</div><div class="line">这里列举一些常用的修改器</div><div class="line">$inc      设置自增或者自减</div><div class="line">$set      设置指定键的值</div><div class="line">$unset    $set的反操作，会删除键及键值</div><div class="line">$push     将元素追加到数组末尾，数组不存在则自动创建</div><div class="line">$pushAll  $push的批量操作版本</div><div class="line">$addToSet 与$push一样，会自动过滤重复元素</div><div class="line">$pop      从数组中移除元素,<span class="number">1</span>代表从末尾移除，<span class="number">-1</span>代码从开头移除</div><div class="line">$pull     从数组中移除所有匹配的元素</div><div class="line">$pullAll  $pull的批量操作版本</div><div class="line">$rename   修改制定键的键名</div><div class="line">$bit      对整型键进行位操作</div><div class="line">另外，还有一种方式可以实现文档的更新：</div><div class="line"><span class="comment">//使用findAndModify()更新文档</span></div><div class="line">db.Collection_Name.findAndModify(</div><div class="line">  &#123;</div><div class="line">      <span class="string">'query'</span> : &#123;<span class="string">"name"</span> : <span class="string">"翘着二郎腿打代码"</span> &#125;,</div><div class="line">      <span class="string">'update'</span> : &#123;<span class="string">"$set"</span> : &#123; <span class="string">"favour"</span> : <span class="number">100</span> &#125; &#125;,</div><div class="line">      <span class="string">'new'</span> : <span class="literal">true</span></div><div class="line">  &#125;</div><div class="line">);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">其中的参数如下：</div><div class="line"></div><div class="line">query   :  查询条件，用来定位到匹配的文档</div><div class="line">sort    :  如果匹配到多个文档，指定一个排序方式，-1降序，1升序</div><div class="line">remove  :  是否删除匹配的文档</div><div class="line">new     :  是否返回更新后的文档</div><div class="line">update  :  更新操作</div><div class="line">upsert  :  是否自动创建，如果匹配不到文档</div><div class="line"></div><div class="line">**/</div><div class="line">save()</div><div class="line"><span class="comment">//文档不存在时，执行insert操作，存在是执行update操作。</span></div><div class="line">db.demo.save(<span class="built_in">document</span>);</div></pre></td></tr></table></figure>
+<h4 id="6、查询"><a href="#6、查询" class="headerlink" title="6、查询"></a>6、查询</h4><p>我们先来举一些简单的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//select * from demo;</span></div><div class="line">db.demo.find();</div><div class="line"></div><div class="line"><span class="comment">//select * from demo where a = 1;</span></div><div class="line">db.demo.find(&#123;<span class="string">"a"</span>:<span class="number">1</span>&#125;);</div><div class="line"></div><div class="line"><span class="comment">//select a,b from demo where a = 1;</span></div><div class="line">db.demo.find(&#123;<span class="string">"a"</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">1</span>&#125;);</div><div class="line"></div><div class="line"><span class="comment">//select * from demo where a = 1 order by name asc;</span></div><div class="line">db.demo.find(&#123;<span class="string">"a"</span>:<span class="number">1</span>&#125;).sort(&#123;<span class="string">"name"</span>:<span class="number">1</span>&#125;);</div><div class="line"></div><div class="line"><span class="comment">//select * from demo where a &gt; 1;</span></div><div class="line">db.demo.find(&#123;<span class="string">"a"</span>:&#123;<span class="attr">$gt</span>:<span class="number">1</span>&#125;&#125;);</div><div class="line"></div><div class="line"><span class="comment">//select * from demo where a like 'eee';</span></div><div class="line">db.demo.find(&#123;<span class="string">"name"</span>:<span class="string">"/^eee/"</span>&#125;);</div><div class="line"></div><div class="line"><span class="comment">//select * from demo limit 10 skip 20;</span></div><div class="line">db.demo.find().limit(<span class="number">10</span>).skip(<span class="number">20</span>);</div></pre></td></tr></table></figure>
+<p>当然还有很多其他的语法形式，这里不再一一列举。下面列举一些常见的查询条件操作符</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">$lt    #小于</div><div class="line">$lte   #小于等于</div><div class="line">$gt    #大于</div><div class="line">$gte   #大于等于</div><div class="line">$all   #完全匹配</div><div class="line">$mod   #取模</div><div class="line">$ne    #不等于</div><div class="line">$in    #在...内</div><div class="line">$nin   #不在...内</div><div class="line">$nor   #既不...也不...</div><div class="line">$or    #或</div><div class="line">$size  #匹配数组长度</div><div class="line">$type  #匹配数据类型</div><div class="line">slice()函数用于数组的查询</div><div class="line">db.demo.find(&#123;&#125;,&#123;favours:&#123;'$slice':1&#125;&#125;);     //仅返回数组中的前1项</div><div class="line">db.demo.find(&#123;&#125;,&#123;favours:&#123;'$slice':-1&#125;&#125;);    //仅返回数组中的最后一项</div><div class="line">db.demo.find(&#123;&#125;,&#123;favours:&#123;'$slice':[1,2]&#125;&#125;); //跳过前1项，返回接下来的10项</div><div class="line">db.demo.find(&#123;&#125;,&#123;favours:&#123;'$slice':[-1,1]&#125;&#125;);//跳过最后一项，返回接下来的1项</div></pre></td></tr></table></figure>
+<h4 id="7、游标"><a href="#7、游标" class="headerlink" title="7、游标"></a>7、游标</h4><p>MongoDB中的游标已经在各个版本的驱动程序中封装好了，不需要像传统SQL那样使用PL/SQL结构化编程来声明游标，在Shell中，游标的使用方式与Java中的迭代器十分相似。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cursor = db.demo.find();  <span class="comment">//声明游标</span></div><div class="line"><span class="keyword">while</span>(cursor.hasNext())&#123;      <span class="comment">//遍历集合</span></div><div class="line">  <span class="keyword">var</span> element = cursor.next();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="8、-WHERE"><a href="#8、-WHERE" class="headerlink" title="8、$WHERE"></a>8、$WHERE</h4><p>$where操作符也是用来定位查询的，这个SQL中的where非常类似，前面我们说过，匹配文档的时候可以使用各种查询条件操作符来实现，但是为什么还要有这个操作符呢？因为有些查询是无法通过之前讲过 的那些查询操作符来实现的。值得注意的是，$where操作符的性能低，没有使用也无法使用索引机制。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//传统SQL</div><div class="line">select * from demo where a &gt; 1;</div><div class="line"></div><div class="line">//使用查询操作符实现</div><div class="line">db.demo.find(&#123;a:&#123;"$gt":1&#125;&#125;);</div><div class="line"></div><div class="line">//使用$where实现</div><div class="line">db.demo.find(&#123;"$where":"this.a &gt; 1"&#125;);</div><div class="line">db.demo.find("this.a &gt; 1");</div><div class="line">db.demo.find(function()&#123;</div><div class="line">  return this.a &gt; 1;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="9、-排序-amp-分页"><a href="#9、-排序-amp-分页" class="headerlink" title="9、 排序&amp;分页"></a>9、 排序&amp;分页</h4><p>MongoDB中提供了相关的方法进行排序和分页，主要有limit(),skip()和sort()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//每页10条记录，略过前面10条记录，按a降序排序</span></div><div class="line">db.demo.find().limit(<span class="number">10</span>).skip(<span class="number">10</span>).sort(&#123;<span class="attr">a</span>:<span class="number">-1</span>&#125;);</div></pre></td></tr></table></figure>
+<h4 id="10、索引"><a href="#10、索引" class="headerlink" title="10、索引"></a>10、索引</h4><p>MongoDB的索引机制与传统SQL的索引基本上是一样的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建索引</span></div><div class="line">db.demo.ensureIndex(&#123;<span class="string">'a'</span>:<span class="number">1</span>&#125;);</div><div class="line"></div><div class="line"><span class="comment">//创建子文档索引</span></div><div class="line">db.demo.ensureIndex(&#123;<span class="string">'a.b'</span>:<span class="number">-1</span>&#125;);</div><div class="line"></div><div class="line"><span class="comment">//创建复合索引</span></div><div class="line">db.demo.ensureIndex(&#123;</div><div class="line">   <span class="string">"a"</span>:<span class="number">1</span>,<span class="string">"b"</span>:<span class="number">-1</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//在MongoDB中，1表示升序，-1表示降序</span></div><div class="line"></div><div class="line"><span class="comment">//重新索引，一般是修改索引后重新索引操作</span></div><div class="line">db.demo.reIndex();</div><div class="line"></div><div class="line"><span class="comment">//删除索引</span></div><div class="line">db.demo.dropIndexes();</div></pre></td></tr></table></figure>
+<h4 id="11、聚合"><a href="#11、聚合" class="headerlink" title="11、聚合"></a>11、聚合</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">count()</div><div class="line"><span class="comment">//select count(a) from demo where a = 1;</span></div><div class="line">db.demo.count(&#123;<span class="string">"a"</span>:<span class="number">1</span>&#125;);</div><div class="line">distinct()</div><div class="line">db.demo.distinct(<span class="string">"zip-code"</span>,&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;);</div><div class="line">group(key,cond,reduce,initial)</div></pre></td></tr></table></figure>
+<p>其中，</p>
+<ul>
+<li>key ：分组依据</li>
+<li>cond： 查询条件</li>
+<li>reduce：聚合操作</li>
+<li>initial ： 指定聚合计数器的初始对象</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//sql表示</div><div class="line"><span class="keyword">select</span> a,b,<span class="keyword">sum</span>(c) <span class="keyword">from</span> demo <span class="keyword">where</span> a = <span class="number">1</span> <span class="keyword">group</span> <span class="keyword">by</span> a,b;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//MongoDB表示</span></div><div class="line">db.demo.gourp(&#123;</div><div class="line">  <span class="string">"key"</span>:&#123;</div><div class="line">     <span class="string">"a"</span>: <span class="literal">true</span>,</div><div class="line">     <span class="string">"b"</span>: <span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"cond"</span>:&#123;</div><div class="line">     <span class="string">"a"</span>:<span class="number">1</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="12、归纳一下MongoDB中的一些Tips"><a href="#12、归纳一下MongoDB中的一些Tips" class="headerlink" title="12、归纳一下MongoDB中的一些Tips"></a>12、归纳一下MongoDB中的一些Tips</h4><p><strong>1、MongoDB与传统SQL的显著区别</strong></p>
+<table>
+<thead>
+<tr>
+<th>SQL</th>
+<th>MongoDB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表(Table)</td>
+<td>集合(Collection)</td>
+</tr>
+<tr>
+<td>行(row)</td>
+<td>文档(document)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2、集合不能以system.开头， 这是因为MongoDB中的系统集合保持的前缀。比如</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.system.update(<span class="built_in">document</span>);  <span class="comment">//错误</span></div></pre></td></tr></table></figure>
+<p><strong>3、 ObjectId类型是_id的默认类型，也可以自己指定其数据类型。MongoDB的初衷是设计成一个分布式的数据库，所以不会自动实现_id的自增。插入文档时，如果没有指定_id的值，则系统自动创建一个ObjectId类型的值，一般在客户端的驱动程序中完成。</strong><br><strong>4、插入文档时，MongoDB会解析BSON数据，BSON数据格式与JSON基本一致，在MongoDB中称为BSON。插入时会检查是否包含_id以及检查文档数据是否超过16MB,其余全部不作检查，从而实现其高效率性。</strong><br><strong>5、MongoDB在插入数据时，不会执行插入数据的代码，而是将BSON数据直接写入，不作任何的数据验证，所以不存在类似于SQL中的注入风险。</strong></p>
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>本篇文章也是笔者自己在学习过后总结出来的。也是针对习惯于传统SQL的简友们写的，传统的SQL数据库与NoSQL个人感觉差别还算是挺大的。刚开始接触NoSQL的时候最大的不适应就是在MongoDB中是不需要设计表和表结构的，全是基于JSON的数据操作，所以其逻辑原理都在程序代码中实现，而MongoDB本身只负责分布式的数据存储。</p>
 ]]></content>
     </entry>
     

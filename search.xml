@@ -744,13 +744,13 @@
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"><span class="comment">//Javascript代码写在这里</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>Javascript代码可以写在<code>body</code>标签内</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></div><div class="line">    <span class="comment">//Javascript代码写在这里</span></div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">&lt;<span class="regexp">/body&gt;</span></div></pre></td></tr></table></figure>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">    //Javascript代码写在这里</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;<span class="regexp">/body&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>Javascript代码可以写在<code>&lt;head&gt;</code>标签内</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></div><div class="line">    <span class="comment">//Javascript代码写在这里</span></div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">&lt;<span class="regexp">/head&gt;</span></div></pre></td></tr></table></figure>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">    //Javascript代码写在这里</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;<span class="regexp">/head&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>Javascript代码可以写在外部的独立js文件内</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"xxx.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;<span class="regexp">/head&gt;</span></div></pre></td></tr></table></figure>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">    &lt;script src="xxx.js"&gt;&lt;/script&gt;</div><div class="line">&lt;<span class="regexp">/head&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <blockquote>
@@ -878,6 +878,17 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">jQuery(<span class="string">'#loading'</span>).showLoading();</div><div class="line">jQuery(<span class="string">'#loading'</span>).hideLoading();</div></pre></td></tr></table></figure>
 <p>6) 修改Loading的动画图标，可以修改为自己的gif动画。在showLoading.css中修改样式中的路径即可</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.loading-indicator &#123;</div><div class="line">	height: 80px;</div><div class="line">	width: 80px;</div><div class="line">	background: url( '/img/loading.gif' );  //修改此处即可。</div><div class="line">	background-repeat: no-repeat;</div><div class="line">	background-position: center center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[调试工具之Fidder4]]></title>
+      <url>/2016/04/18/%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7%E4%B9%8BFidder4/</url>
+      <content type="html"><![CDATA[<p>Fidder是一款WEB调试程序，提供http协议调试代理工具，它能够记录并检查所有你的电脑和互联网之间的http通讯，设置断点，查看所有的“进出”Fiddler的数据（指cookie,html,js,css等文件，这些都可以让你胡乱修改的意思）。 Fiddler 要比其他的网络调试器要更加简单，因为它不仅仅暴露http通讯还提供了一个用户友好的格式。</p>
+<a id="more"></a>
+<h3 id="模拟文件上传"><a href="#模拟文件上传" class="headerlink" title="模拟文件上传"></a>模拟文件上传</h3><p><img src="http://i1.piimg.com/577934/f1507e662f61a1fc.png" alt=""></p>
+<p>同时携带其他参数：</p>
+<p><img src="http://i1.piimg.com/577934/55de3a19da8b07a8.png" alt=""></p>
 ]]></content>
     </entry>
     

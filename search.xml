@@ -4,6 +4,17 @@
   
     
     <entry>
+      <title><![CDATA[IIS .woff字体文件404的解决方法]]></title>
+      <url>/2016/11/14/IIS-woff%E5%AD%97%E4%BD%93%E6%96%87%E4%BB%B6404%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>最近在开发中遇到了一个很奇妙的问题。项目前端使用的框架中包含了一些字体文件，这些字体文件在浏览器中的GET请求返回了404错误。404是Http状态码中最常见的一个，代表着无法找到对应的资源。但是，请求的链接是正确的，在F12调试中也可以连接到对应的文件，那么，IIS为什么会返回404呢?</p>
+<a id="more"></a>
+<p>经过一番探索，发现在IIS中，默认中是没有配置woff字体文件的相关静态资源的。也就是说，.woff文件是没有MIME-TYPE的，所以导致无法将对应的静态资源映射到对应的资源目录。<br>在这里给大家分享一个快速的解决方式，就是为对应的字体文件添加MIME-Type。</p>
+<figure class="highlight xml"><figcaption><span>web.config</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">system.webServer</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">staticContent</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">remove</span> <span class="attr">fileExtension</span>=<span class="string">".woff"</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">mimeMap</span> <span class="attr">fileExtension</span>=<span class="string">".woff"</span> <span class="attr">mimeType</span>=<span class="string">"application/x-font-woff"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">staticContent</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">system.webServer</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这个解决方法是从<a href="http://ideasof.andersaberg.com/development/quick-fix-iis-woff-font-file-404-not-found-in-aspnet-mvc" target="_blank" rel="external">这里</a>发现的。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[菜鸟玩Git之SSH公钥]]></title>
       <url>/2016/11/04/%E8%8F%9C%E9%B8%9F%E7%8E%A9Git%E4%B9%8BSSH%E5%85%AC%E9%92%A5/</url>
       <content type="html"><![CDATA[<p>菜鸟在玩GIT的时候，最开始纠结的就是需要在命令行下，像在LINUX中敲打代码进行提交等操作。这对于熟悉WINDOWS的小伙伴来说，是需要一段时间来适应的。本篇文章，从菜鸟的角度对GIT仓库权限进行配置SSH公钥进行介绍。</p>

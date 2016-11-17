@@ -228,7 +228,7 @@
 <h3 id="Step01-安装包的下载"><a href="#Step01-安装包的下载" class="headerlink" title="Step01:安装包的下载"></a>Step01:安装包的下载</h3><p>MongoDB的安装包可以通过<a href="https://www.mongodb.com/download-center#community" target="_blank" rel="external">官网</a>进行下载。MongoDB在Windows中提供msi和binary两种方式。本文介绍如果通过二进制文件方式进行安装与配置。<br>在这里选择对应的数据库版本并下载。</p>
 <h3 id="Step02-解压到安装目录"><a href="#Step02-解压到安装目录" class="headerlink" title="Step02:解压到安装目录"></a>Step02:解压到安装目录</h3><p>将刚下载后的安装包解压到需要的安装目录即可。对于下载MSI安装包来说，只需要选择对应的安装路径即可。</p>
 <h3 id="Step03-设置系统环境变量"><a href="#Step03-设置系统环境变量" class="headerlink" title="Step03:设置系统环境变量"></a>Step03:设置系统环境变量</h3><p>为了方便以后在CMD中能在任意目录下管理使用MongDB的工具集，需要在系统环境变量Path中添加安装目录中的bin目录，设置后后在新的CMD实例中进行验证。</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo <span class="comment">--version</span></div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo <span class="comment">--version</span></div></pre></td></tr></table></figure>
 <h3 id="Step03-创建数据库存储目录"><a href="#Step03-创建数据库存储目录" class="headerlink" title="Step03:创建数据库存储目录"></a>Step03:创建数据库存储目录</h3><p>对于新安装的MongoDB，需要创建一个目录来存储数据。</p>
 <figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">md D:<span class="symbol">\D</span>atabase<span class="symbol">\M</span>ongoData</div></pre></td></tr></table></figure>
 <h3 id="Step04-创建数据库日志目录"><a href="#Step04-创建数据库日志目录" class="headerlink" title="Step04:创建数据库日志目录"></a>Step04:创建数据库日志目录</h3><p>需要指定一个目录作为MongoDB的日志存放目录</p>

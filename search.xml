@@ -4,6 +4,28 @@
   
     
     <entry>
+      <title><![CDATA[试试Reids之基础知识]]></title>
+      <url>/2016/11/21/%E8%AF%95%E8%AF%95Reids%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+      <content type="html"><![CDATA[<p>本篇文章主要介绍了我在使用Redis过程中对Redis数据库的一些技术积累。</p>
+<a id="more"></a>
+<h3 id="PING"><a href="/2016/11/21/试试Reids之基础知识/#PING" class="headerlink" title="PING"></a>PING</h3><p>使用客户端向 Redis 服务器发送一个 PING ，如果服务器运作正常的话，会返回一个 PONG 。通常用于测试与服务器的连接是否仍然生效，或者用于测量延迟值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 客户端和服务器连接正常</div><div class="line">redis&gt; PING</div><div class="line">PONG</div><div class="line"># 客户端和服务器连接不正常(网络不正常或服务器未能正常运行)</div><div class="line">redis 127.0.0.1:6379&gt; PING</div><div class="line">Could not connect to Redis at 127.0.0.1:6379: Connection refused</div></pre></td></tr></table></figure>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[试试Redis之环境搭建]]></title>
+      <url>/2016/11/21/%E8%AF%95%E8%AF%95Redis%E4%B9%8B%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+      <content type="html"><![CDATA[<p>本篇文章主要介绍了如何在Windows下和Linux下安装Redis数据库。</p>
+<a id="more"></a>
+<h3 id="Windows下的安装"><a href="/2016/11/21/试试Redis之环境搭建/#Windows下的安装" class="headerlink" title="Windows下的安装"></a>Windows下的安装</h3><p>从<a href="https://github.com/MSOpenTech/redis/releases" target="_blank" rel="external">Redis的Github仓库</a>上下载合适的安装包，一键安装即可。</p>
+<h3 id="Linux下的安装"><a href="/2016/11/21/试试Redis之环境搭建/#Linux下的安装" class="headerlink" title="Linux下的安装"></a>Linux下的安装</h3><p>下载地址：<a href="http://redis.io/download，下载最新文档版本。" target="_blank" rel="external">http://redis.io/download，下载最新文档版本。</a></p>
+<figure class="highlight plain"><figcaption><span>shell</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ wget http://download.redis.io/releases/redis-2.8.17.tar.gz</div><div class="line">$ tar xzf redis-2.8.17.tar.gz</div><div class="line">$ cd redis-2.8.17</div><div class="line">$ make</div></pre></td></tr></table></figure>
+<p>make完后 redis-2.8.17目录下会出现编译后的redis服务程序redis-server,还有用于测试的客户端程序redis-cli,两个程序位于安装目录 src 目录下：<br>下面启动redis服务.</p>
+<figure class="highlight plain"><figcaption><span>shell</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd src</div><div class="line">$ ./redis-server</div></pre></td></tr></table></figure>
+<h3 id="密码验证"><a href="/2016/11/21/试试Redis之环境搭建/#密码验证" class="headerlink" title="密码验证"></a>密码验证</h3><figure class="highlight plain"><figcaption><span>shell</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ config set requirepass your_password</div></pre></td></tr></table></figure>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[WEB系统性能调优之路]]></title>
       <url>/2016/11/19/%E7%BD%91%E7%AB%99%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98%E6%80%BB%E7%BB%93/</url>
       <content type="html"><![CDATA[<p>之所以想总结这么一个点，是因为在开发过程中觉得一切正常的情况下，在压测中却出现了各种始料未及的情况。比如，高并发下的卡顿、大数据量下的查询缓慢等等。为什么会出现这种情况？原因有二：一是开发过程中没有注重数据库的性能调优，导致数据库性能不佳；二是开发过程中没有模拟并发下的情况，因为有一些情况只有并发访问下才会出现。以下是我在开发过程中使用的一些调优的方法，当然，也不一定合理。</p>
@@ -35,7 +57,8 @@
       <content type="html"><![CDATA[<p>本篇博文收集了平时开发中会使用到的一些工具资源、网址、文章等。</p>
 <a id="more"></a>
 <h3 id="MongoDB"><a href="/2016/11/19/程序猿百宝箱-持续更新/#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><p><a href="http://www.runoob.com/mongodb/mongodb-tutorial.html" target="_blank" rel="external">MongoDB菜鸟教程</a> | <a href="https://docs.mongodb.com/manual/" target="_blank" rel="external">MongoDB文档</a> | <a href="http://www.mongoing.com/" target="_blank" rel="external">MongoDB中文社区</a> | <a href="https://robomongo.org/" target="_blank" rel="external">RoboMongo</a></p>
-<h3 id="前端插件"><a href="/2016/11/19/程序猿百宝箱-持续更新/#前端插件" class="headerlink" title="前端插件"></a>前端插件</h3><p><a href="https://github.com/zeroclipboard/zeroclipboard" target="_blank" rel="external">ZeroClipboard</a> | <a href="http://echarts.baidu.com/examples.html" target="_blank" rel="external">Echarts3</a></p>
+<h3 id="Redis"><a href="/2016/11/19/程序猿百宝箱-持续更新/#Redis" class="headerlink" title="Redis"></a>Redis</h3><p><a href="https://github.com/MSOpenTech/redis/releases" target="_blank" rel="external">Redis Download</a> | <a href="http://www.runoob.com/redis/redis-intro.html" target="_blank" rel="external">Redis菜鸟教程</a> | <a href="https://redisdesktop.com/download" target="_blank" rel="external">Redis Desktop Manager</a></p>
+<h3 id="前端插件"><a href="/2016/11/19/程序猿百宝箱-持续更新/#前端插件" class="headerlink" title="前端插件"></a>前端插件</h3><p><a href="https://github.com/zeroclipboard/zeroclipboard" target="_blank" rel="external">ZeroClipboard</a> | <a href="http://echarts.baidu.com/examples.html" target="_blank" rel="external">Echarts3</a> | <a href="https://github.com/hustcc/ribbon.js" target="_blank" rel="external">Ribbon.js</a></p>
 <h3 id="调试工具"><a href="/2016/11/19/程序猿百宝箱-持续更新/#调试工具" class="headerlink" title="调试工具"></a>调试工具</h3><p><a href="https://www.telerik.com/download/fiddler" target="_blank" rel="external">Fidder</a> | <a href="https://www.getpostman.com/" target="_blank" rel="external">Postman</a></p>
 <h3 id="在线工具"><a href="/2016/11/19/程序猿百宝箱-持续更新/#在线工具" class="headerlink" title="在线工具"></a>在线工具</h3><p><a href="http://html2jade.aaron-powell.com/" target="_blank" rel="external">Html to Jade</a> | </p>
 <h3 id="Google插件"><a href="/2016/11/19/程序猿百宝箱-持续更新/#Google插件" class="headerlink" title="Google插件"></a>Google插件</h3><p><a href="https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=zh-CN" target="_blank" rel="external">Momentum</a></p>

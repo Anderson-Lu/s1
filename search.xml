@@ -34,6 +34,11 @@
 <li>Real developers ship —— Jeff Attwood</li>
 <li>过去的33年里，我每天早上看着镜子问自己：“今天是我生命的最后一天吗？我是否要去做今天该做的事？”一天一天太多次 是“不是”，我知道这需要改变…所有的事情 —— 所有身外的期望，所有的骄傲，所有的对困难和失败的恐惧 —— 这些东西在死亡面前立刻消失的无影无踪，只剩下真正重要的东西。想着自己即将死去，这是让我避免落入担心失去什么的陷阱里的最好的方法。—— Steve Jobs</li>
 </ul>
+<h3 id="软件开发"><a href="/2016/11/24/软件开发原则/#软件开发" class="headerlink" title="软件开发"></a>软件开发</h3><ul>
+<li>收到策划稿永远不要立马写代码实现，而是要对所有的需求进行分析和归纳，并抽象出整体业务体系和程序架构。</li>
+<li>高内聚，低耦合。各自负责各自的事情，减少模块间耦合性。</li>
+<li>异常检测机制与日志管理。规定好异常，作好异常捕获与处理工作，并对业务、框架等进行日志记录。这部分在脱离开发环境后极为有用。</li>
+</ul>
 ]]></content>
     </entry>
     
@@ -95,11 +100,12 @@
 <h3 id="前端插件"><a href="/2016/11/19/程序猿百宝箱-持续更新/#前端插件" class="headerlink" title="前端插件"></a>前端插件</h3><p><a href="https://github.com/zeroclipboard/zeroclipboard" target="_blank" rel="external">ZeroClipboard</a> | <a href="http://echarts.baidu.com/examples.html" target="_blank" rel="external">Echarts3</a> | <a href="https://github.com/hustcc/ribbon.js" target="_blank" rel="external">Ribbon.js</a></p>
 <h3 id="调试工具"><a href="/2016/11/19/程序猿百宝箱-持续更新/#调试工具" class="headerlink" title="调试工具"></a>调试工具</h3><p><a href="https://www.telerik.com/download/fiddler" target="_blank" rel="external">Fidder</a> | <a href="https://www.getpostman.com/" target="_blank" rel="external">Postman</a></p>
 <h3 id="性能测试"><a href="/2016/11/19/程序猿百宝箱-持续更新/#性能测试" class="headerlink" title="性能测试"></a>性能测试</h3><p><a href="http://jmeter.apache.org/" target="_blank" rel="external">JMeter</a></p>
-<h3 id="在线工具"><a href="/2016/11/19/程序猿百宝箱-持续更新/#在线工具" class="headerlink" title="在线工具"></a>在线工具</h3><p><a href="http://html2jade.aaron-powell.com/" target="_blank" rel="external">Html to Jade</a> | </p>
+<h3 id="在线工具"><a href="/2016/11/19/程序猿百宝箱-持续更新/#在线工具" class="headerlink" title="在线工具"></a>在线工具</h3><p><a href="http://html2jade.aaron-powell.com/" target="_blank" rel="external">Html to Jade</a> | <a href="https://1024tools.com/" target="_blank" rel="external">1024 Tool</a></p>
 <h3 id="Google插件"><a href="/2016/11/19/程序猿百宝箱-持续更新/#Google插件" class="headerlink" title="Google插件"></a>Google插件</h3><p><a href="https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=zh-CN" target="_blank" rel="external">Momentum</a></p>
 <h3 id="版本控制"><a href="/2016/11/19/程序猿百宝箱-持续更新/#版本控制" class="headerlink" title="版本控制"></a>版本控制</h3><p><a href="https://git-scm.com/download/" target="_blank" rel="external">Git</a> | <a href="https://tortoisesvn.net/" target="_blank" rel="external">TortoiseSVN</a> | <a href="https://tortoisegit.org/" target="_blank" rel="external">TortoiseGit</a></p>
 <h3 id="技术书籍"><a href="/2016/11/19/程序猿百宝箱-持续更新/#技术书籍" class="headerlink" title="技术书籍"></a>技术书籍</h3><p><a href="https://linuxstory.org/free-chinese-programming-books/" target="_blank" rel="external">编程类开放书籍荟萃</a> | <a href="https://www.zhihu.com/question/38836382/answer/79794319" target="_blank" rel="external">GitHub 上有哪些值得推荐的开源电子书？</a></p>
-<h3 id="励志文章"><a href="/2016/11/19/程序猿百宝箱-持续更新/#励志文章" class="headerlink" title="励志文章"></a>励志文章</h3><p><a href="http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA%3D%3D&amp;mid=2650994277&amp;idx=1&amp;sn=f0d3c25d805503264a78ab5eeb29044d&amp;chksm=bdbf0e368ac88720da10e901457fdbee77a90a426c20a3b95316fcbc6c8ab7b1afbd55950ad3&amp;mpshare=1&amp;scene=1&amp;srcid=0929tHBCIJ0R71LdEDGf9Gc1" target="_blank" rel="external">《天天写「业务代码」，如何成为「技术大牛」？》</a> | <a href="http://blog.jobbole.com/97009/" target="_blank" rel="external">《15 位健在的牛叉程序员，你知道哪几位？》</a></p>
+<h3 id="在线产品"><a href="/2016/11/19/程序猿百宝箱-持续更新/#在线产品" class="headerlink" title="在线产品"></a>在线产品</h3><p><a href="http://www.kancloud.cn/" target="_blank" rel="external">在线文档创作-看云</a></p>
+<h3 id="励志文章"><a href="/2016/11/19/程序猿百宝箱-持续更新/#励志文章" class="headerlink" title="励志文章"></a>励志文章</h3><p><a href="http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA%3D%3D&amp;mid=2650994277&amp;idx=1&amp;sn=f0d3c25d805503264a78ab5eeb29044d&amp;chksm=bdbf0e368ac88720da10e901457fdbee77a90a426c20a3b95316fcbc6c8ab7b1afbd55950ad3&amp;mpshare=1&amp;scene=1&amp;srcid=0929tHBCIJ0R71LdEDGf9Gc1" target="_blank" rel="external">《天天写「业务代码」，如何成为「技术大牛」？》</a><br><a href="http://blog.jobbole.com/97009/" target="_blank" rel="external">《15 位健在的牛叉程序员，你知道哪几位？》</a><br><a href="http://blog.qiniu.com/archives/5897" target="_blank" rel="external">《架构师成长之路》</a></p>
 ]]></content>
     </entry>
     

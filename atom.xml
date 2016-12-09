@@ -1,0 +1,1289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hummingman</title>
+  <subtitle>Real Developer Ship...</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="/"/>
+  <updated>2016-12-05T05:21:34.958Z</updated>
+  <id>/</id>
+  
+  <author>
+    <name>Anderson</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>X:Rebirth Home Of Light Guide</title>
+    <link href="/ciwhm6drb00116on43wmnfh9q/"/>
+    <id>/ciwhm6drb00116on43wmnfh9q/</id>
+    <published>2016-12-05T05:09:55.000Z</published>
+    <updated>2016-12-05T05:21:34.958Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇文章主要介绍了如何玩《X重生：光之家园》这个游戏。</p>
+<a id="more"></a>
+<h3 id="The-universe"><a href="/ciwhm6drb00116on43wmnfh9q/#The-universe" class="headerlink" title="The universe"></a>The universe</h3><ul>
+<li>At the top, we have the <strong>galaxy</strong>. The galaxy is basically everything in the x-universe. Think of it as the world (Earth) to make things easier. </li>
+<li>Now Earth is divied into smaller sections called <strong>sectors</strong>.</li>
+<li>Each cluster is split into <strong>sectors</strong>. </li>
+<li>Sectors is split into <strong>zones</strong>.</li>
+<li><strong>Local highway</strong> is designed to connect different zones.</li>
+<li><strong>Super highway</strong> is designed to connect different sectors.</li>
+<li><strong>Gate</strong> is designed to connect different clusters.</li>
+<li>Super-highways are blue and local-highways are green.</li>
+</ul>
+<h3 id="Platforms"><a href="/ciwhm6drb00116on43wmnfh9q/#Platforms" class="headerlink" title="Platforms"></a>Platforms</h3><p> In X-Rebirth we land on platforms, so that we can talk to people about the services they offer. The range of services includes recruitment, ship repairs, mission objectives, trade, ship upgrades etc. Landing on platforms also gives you the chance to look at varoius people. </p>
+<ul>
+<li>Bar platforms</li>
+<li>Drnoe</li>
+<li>Shipyard</li>
+<li>Headquarters</li>
+<li>Repair platform</li>
+<li>Trade platform</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇文章主要介绍了如何玩《X重生：光之家园》这个游戏。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="游戏" scheme="/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+      <category term="Game" scheme="/tags/Game/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>致X君</title>
+    <link href="/ciwhm6drd00166on4hfgx9pvr/"/>
+    <id>/ciwhm6drd00166on4hfgx9pvr/</id>
+    <published>2016-12-04T01:27:12.000Z</published>
+    <updated>2016-12-04T07:28:43.154Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><span id="encrypt-message">A correct password is required for this article. Please ask me for more help if you can't get the key! This article is a letter for X.</span><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">确认</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
+    
+    <summary type="html">
+    
+      A correct password is required for this article. Please ask me for more help if you can&#39;t get the key! This article is a letter for X.
+    
+    </summary>
+    
+      <category term="随笔" scheme="/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随笔集</title>
+    <link href="/ciwhm6dsi00346on4xp1gmzdn/"/>
+    <id>/ciwhm6dsi00346on4xp1gmzdn/</id>
+    <published>2016-11-25T03:45:45.000Z</published>
+    <updated>2016-12-01T12:07:58.503Z</updated>
+    
+    <content type="html"><![CDATA[<p>人生若只如初见，何事秋风悲画扇。大概经历得多了，便觉得多了一些偏见与执念。所以善始者繁，善终者却很少。于是初次见面的时候，彼此了解甚少，所以各自展现自己最好的一面，也各自接受对方最好的一面。在一个阶段刚踏足的时候，往往以昂然的心态去面对。时光匆匆，当我们失去了这个新鲜感，褪去了伊始靓丽的颜色，便开始感叹，人生，若能保持开始时的美好，该有多好。 <strong>– 开始的美好</strong></p>
+<a id="more"></a>
+<hr>
+<p>小时候，我家住在一栋的三层楼房里，一楼是客厅和厨房，二楼则是卧室，三楼只有哥哥和大姐回来或者是客人来的时候才会整理出来，平时则是储物的地方。由于每层楼的摆设、结构基本一模一样，所以，每次我和二姐玩耍的时候，总要吐槽一下这个房子的设计。有一天，妈妈突然问我，“你觉得搬家怎么样？”，我一听，内心欢喜极了，心想着可以到新的地方玩了，于是我激动地回答道，“好啊好啊”。我记得妈妈当时那种强颜欢笑的感觉，只是在我们面前，依然笑靥如初。长大后回想起来，才知道，那次搬家，是后来颠沛流离与寄人篱下生活的开始。 <strong>– 关于搬家</strong></p>
+<hr>
+<p>初生牛犊的程序员在软件开发中总会遇到一些坎坷与牵绊，究其本质，可以归纳为不确定性。理想与现实总是存在差距的，这种差距也加大了不确定性。打个比方，你独立负责一个系统的设计，设计开起来堪称完美，心想着，这要是做完了，一定能大放异彩。于是，自以为完美地啪啦啪啦地开始代码实现了。慢慢地，你发现，有太多的地方设计不完善，对于敏捷的需求变动无法实现即时适应，对于系统的性能无法保证，对于系统的交互无法确定。总而言之，你开始忧虑起来，因为自己的设计渐渐产生负面的效应，你开始反思与怀疑自己的设计，你开始无法确定系统能否按照正常计划实现。<strong>–不确定性</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;人生若只如初见，何事秋风悲画扇。大概经历得多了，便觉得多了一些偏见与执念。所以善始者繁，善终者却很少。于是初次见面的时候，彼此了解甚少，所以各自展现自己最好的一面，也各自接受对方最好的一面。在一个阶段刚踏足的时候，往往以昂然的心态去面对。时光匆匆，当我们失去了这个新鲜感，褪去了伊始靓丽的颜色，便开始感叹，人生，若能保持开始时的美好，该有多好。 &lt;strong&gt;– 开始的美好&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>软件开发原则</title>
+    <link href="/ciwhm6dsg002x6on4v9qe32zp/"/>
+    <id>/ciwhm6dsg002x6on4v9qe32zp/</id>
+    <published>2016-11-24T02:17:41.000Z</published>
+    <updated>2016-12-06T08:39:01.149Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+<ol>
+<li>代码规范</li>
+<li>系统耦合</li>
+<li>系统性能</li>
+<li>数据完整</li>
+<li>系统健壮</li>
+<li>数据库设计</li>
+<li>异常捕获与处理+日志记录</li>
+</ol>
+<hr>
+<h3 id="软件开发箴言"><a href="/ciwhm6dsg002x6on4v9qe32zp/#软件开发箴言" class="headerlink" title="软件开发箴言"></a>软件开发箴言</h3><ul>
+<li>任何傻瓜都能写出计算机可以理解的代码。好的程序员能写出人能读懂的代码 —— Martin Fowler</li>
+<li>简单不先于复杂，而是在复杂之后 —— Alan Perlis</li>
+<li>Real developers ship —— Jeff Attwood</li>
+<li>过去的33年里，我每天早上看着镜子问自己：“今天是我生命的最后一天吗？我是否要去做今天该做的事？”一天一天太多次 是“不是”，我知道这需要改变…所有的事情 —— 所有身外的期望，所有的骄傲，所有的对困难和失败的恐惧 —— 这些东西在死亡面前立刻消失的无影无踪，只剩下真正重要的东西。想着自己即将死去，这是让我避免落入担心失去什么的陷阱里的最好的方法。—— Steve Jobs</li>
+</ul>
+<h3 id="软件开发"><a href="/ciwhm6dsg002x6on4v9qe32zp/#软件开发" class="headerlink" title="软件开发"></a>软件开发</h3><ul>
+<li>收到策划稿永远不要立马写代码实现，而是要对所有的需求进行分析和归纳，并抽象出整体业务体系和程序架构。</li>
+<li>高内聚，低耦合。各自负责各自的事情，减少模块间耦合性。</li>
+<li>异常检测机制与日志管理。规定好异常，作好异常捕获与处理工作，并对业务、框架等进行日志记录。这部分在脱离开发环境后极为有用。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;ol&gt;
+&lt;li&gt;代码规范&lt;/li&gt;
+&lt;li&gt;系统耦合&lt;/li&gt;
+&lt;li&gt;系统性能&lt;/li&gt;
+&lt;li&gt;数据完整&lt;/li&gt;
+&lt;li&gt;系统健壮&lt;/li&gt;
+&lt;li&gt;数据库设计&lt;/li&gt;
+&lt;li&gt;异常捕获与处理+日志记录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="Software Engineering" scheme="/categories/Software-Engineering/"/>
+    
+    
+      <category term="Software Engineering" scheme="/tags/Software-Engineering/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>试试Reids之基础知识</title>
+    <link href="/ciwhm6dsa002n6on4q1v7isdn/"/>
+    <id>/ciwhm6dsa002n6on4q1v7isdn/</id>
+    <published>2016-11-21T13:27:09.000Z</published>
+    <updated>2016-11-21T13:29:36.978Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇文章主要介绍了我在使用Redis过程中对Redis数据库的一些技术积累。</p>
+<a id="more"></a>
+<h3 id="PING"><a href="/ciwhm6dsa002n6on4q1v7isdn/#PING" class="headerlink" title="PING"></a>PING</h3><p>使用客户端向 Redis 服务器发送一个 PING ，如果服务器运作正常的话，会返回一个 PONG 。通常用于测试与服务器的连接是否仍然生效，或者用于测量延迟值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 客户端和服务器连接正常</div><div class="line">redis&gt; PING</div><div class="line">PONG</div><div class="line"># 客户端和服务器连接不正常(网络不正常或服务器未能正常运行)</div><div class="line">redis 127.0.0.1:6379&gt; PING</div><div class="line">Could not connect to Redis at 127.0.0.1:6379: Connection refused</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇文章主要介绍了我在使用Redis过程中对Redis数据库的一些技术积累。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Database" scheme="/categories/Database/"/>
+    
+    
+      <category term="Database" scheme="/tags/Database/"/>
+    
+      <category term="Redis" scheme="/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>试试Redis之环境搭建</title>
+    <link href="/ciwhm6ds9002k6on45142nsww/"/>
+    <id>/ciwhm6ds9002k6on45142nsww/</id>
+    <published>2016-11-21T01:17:52.000Z</published>
+    <updated>2016-11-21T03:53:15.960Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇文章主要介绍了如何在Windows下和Linux下安装Redis数据库。</p>
+<a id="more"></a>
+<h3 id="Windows下的安装"><a href="/ciwhm6ds9002k6on45142nsww/#Windows下的安装" class="headerlink" title="Windows下的安装"></a>Windows下的安装</h3><p>从<a href="https://github.com/MSOpenTech/redis/releases" target="_blank" rel="external">Redis的Github仓库</a>上下载合适的安装包，一键安装即可。</p>
+<h3 id="Linux下的安装"><a href="/ciwhm6ds9002k6on45142nsww/#Linux下的安装" class="headerlink" title="Linux下的安装"></a>Linux下的安装</h3><p>下载地址：<a href="http://redis.io/download，下载最新文档版本。" target="_blank" rel="external">http://redis.io/download，下载最新文档版本。</a></p>
+<figure class="highlight plain"><figcaption><span>shell</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ wget http://download.redis.io/releases/redis-2.8.17.tar.gz</div><div class="line">$ tar xzf redis-2.8.17.tar.gz</div><div class="line">$ cd redis-2.8.17</div><div class="line">$ make</div></pre></td></tr></table></figure>
+<p>make完后 redis-2.8.17目录下会出现编译后的redis服务程序redis-server,还有用于测试的客户端程序redis-cli,两个程序位于安装目录 src 目录下：<br>下面启动redis服务.</p>
+<figure class="highlight plain"><figcaption><span>shell</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd src</div><div class="line">$ ./redis-server</div></pre></td></tr></table></figure>
+<h3 id="密码验证"><a href="/ciwhm6ds9002k6on45142nsww/#密码验证" class="headerlink" title="密码验证"></a>密码验证</h3><figure class="highlight plain"><figcaption><span>shell</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ config set requirepass your_password</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇文章主要介绍了如何在Windows下和Linux下安装Redis数据库。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Database" scheme="/categories/Database/"/>
+    
+    
+      <category term="Database" scheme="/tags/Database/"/>
+    
+      <category term="Redis" scheme="/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WEB系统性能调优之路</title>
+    <link href="/ciwhm6ds100276on45e647dz7/"/>
+    <id>/ciwhm6ds100276on45e647dz7/</id>
+    <published>2016-11-19T05:27:10.000Z</published>
+    <updated>2016-11-19T08:38:04.794Z</updated>
+    
+    <content type="html"><![CDATA[<p>之所以想总结这么一个点，是因为在开发过程中觉得一切正常的情况下，在压测中却出现了各种始料未及的情况。比如，高并发下的卡顿、大数据量下的查询缓慢等等。为什么会出现这种情况？原因有二：一是开发过程中没有注重数据库的性能调优，导致数据库性能不佳；二是开发过程中没有模拟并发下的情况，因为有一些情况只有并发访问下才会出现。以下是我在开发过程中使用的一些调优的方法，当然，也不一定合理。</p>
+<a id="more"></a>
+<h3 id="数据库瓶颈"><a href="/ciwhm6ds100276on45e647dz7/#数据库瓶颈" class="headerlink" title="数据库瓶颈"></a>数据库瓶颈</h3><p>一般我们说大数据量，那么什么情况才算是大数据量？100万算不算，1000万算不算？100万算不上大数据量，1000万也不一定算得上大数据量。当然，如果能够保证在越大的数据量下依然保持高度的顺畅，那自然是求之不得的。那么如果保持在上千万的数据量中，能够迅速的对数据进行聚合、查询和插入与修改呢？</p>
+<ul>
+<li><p><strong>首先，必然要使用索引</strong>。索引是什么？为什么能够提高数据库性能？索引本质上是一种哈希树的结构，通过哈希，能够将庞大的数据映射到一个范围较小的数据集合，这样就避免了数据库的全盘扫描。数据库扫描的数据量是觉得数据库性能的一大要素。所以，通过索引能够减少数据的检索，从而提高数据的操作速度。但是，索引不是越多越好，索引的创建需要额外的空间和时间进行维护。适当的建立索引才是正确之选。当然，不同的数据库的索引也是不一样的，索引的种类也是不同的。</p>
+</li>
+<li><p><strong>数据库结构的优化</strong>。数据库结构的优化对于聚集统计非常重要。一个良好的表结构（SQL数据概念）或者文档结构（NOSQL数据概念）非常重要。在NOSQL数据库中，嵌套的文档子字段和排序下无法使用会导致字文档中索引的失效，在数据量比较大的情况下会导致数据库的文档检索消耗过大，从而导致在数据库并发下访问缓慢的出现。</p>
+</li>
+<li><p><strong>数据库类型的选择</strong>。一是、关系型数据库与非关系型数据库的选择，磁盘数据库与内存数据库的选择。传统的SQL数据库，比如Oracle、MySQL以及SQL Server，都必须保证验证的数据表结构的设计，而MongoDB等文档型型数据库则没有这个要求，所有的数据结构逻辑由程序控制。另外一个就是MongoDB和Redis等NOSQL数据库采用的是内存式查询，相对于查询磁盘数据文件，这无疑提高了数据库的性能。当然，具体使用什么数据库，需要结合业务逻辑来选择。</p>
+</li>
+<li><p><strong>数据缓存</strong>。数据缓存在高并发下使用缓存是合适的。并发下的数据库连接太过频繁，会降低数据库的读写性能。使用缓存数据库，比如Redis，则可以减少数据库的连接次数，加快并发访问速度。</p>
+</li>
+</ul>
+<h3 id="业务逻辑瓶颈"><a href="/ciwhm6ds100276on45e647dz7/#业务逻辑瓶颈" class="headerlink" title="业务逻辑瓶颈"></a>业务逻辑瓶颈</h3><ul>
+<li><p><strong>第三方系统数据接入</strong>。在IIS中，使用WebClient实时获取第三方系统数据时，在并发访问下会导致耗时加长N倍。网上有种较为可靠的说法，在非服务器版本Windows中，IIS仍然遵循HTTP1.0的规则：一个客户端不允许同时超过连个并发的连接去访问其他的域。但是在服务器版本中则有20个还是几个并发的连接访问。个人感觉这是一个坑。所以建议在向第三方系统交互的时候，可以适当地使用缓存数据。</p>
+</li>
+<li><p><strong>自身代码重构与优化</strong>。自身代码需要保持良好的代码风格。避免Code Semll（Code Smell也称代码臭味，是指可能对可能导致潜在BUG的垃圾代码），比如减少不必要的循环，避免长类，长方法等等。从而提高系统的可维护性与可扩展性。最重要的是简洁的代码，可以减少系统出错的概率，减少程序运行的时间复杂度，提高效率。</p>
+</li>
+</ul>
+<p>当然，笔者到目前为止，工作经验尚浅，可能这些方法也不一定合适。对于像什么分布式部署什么的，目前还未涉足，所以也无法总结这方面的知识。漫漫的取经路上，程序猿只能边走边积累！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之所以想总结这么一个点，是因为在开发过程中觉得一切正常的情况下，在压测中却出现了各种始料未及的情况。比如，高并发下的卡顿、大数据量下的查询缓慢等等。为什么会出现这种情况？原因有二：一是开发过程中没有注重数据库的性能调优，导致数据库性能不佳；二是开发过程中没有模拟并发下的情况，因为有一些情况只有并发访问下才会出现。以下是我在开发过程中使用的一些调优的方法，当然，也不一定合理。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Software Engineering" scheme="/categories/Software-Engineering/"/>
+    
+    
+      <category term="Software Engineering" scheme="/tags/Software-Engineering/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>程序猿百宝箱(持续更新)</title>
+    <link href="/ciwhm6ds6002d6on455htrt9a/"/>
+    <id>/ciwhm6ds6002d6on455htrt9a/</id>
+    <published>2016-11-19T04:31:57.000Z</published>
+    <updated>2016-12-09T09:06:31.487Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇博文收集了平时开发中会使用到的一些工具资源、网址、文章等。</p>
+<a id="more"></a>
+<h3 id="MongoDB"><a href="/ciwhm6ds6002d6on455htrt9a/#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><p><a href="http://www.runoob.com/mongodb/mongodb-tutorial.html" target="_blank" rel="external">MongoDB菜鸟教程</a> | <a href="https://docs.mongodb.com/manual/" target="_blank" rel="external">MongoDB文档</a> | <a href="http://www.mongoing.com/" target="_blank" rel="external">MongoDB中文社区</a> | <a href="https://robomongo.org/" target="_blank" rel="external">RoboMongo</a></p>
+<h3 id="Redis"><a href="/ciwhm6ds6002d6on455htrt9a/#Redis" class="headerlink" title="Redis"></a>Redis</h3><p><a href="https://github.com/MSOpenTech/redis/releases" target="_blank" rel="external">Redis Download</a> | <a href="http://www.runoob.com/redis/redis-intro.html" target="_blank" rel="external">Redis菜鸟教程</a> | <a href="https://redisdesktop.com/download" target="_blank" rel="external">Redis Desktop Manager</a></p>
+<h3 id="XAML"><a href="/ciwhm6ds6002d6on455htrt9a/#XAML" class="headerlink" title="XAML"></a>XAML</h3><p><a href="https://www.microsoft.com/zh-cn/store/p/xaml-ui-controls/9nblggh31bxt" target="_blank" rel="external">XAML UI Controls</a></p>
+<h3 id="前端插件"><a href="/ciwhm6ds6002d6on455htrt9a/#前端插件" class="headerlink" title="前端插件"></a>前端插件</h3><p><a href="https://github.com/zeroclipboard/zeroclipboard" target="_blank" rel="external">ZeroClipboard</a> | <a href="http://echarts.baidu.com/examples.html" target="_blank" rel="external">Echarts3</a> | <a href="https://github.com/hustcc/ribbon.js" target="_blank" rel="external">Ribbon.js</a> | <a href="https://tiaanduplessis.github.io/wenk/" target="_blank" rel="external">Wenk.css</a> | <a href="http://www.raphaelfabeni.com.br/css-loader/" target="_blank" rel="external">Css Loader</a> | <a href="https://canvas-gauges.com/documentation/examples/" target="_blank" rel="external">Canvas Gauges</a> | <a href="http://cssicon.space/old/" target="_blank" rel="external">CSS Icon</a> | </p>
+<h3 id="趣味资源"><a href="/ciwhm6ds6002d6on455htrt9a/#趣味资源" class="headerlink" title="趣味资源"></a>趣味资源</h3><p><a href="https://clustrmaps.com/profile/178id/widget/customize" target="_blank" rel="external">ClustrMaps</a> | <a href="http://fontawesome.io/icons/" target="_blank" rel="external">Fontawesome</a> | <a href="http://theblogstylist.com/resources/picmonkey/" target="_blank" rel="external">Theblogstyllist.com</a> | <a href="http://theblogstylist.com/resources/picmonkey/" target="_blank" rel="external">Crazy Egg</a> | <a href="https://www.revolvermaps.com/?target=setupgl" target="_blank" rel="external">Revolvermaps.com</a> | <a href="http://widgetdemo.edublogs.org/" target="_blank" rel="external">widgetdemo.edublogs.org</a> | <a href="http://100widgets.com/" target="_blank" rel="external">100.widgets.com</a></p>
+<h3 id="调试工具"><a href="/ciwhm6ds6002d6on455htrt9a/#调试工具" class="headerlink" title="调试工具"></a>调试工具</h3><p><a href="https://www.telerik.com/download/fiddler" target="_blank" rel="external">Fidder</a> | <a href="https://www.getpostman.com/" target="_blank" rel="external">Postman</a></p>
+<h3 id="性能测试"><a href="/ciwhm6ds6002d6on455htrt9a/#性能测试" class="headerlink" title="性能测试"></a>性能测试</h3><p><a href="http://jmeter.apache.org/" target="_blank" rel="external">JMeter</a></p>
+<h3 id="安全检测"><a href="/ciwhm6ds6002d6on455htrt9a/#安全检测" class="headerlink" title="安全检测"></a>安全检测</h3><p><a href="http://www.nstalker.com/products/editions/free/download/" target="_blank" rel="external">Nstalker</a></p>
+<h3 id="在线工具"><a href="/ciwhm6ds6002d6on455htrt9a/#在线工具" class="headerlink" title="在线工具"></a>在线工具</h3><p><a href="http://html2jade.aaron-powell.com/" target="_blank" rel="external">Html to Jade</a> | <a href="https://1024tools.com/" target="_blank" rel="external">1024 Tool</a> | <a href="http://html2jade.vida.io/" target="_blank" rel="external">Html2Jade</a></p>
+<h3 id="Google插件"><a href="/ciwhm6ds6002d6on455htrt9a/#Google插件" class="headerlink" title="Google插件"></a>Google插件</h3><p><a href="https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=zh-CN" target="_blank" rel="external">Momentum</a></p>
+<h3 id="版本控制"><a href="/ciwhm6ds6002d6on455htrt9a/#版本控制" class="headerlink" title="版本控制"></a>版本控制</h3><p><a href="https://git-scm.com/download/" target="_blank" rel="external">Git</a> | <a href="https://tortoisesvn.net/" target="_blank" rel="external">TortoiseSVN</a> | <a href="https://tortoisegit.org/" target="_blank" rel="external">TortoiseGit</a></p>
+<h3 id="Markdown"><a href="/ciwhm6ds6002d6on455htrt9a/#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><p><a href="http://forthebadge.com/" target="_blank" rel="external">forthebadge.com</a></p>
+<h3 id="技术书籍"><a href="/ciwhm6ds6002d6on455htrt9a/#技术书籍" class="headerlink" title="技术书籍"></a>技术书籍</h3><p><a href="https://linuxstory.org/free-chinese-programming-books/" target="_blank" rel="external">编程类开放书籍荟萃</a> | <a href="https://www.zhihu.com/question/38836382/answer/79794319" target="_blank" rel="external">GitHub 上有哪些值得推荐的开源电子书</a> | <a href="https://github.com/justjavac/free-programming-books-zh_CN" target="_blank" rel="external">Github上免费的计算机编程类中文书籍</a> | <a href="http://www.imooc.com/article/1977" target="_blank" rel="external">慕课网总结:Github资源汇总</a></p>
+<h3 id="在线产品"><a href="/ciwhm6ds6002d6on455htrt9a/#在线产品" class="headerlink" title="在线产品"></a>在线产品</h3><p><a href="http://www.kancloud.cn/" target="_blank" rel="external">在线文档创作-看云</a></p>
+<h3 id="励志文章"><a href="/ciwhm6ds6002d6on455htrt9a/#励志文章" class="headerlink" title="励志文章"></a>励志文章</h3><p><a href="http://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA%3D%3D&amp;mid=2650994277&amp;idx=1&amp;sn=f0d3c25d805503264a78ab5eeb29044d&amp;chksm=bdbf0e368ac88720da10e901457fdbee77a90a426c20a3b95316fcbc6c8ab7b1afbd55950ad3&amp;mpshare=1&amp;scene=1&amp;srcid=0929tHBCIJ0R71LdEDGf9Gc1" target="_blank" rel="external">《天天写「业务代码」，如何成为「技术大牛」？》</a><br><a href="http://blog.jobbole.com/97009/" target="_blank" rel="external">《15 位健在的牛叉程序员，你知道哪几位？》</a><br><a href="http://blog.qiniu.com/archives/5897" target="_blank" rel="external">《架构师成长之路》</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇博文收集了平时开发中会使用到的一些工具资源、网址、文章等。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Tool" scheme="/categories/Tool/"/>
+    
+    
+      <category term="Tool" scheme="/tags/Tool/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>玩转MongoDB之备份与恢复</title>
+    <link href="/ciwhm6dru001u6on4lumtmdzt/"/>
+    <id>/ciwhm6dru001u6on4lumtmdzt/</id>
+    <published>2016-11-15T08:22:08.000Z</published>
+    <updated>2016-11-15T11:37:46.178Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Mongodb中我们使用mongodump命令来备份MongoDB数据，这个命令可以导出所有数据到指定目录中，并将所有的索引信息一并导出到文件中。另外，MongoDB提供了mongoexport和mongoimport工具，但是这两个工具只是导出文档，而不导出相应的索引等其他信息。</p>
+<h3 id="mongodump工具"><a href="/ciwhm6dru001u6on4lumtmdzt/#mongodump工具" class="headerlink" title="mongodump工具"></a>mongodump工具</h3><p>使用mongodump工具导出的数据具备文档数据和索引数据。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongodump -u username -p password -o outputDirectory <span class="_">-d</span> databaseName -h host</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-h</td>
+<td>MongDB所在服务器地址，例如：127.0.0.1，当然也可以指定端口号：127.0.0.1:27017</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>需要备份的数据库实例，例如：test</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>备份的数据存放位置，例如：c:\data\dump，当然该目录需要提前建立，在备份完成后，系统自动在dump目录下建立一个test目录，这个目录里面存放该数据库实例的备份数据。</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>密码</td>
+</tr>
+<tr>
+<td>-port</td>
+<td>端口号</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mongorestore工具"><a href="/ciwhm6dru001u6on4lumtmdzt/#mongorestore工具" class="headerlink" title="mongorestore工具"></a>mongorestore工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongorestore backupPath -u username -p password -h host <span class="_">-d</span> database</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-h</td>
+<td>MongDB所在服务器地址，例如：127.0.0.1，当然也可以指定端口号：127.0.0.1:27017</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>需要备份的数据库实例，例如：test</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>密码</td>
+</tr>
+<tr>
+<td>-port</td>
+<td>端口号</td>
+</tr>
+<tr>
+<td>–drop</td>
+<td>先删除原有数据，然后在导入备份的数据</td>
+</tr>
+<tr>
+<td>–directoryperdb</td>
+<td>MongoDB 3.x版本不再支持该参数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mongoexport工具"><a href="/ciwhm6dru001u6on4lumtmdzt/#mongoexport工具" class="headerlink" title="mongoexport工具"></a>mongoexport工具</h3><p>mongoexport工具只是导出数据，不会导出相应的索引信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongoexport <span class="_">-d</span> database -c collections -o outputPath -u username -p password</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-d</td>
+<td>库名</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>表名</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>field1,field2…列名</td>
+</tr>
+<tr>
+<td>-q</td>
+<td>查询条件</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>导出的文件名</td>
+</tr>
+<tr>
+<td>–type=csv</td>
+<td>导出csv格式(便于和传统数据库交换数据)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mongoimport工具"><a href="/ciwhm6dru001u6on4lumtmdzt/#mongoimport工具" class="headerlink" title="mongoimport工具"></a>mongoimport工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongoimport <span class="_">-d</span> <span class="built_in">test</span> -c goods_csv --type csv <span class="_">-f</span> goods_id,goods_name --file ./goodsall.csv</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-d</td>
+<td>库名</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>表名</td>
+</tr>
+<tr>
+<td>–type</td>
+<td>csv/json(不存在自己创建)</td>
+</tr>
+<tr>
+<td>-file</td>
+<td>备份路径</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Mongodb中我们使用mongodump命令来备份MongoDB数据，这个命令可以导出所有数据到指定目录中，并将所有的索引信息一并导出到文件中。另外，MongoDB提供了mongoexport和mongoimport工具，但是这两个工具只是导出文档，而不导出相应的索引等
+    
+    </summary>
+    
+      <category term="Database" scheme="/categories/Database/"/>
+    
+    
+      <category term="MongoDB" scheme="/tags/MongoDB/"/>
+    
+      <category term="Database" scheme="/tags/Database/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>玩转MongoDB之权限控制</title>
+    <link href="/ciwhm6dry00236on495blk03h/"/>
+    <id>/ciwhm6dry00236on495blk03h/</id>
+    <published>2016-11-15T03:59:08.000Z</published>
+    <updated>2016-11-15T11:35:58.834Z</updated>
+    
+    <content type="html"><![CDATA[<p>在MongoDB中，刚开始安装时是不存在任何用户的，也就是说，是不需要进行安全验证就可以操作数据库中的所有操作。很明显存在一些安全问题，所以需要在安装完成后为MongoDB添加安全验证。MongoDB的权限控制是跟着数据库走的，在创建了一个全局管理员后启用验证模式，然后在各个指定的数据库下创建相应的用户即可。</p>
+<a id="more"></a>
+<h3 id="权限初始化设置"><a href="/ciwhm6dry00236on495blk03h/#权限初始化设置" class="headerlink" title="权限初始化设置"></a>权限初始化设置</h3><p>(1)在初始情况下访问数据库，启动数据库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath yourDbPath</div></pre></td></tr></table></figure>
+<p>(2)连接到MongoDB，创建系统管理员账号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mongo</div><div class="line">use admin</div><div class="line">db.createUser(&#123;<span class="string">"user"</span>:<span class="string">"root"</span>,<span class="string">"pwd"</span>:<span class="string">"123456"</span>,<span class="string">"roles"</span>:[<span class="string">"root"</span>]&#125;);</div></pre></td></tr></table></figure>
+<p>(3)重启数据库，加入安全验证参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath yourDbPath --auth</div></pre></td></tr></table></figure>
+<p>(4)验证权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.auth(<span class="string">"username"</span>,<span class="string">"password"</span>);</div></pre></td></tr></table></figure>
+<h3 id="添加用户"><a href="/ciwhm6dry00236on495blk03h/#添加用户" class="headerlink" title="添加用户"></a>添加用户</h3><p>MongoDB3.0之前版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.addUser(username,password,isReadOnly);</div></pre></td></tr></table></figure>
+<p>MongoDB3.0+</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.createUser(&#123;<span class="string">"user"</span>:<span class="string">"username"</span>,<span class="string">"pwd"</span>:<span class="string">"password"</span>,<span class="string">"roles"</span>:[<span class="string">"readWrite"</span>,<span class="string">"dbAdmin"</span>]&#125;)</div></pre></td></tr></table></figure>
+<p>关于角色字段，可以用一个空数组给新用户设定空角色，也可以指定内置角色和用户定义的角色。</p>
+<table>
+<thead>
+<tr>
+<th>角色名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read</td>
+<td>允许用户读取指定的数据库</td>
+</tr>
+<tr>
+<td>readWrite</td>
+<td>允许用户读写指定的数据库</td>
+</tr>
+<tr>
+<td>dbAdmin</td>
+<td>允许用户在指定数据库中执行管理函数，如索引创建、删除，查看统计或访问system.profile</td>
+</tr>
+<tr>
+<td>userAdmin</td>
+<td>允许用户向system.users集合写入，可以找指定数据库里创建、删除和管理用户</td>
+</tr>
+<tr>
+<td>clusterAdmin</td>
+<td>只在admin数据库中可用，赋予用户所有分片和复制集相关函数的管理权限</td>
+</tr>
+<tr>
+<td>readAnyDatabase</td>
+<td>只在admin数据库中可用，赋予用户所有数据库的读权限</td>
+</tr>
+<tr>
+<td>readWriteAnyDatabase</td>
+<td>只在admin数据库中可用，赋予用户所有数据库的读写权限</td>
+</tr>
+<tr>
+<td>userAdminAnyDatabase</td>
+<td>只在admin数据库中可用，赋予用户所有数据库的userAdmin权限</td>
+</tr>
+<tr>
+<td>dbAdminAnyDatabase</td>
+<td>只在admin数据库中可用，赋予用户所有数据库的dbAdmin权限</td>
+</tr>
+<tr>
+<td>root</td>
+<td>只在admin数据库中可用。超级账号，超级权限</td>
+</tr>
+</tbody>
+</table>
+<h3 id="为指定数据库添加指定管理用户"><a href="/ciwhm6dry00236on495blk03h/#为指定数据库添加指定管理用户" class="headerlink" title="为指定数据库添加指定管理用户"></a>为指定数据库添加指定管理用户</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">use testUser</div><div class="line">db.createUser(&#123;</div><div class="line">  "user":"testUser",</div><div class="line">  "pwd":"123456",</div><div class="line">  "roles":[</div><div class="line">    &#123;</div><div class="line">      "user":"testUser",</div><div class="line">      "db":"testUser"</div><div class="line">    &#125;</div><div class="line">  ]  </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在MongoDB中，刚开始安装时是不存在任何用户的，也就是说，是不需要进行安全验证就可以操作数据库中的所有操作。很明显存在一些安全问题，所以需要在安装完成后为MongoDB添加安全验证。MongoDB的权限控制是跟着数据库走的，在创建了一个全局管理员后启用验证模式，然后在各个指定的数据库下创建相应的用户即可。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Database" scheme="/categories/Database/"/>
+    
+    
+      <category term="MongoDB" scheme="/tags/MongoDB/"/>
+    
+      <category term="Database" scheme="/tags/Database/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>玩转MongoDB之安装与配置</title>
+    <link href="/ciwhm6drw001z6on4btknrh9l/"/>
+    <id>/ciwhm6drw001z6on4btknrh9l/</id>
+    <published>2016-11-15T02:53:55.000Z</published>
+    <updated>2016-11-15T11:34:34.441Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇文章介绍了如何在Windows上安装并配置MongoDB。MongoDB主要提供了MSI安装包和编译好的二进制文件，对于MSI安装包，只是通过安装程序将对应的数据拷贝到响应的目录，而对于二进制文件，则需要手动解压到安装目录。</p>
+<a id="more"></a>
+<h3 id="Step01-安装包的下载"><a href="/ciwhm6drw001z6on4btknrh9l/#Step01-安装包的下载" class="headerlink" title="Step01:安装包的下载"></a>Step01:安装包的下载</h3><p>MongoDB的安装包可以通过<a href="https://www.mongodb.com/download-center#community" target="_blank" rel="external">官网</a>进行下载。MongoDB在Windows中提供msi和binary两种方式。本文介绍如果通过二进制文件方式进行安装与配置。<br>在这里选择对应的数据库版本并下载。</p>
+<h3 id="Step02-解压到安装目录"><a href="/ciwhm6drw001z6on4btknrh9l/#Step02-解压到安装目录" class="headerlink" title="Step02:解压到安装目录"></a>Step02:解压到安装目录</h3><p>将刚下载后的安装包解压到需要的安装目录即可。对于下载MSI安装包来说，只需要选择对应的安装路径即可。</p>
+<h3 id="Step03-设置系统环境变量"><a href="/ciwhm6drw001z6on4btknrh9l/#Step03-设置系统环境变量" class="headerlink" title="Step03:设置系统环境变量"></a>Step03:设置系统环境变量</h3><p>为了方便以后在CMD中能在任意目录下管理使用MongDB的工具集，需要在系统环境变量Path中添加安装目录中的bin目录，设置后后在新的CMD实例中进行验证。</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo <span class="comment">--version</span></div></pre></td></tr></table></figure>
+<h3 id="Step03-创建数据库存储目录"><a href="/ciwhm6drw001z6on4btknrh9l/#Step03-创建数据库存储目录" class="headerlink" title="Step03:创建数据库存储目录"></a>Step03:创建数据库存储目录</h3><p>对于新安装的MongoDB，需要创建一个目录来存储数据。</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">md D:<span class="symbol">\D</span>atabase<span class="symbol">\M</span>ongoData</div></pre></td></tr></table></figure>
+<h3 id="Step04-创建数据库日志目录"><a href="/ciwhm6drw001z6on4btknrh9l/#Step04-创建数据库日志目录" class="headerlink" title="Step04:创建数据库日志目录"></a>Step04:创建数据库日志目录</h3><p>需要指定一个目录作为MongoDB的日志存放目录</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">md D:<span class="symbol">\D</span>atabase<span class="symbol">\M</span>ongoLog</div></pre></td></tr></table></figure>
+<h3 id="Step05-创建配置文件"><a href="/ciwhm6drw001z6on4btknrh9l/#Step05-创建配置文件" class="headerlink" title="Step05:创建配置文件"></a>Step05:创建配置文件</h3><p>为了避免每次启动的时候都需要指定对应的数据库存储目录、数据库日志目录，我们可以将这些信息写入到配置文件中，方便以后的管理。</p>
+<p>在MongoDB2.6以上的版本，配置文件的语法为YML格式，基本的配置如下：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">systemLog:</span></div><div class="line"><span class="attr">  destination:</span> file</div><div class="line"><span class="attr">  path:</span> d:\Database\MongoLog\mongo.log</div><div class="line"><span class="attr">storage:</span></div><div class="line"><span class="attr">  dbPath:</span> d:\Database\MongoData</div></pre></td></tr></table></figure>
+<p>将文件保存为config.conf</p>
+<h3 id="Step06-安装MongoDB服务"><a href="/ciwhm6drw001z6on4btknrh9l/#Step06-安装MongoDB服务" class="headerlink" title="Step06:安装MongoDB服务"></a>Step06:安装MongoDB服务</h3><p>在Windows中，通过使用MongoDB提供的mongod工具来安装MongoDB服务。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --config D:\Database\MongoConfig\config.conf --install</div></pre></td></tr></table></figure>
+<h3 id="Step07-启动MongDB服务"><a href="/ciwhm6drw001z6on4btknrh9l/#Step07-启动MongDB服务" class="headerlink" title="Step07:启动MongDB服务"></a>Step07:启动MongDB服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">net start MongoDB</div></pre></td></tr></table></figure>
+<h3 id="Step08-测试数据库连接"><a href="/ciwhm6drw001z6on4btknrh9l/#Step08-测试数据库连接" class="headerlink" title="Step08: 测试数据库连接"></a>Step08: 测试数据库连接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo</div></pre></td></tr></table></figure>
+<h3 id="MongoDB的Windows服务安装和卸载"><a href="/ciwhm6drw001z6on4btknrh9l/#MongoDB的Windows服务安装和卸载" class="headerlink" title="MongoDB的Windows服务安装和卸载"></a>MongoDB的Windows服务安装和卸载</h3><p><strong>指定具体参数创建服务</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod -dbpath yourPath -logpath yourPath --install --serviceName yourServiceName --auth</div></pre></td></tr></table></figure>
+<p><strong>指定服务名删除服务</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --remove --serviceName yourServiceName</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇文章介绍了如何在Windows上安装并配置MongoDB。MongoDB主要提供了MSI安装包和编译好的二进制文件，对于MSI安装包，只是通过安装程序将对应的数据拷贝到响应的目录，而对于二进制文件，则需要手动解压到安装目录。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Database" scheme="/categories/Database/"/>
+    
+    
+      <category term="MongoDB" scheme="/tags/MongoDB/"/>
+    
+      <category term="Database" scheme="/tags/Database/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IIS .woff字体文件404的解决方法</title>
+    <link href="/ciwhm6dqp00086on44aesbyqu/"/>
+    <id>/ciwhm6dqp00086on44aesbyqu/</id>
+    <published>2016-11-14T03:05:46.000Z</published>
+    <updated>2016-11-14T03:21:50.974Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在开发中遇到了一个很奇妙的问题。项目前端使用的框架中包含了一些字体文件，这些字体文件在浏览器中的GET请求返回了404错误。404是Http状态码中最常见的一个，代表着无法找到对应的资源。但是，请求的链接是正确的，在F12调试中也可以连接到对应的文件，那么，IIS为什么会返回404呢?</p>
+<a id="more"></a>
+<p>经过一番探索，发现在IIS中，默认中是没有配置woff字体文件的相关静态资源的。也就是说，.woff文件是没有MIME-TYPE的，所以导致无法将对应的静态资源映射到对应的资源目录。<br>在这里给大家分享一个快速的解决方式，就是为对应的字体文件添加MIME-Type。</p>
+<figure class="highlight xml"><figcaption><span>web.config</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">system.webServer</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">staticContent</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">remove</span> <span class="attr">fileExtension</span>=<span class="string">".woff"</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">mimeMap</span> <span class="attr">fileExtension</span>=<span class="string">".woff"</span> <span class="attr">mimeType</span>=<span class="string">"application/x-font-woff"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">staticContent</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">system.webServer</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这个解决方法是从<a href="http://ideasof.andersaberg.com/development/quick-fix-iis-woff-font-file-404-not-found-in-aspnet-mvc" target="_blank" rel="external">这里</a>发现的。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在开发中遇到了一个很奇妙的问题。项目前端使用的框架中包含了一些字体文件，这些字体文件在浏览器中的GET请求返回了404错误。404是Http状态码中最常见的一个，代表着无法找到对应的资源。但是，请求的链接是正确的，在F12调试中也可以连接到对应的文件，那么，IIS为什么会返回404呢?&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="ASP.Net" scheme="/categories/ASP-Net/"/>
+    
+    
+      <category term="ASP.net" scheme="/tags/ASP-net/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>菜鸟玩Git之SSH公钥</title>
+    <link href="/ciwhm6ds8002g6on4z346jem7/"/>
+    <id>/ciwhm6ds8002g6on4z346jem7/</id>
+    <published>2016-11-04T03:18:33.000Z</published>
+    <updated>2016-11-04T04:49:37.003Z</updated>
+    
+    <content type="html"><![CDATA[<p>菜鸟在玩GIT的时候，最开始纠结的就是需要在命令行下，像在LINUX中敲打代码进行提交等操作。这对于熟悉WINDOWS的小伙伴来说，是需要一段时间来适应的。本篇文章，从菜鸟的角度对GIT仓库权限进行配置SSH公钥进行介绍。</p>
+<a id="more"></a>
+<h4 id="首先，什么是SSH协议"><a href="/ciwhm6ds8002g6on4z346jem7/#首先，什么是SSH协议" class="headerlink" title="首先，什么是SSH协议"></a>首先，什么是SSH协议</h4><p>SSH是Secure Shell的缩写，由IETF(Network Working Group)制定。SSH是一种作用在应用层和传输层上的安全协议，为计算机上的Shell提供安全的传输和使用环境。<br>SSH专门为远程登录会话和其他网络服务提供安全性的协议。</p>
+<h4 id="SSH的安全验证"><a href="/ciwhm6ds8002g6on4z346jem7/#SSH的安全验证" class="headerlink" title="SSH的安全验证"></a>SSH的安全验证</h4><p>1、对于客户端来说，SSH有两种级别的安全验证。</p>
+<h5 id="1-基于密码的安全验证"><a href="/ciwhm6ds8002g6on4z346jem7/#1-基于密码的安全验证" class="headerlink" title="(1)基于密码的安全验证"></a>(1)基于密码的安全验证</h5><p>使用账号和密码登录到远程主机，传输数据被加密，但是，可能有别的服务器冒充真正的服务器，存在安全隐患。</p>
+<h5 id="2-基于密钥的安全验证"><a href="/ciwhm6ds8002g6on4z346jem7/#2-基于密钥的安全验证" class="headerlink" title="(2)基于密钥的安全验证"></a>(2)基于密钥的安全验证</h5><p>本地创建一对密钥，把公钥放在服务器上。客户端向服务端发送请求时，使用本地的密钥进行验证。服务器接收到请求时，在服务器上用户根目录下寻找公钥，将客户端发送过来的公钥进行比较。如果一致，则通过验证。</p>
+<h4 id="Git生成公钥"><a href="/ciwhm6ds8002g6on4z346jem7/#Git生成公钥" class="headerlink" title="Git生成公钥"></a>Git生成公钥</h4><h5 id="Step-1-检查本地是否有公钥："><a href="/ciwhm6ds8002g6on4z346jem7/#Step-1-检查本地是否有公钥：" class="headerlink" title="Step 1: 检查本地是否有公钥："></a>Step 1: 检查本地是否有公钥：</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~/.ssh</div><div class="line">$ ls</div></pre></td></tr></table></figure>
+<p>如果上述目录下没有文件，则表明这台机器上还没有存储过任何SSH密钥。在Windows中，密钥的存放目录在系统盘的用户目录下。</p>
+<h5 id="Step-2：创建SSH密钥"><a href="/ciwhm6ds8002g6on4z346jem7/#Step-2：创建SSH密钥" class="headerlink" title="Step 2：创建SSH密钥"></a>Step 2：创建SSH密钥</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen</div><div class="line"></div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/schacon/.ssh/id_rsa):</div><div class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</div><div class="line">Enter same passphrase again:</div><div class="line">Your identification has been saved <span class="keyword">in</span> /Users/schacon/.ssh/id_rsa.</div><div class="line">Your public key has been saved <span class="keyword">in</span> /Users/schacon/.ssh/id_rsa.pub.</div><div class="line">The key fingerprint is:</div><div class="line">43:c5:5b:5f:b1:f1:50:43:ad:20:a6:92:6a:1f:9a:3a schacon@agadorlaptop.local</div></pre></td></tr></table></figure>
+<p>这个过程会提示你要保存的密钥文件名，可选，默认在根目录下.ssh文件夹下。同时提示是否输入验证密码，输入后，在连接的时候需要输入设定好的密码。</p>
+<h5 id="Step-3：将生成的公钥文件存储在服务器上。"><a href="/ciwhm6ds8002g6on4z346jem7/#Step-3：将生成的公钥文件存储在服务器上。" class="headerlink" title="Step 3：将生成的公钥文件存储在服务器上。"></a>Step 3：将生成的公钥文件存储在服务器上。</h5><p>在github上，则可以通过添加仓库的<strong>Deploy keys</strong>来验证提交权限。</p>
+<p>参考连接：<a href="https://git-scm.com/" target="_blank" rel="external">https://git-scm.com/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;菜鸟在玩GIT的时候，最开始纠结的就是需要在命令行下，像在LINUX中敲打代码进行提交等操作。这对于熟悉WINDOWS的小伙伴来说，是需要一段时间来适应的。本篇文章，从菜鸟的角度对GIT仓库权限进行配置SSH公钥进行介绍。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>REST API拾荒记（一）</title>
+    <link href="/ciwhm6dr2000p6on4urlr185l/"/>
+    <id>/ciwhm6dr2000p6on4urlr185l/</id>
+    <published>2016-11-02T13:30:29.000Z</published>
+    <updated>2016-11-03T08:10:06.247Z</updated>
+    
+    <content type="html"><![CDATA[<style>
+#banner{
+   width:100%;
+   height:30px;
+   background: #666666;
+   color:white;
+   font-family: "微软雅黑","黑体",serif;
+   line-height:30px;
+   text-align:center;
+   font-size:20px;
+   border-radius:5px;
+}
+</style>
+
+<p>“You Type It, We Post It.”，这句广告牌的标志是我在阅读《RESTful Web APIs》看到的第一个场景，自然而然地展开了对服务端和客户端的通信方式的阐述。这本书很好，很多之前觉得似懂非懂的概念在阅读完后都有了新的理解。在此，一边阅读，一边总结，也不失为一件趣事…</p>
+<a id="more"></a>
+<h4 id="服务器上的资源（Resource）"><a href="/ciwhm6dr2000p6on4urlr185l/#服务器上的资源（Resource）" class="headerlink" title="服务器上的资源（Resource）"></a>服务器上的资源（Resource）</h4><p>浏览器向服务端发送的请求都是通过URL传递的。每一个URL更像是一个唯一标识的“地址”。通过这个“地址”找到相应的服务器，由服务器进行处理。在服务器处理完成后都会返回一个HTML文档、或者JSON数据等等其他格式的数据。我们将这些数据定义为资源的描述（Representation of resource）。而通过URL定位的事物，即是资源。</p>
+<h4 id="无状态性（Statelessness）"><a href="/ciwhm6dr2000p6on4urlr185l/#无状态性（Statelessness）" class="headerlink" title="无状态性（Statelessness）"></a>无状态性（Statelessness）</h4><p>服务器端不关心客户端的状态。在一次HTTP会话中，服务端只处理客户端发送过来的单次请求，而在空闲时服务端并不清楚客户端的状态。有时为了表述登录状态，则需在每次会话中都携带cookie信息，或者直接在服务端保存状态(Session)。</p>
+<h4 id="客户端操作资源的方法"><a href="/ciwhm6dr2000p6on4urlr185l/#客户端操作资源的方法" class="headerlink" title="客户端操作资源的方法"></a>客户端操作资源的方法</h4><p>HTTP标准（RFC 2016）定义了8种客户端操作资源的方法。他们分别是：GET，POST，PUT，DISPATCH，DELETE，HEAD，OPTIONS。</p>
+<h4 id="HTTP状态码"><a href="/ciwhm6dr2000p6on4urlr185l/#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h4><p>详见本博客中的HTTP标签下的相关文章</p>
+<h4 id="HTTP响应内容（Http-Response）"><a href="/ciwhm6dr2000p6on4urlr185l/#HTTP响应内容（Http-Response）" class="headerlink" title="HTTP响应内容（Http Response）"></a>HTTP响应内容（Http Response）</h4><p>一个HTTP请求响应后可以得到下面这三个部分的内容：</p>
+<table>
+<thead>
+<tr>
+<th>响应内容</th>
+<th>术语</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>状态码(响应码)</td>
+<td>Status Code</td>
+<td>简要说明了请求的进展情况</td>
+</tr>
+<tr>
+<td>实体消息</td>
+<td>Entity Body</td>
+<td>采用某种数据格式书写的文档，并且预期是可以被客户端所理解的</td>
+</tr>
+<tr>
+<td>响应头</td>
+<td>Content Type</td>
+<td>向客户端说明如何去解析实体消息</td>
+</tr>
+</tbody>
+</table>
+<p>看到这里，让我很自然地想起，平时发出一个异步的post请求，总是要以某个格式来解析得到的内容。比如在JQuery的AJAX请求中，只有状态码为200的时候才会进入到success方法，否则进入到error方法。在后端中，我们有时会设置HTTP Response的Content-Type属性，这样，客户端只有按照这个指定的属性解析内容，才能正确地获取服务端返还的数据。也就是说，服务端设置了响应格式，比如JSON，那么客户端就必须以JSON格式去解析响应实体。</p>
+<h4 id="REST"><a href="/ciwhm6dr2000p6on4urlr185l/#REST" class="headerlink" title="REST"></a>REST</h4><p>Represantation State Transfer 表现层状态转换。REST不是一种具体的协议、框架。它仅仅只是一种约束，一种风格或者说是一种设计的架构。</p>
+<h4 id="HTTP协议语义（Protocol-Semantics）"><a href="/ciwhm6dr2000p6on4urlr185l/#HTTP协议语义（Protocol-Semantics）" class="headerlink" title="HTTP协议语义（Protocol Semantics）"></a>HTTP协议语义（Protocol Semantics）</h4><table>
+<thead>
+<tr>
+<th>语义</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>获取某个资源</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>销毁一个资源</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>在当前资源的下一级创建新的资源</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>替换当前的状态</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>获取服务器发送过来的报头信息</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>获取这个资源所能响应的HTTP方法列表</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>修改资源的部分状态</td>
+</tr>
+<tr>
+<td>LINK</td>
+<td>将其他资源连接到当前资源</td>
+</tr>
+<tr>
+<td>UNLINK</td>
+<td>销毁当前资源和其他资源的连接关系</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>GET方法只用于获取数据，不能更改资源的状态。</li>
+<li>DELETE方法用于删除某个资源。</li>
+<li>PUT方法用于更新一整个资源。</li>
+<li>PATCH方法用于只更新资源的部分状态。在数据量比较大，而更改部分比较少的时候适用。</li>
+</ul>
+<h4 id="幂等性（Idempotence）"><a href="/ciwhm6dr2000p6on4urlr185l/#幂等性（Idempotence）" class="headerlink" title="幂等性（Idempotence）"></a>幂等性（Idempotence）</h4><p>发送多次请求对资源状态的影响和只发送一次请求的影响是一样的。</p>
+<h4 id="POST重载（Overloaded-Post）"><a href="/ciwhm6dr2000p6on4urlr185l/#POST重载（Overloaded-Post）" class="headerlink" title="POST重载（Overloaded Post）"></a>POST重载（Overloaded Post）</h4><p>在实际的项目中很少看见GET,POST之外的HTTP动词语义。因为很大程度上适用POST解决了各式各样的语义需求。在POST中，应用程序自己设定语义，进行各种资源的增删改工作。一个重载后的POST请求不再具有协议上的语义，而只能从应用程序的层面上去了解其语义。所以，协议语义不是必须的，得根据自己的实际情况而定。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;style&gt;
+#banner{
+   width:100%;
+   height:30px;
+   background: #666666;
+   color:white;
+   font-family: &quot;微软雅黑&quot;,&quot;黑体&quot;,serif;
+   line-height:30px;
+   text-align:center;
+   font-size:20px;
+   border-radius:5px;
+}
+&lt;/style&gt;
+
+&lt;p&gt;“You Type It, We Post It.”，这句广告牌的标志是我在阅读《RESTful Web APIs》看到的第一个场景，自然而然地展开了对服务端和客户端的通信方式的阐述。这本书很好，很多之前觉得似懂非懂的概念在阅读完后都有了新的理解。在此，一边阅读，一边总结，也不失为一件趣事…&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="REST" scheme="/categories/REST/"/>
+    
+    
+      <category term="REST" scheme="/tags/REST/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Summary For The Mythical Man-Month</title>
+    <link href="/ciwhm6dr7000t6on4b8hf7r6p/"/>
+    <id>/ciwhm6dr7000t6on4b8hf7r6p/</id>
+    <published>2016-10-31T13:12:34.000Z</published>
+    <updated>2016-11-02T05:31:27.597Z</updated>
+    
+    <content type="html"><![CDATA[<p>You can see the results clearly in many object-oriented modeling description. Often they are accompanied by fine wolds about modeling the real world. But when you look closely you can see that they are really descriptions of programming objects, pure and simple. Any similarity to real-world objects, living or dead, is purely coincidental…</p>
+<a id="more"></a>
+<h4 id="Two-ways-for-turnning-Program-into-Programming-Product"><a href="/ciwhm6dr7000t6on4b8hf7r6p/#Two-ways-for-turnning-Program-into-Programming-Product" class="headerlink" title="Two ways for turnning Program into Programming Product"></a>Two ways for turnning Program into Programming Product</h4><p>There are two ways to turn Program into Programing Produce. One is by Interface &amp; system integration and the other one is by writing documents, testing, and maintenance. But both of them cost at least 3 times then the program cost.</p>
+<h4 id="Why-programmers-feel-that-programming-is-interesting"><a href="/ciwhm6dr7000t6on4b8hf7r6p/#Why-programmers-feel-that-programming-is-interesting" class="headerlink" title="Why programmers feel that programming is interesting"></a>Why programmers feel that programming is interesting</h4><ul>
+<li>It’s interesting to create new thing. All your codes is new and it’s exciting.</li>
+<li>Programmers are creating something useful    for others.</li>
+<li>Can ontinuous learing of knowledge in programming.</li>
+</ul>
+<h4 id="Why-programmers-feel-sad-sometimes"><a href="/ciwhm6dr7000t6on4b8hf7r6p/#Why-programmers-feel-sad-sometimes" class="headerlink" title="Why programmers feel sad sometimes"></a>Why programmers feel sad sometimes</h4><ul>
+<li>Have the perfect goal, but can’t reach it.</li>
+<li>Developing plans are designed by others and they can’t controll it.</li>
+<li>Too many bugs to fix. And may feel tired sometimes.</li>
+<li>Bad code, bad thrid-part system and bad architetues.</li>
+</ul>
+<blockquote>
+<p>Good cooking takes time. If you are made to wait, it is to serve you better, and to please you.</p>
+</blockquote>
+<p>It means we need more time to finish our job.</p>
+<h4 id="Why-the-project-was-delayed"><a href="/ciwhm6dr7000t6on4b8hf7r6p/#Why-the-project-was-delayed" class="headerlink" title="Why the project was delayed"></a>Why the project was delayed</h4><ul>
+<li>We assume that everything works well. So no bugs delay our job. But it’s wrong.</li>
+<li>We confuse progress and work wrongly.</li>
+<li>Lack of confidence in their estimates.</li>
+<li>Lack of progress tracking.</li>
+</ul>
+<h4 id="Man-Month"><a href="/ciwhm6dr7000t6on4b8hf7r6p/#Man-Month" class="headerlink" title="Man-Month"></a>Man-Month</h4><p>One person’s working time for a month, or the equivalent, used as a measure of how much work or labor is required or consumed to perform some task.</p>
+<p>For simple works, it’s possible to arrange linearly. But for complex business logic, even if more people join the team, can not develope in parallel.</p>
+<h4 id="The-law-of-Brooks"><a href="/ciwhm6dr7000t6on4b8hf7r6p/#The-law-of-Brooks" class="headerlink" title="The law of Brooks"></a>The law of Brooks</h4><blockquote>
+<p>Adding manpower to a late software project makes it later.</p>
+</blockquote>
+<h4 id="About-efficiency-amp-manpower"><a href="/ciwhm6dr7000t6on4b8hf7r6p/#About-efficiency-amp-manpower" class="headerlink" title="About efficiency &amp; manpower"></a>About efficiency &amp; manpower</h4><p>Both of manpower and efficiency are required when developing a large software system.</p>
+<h4 id="Three-Phases"><a href="/ciwhm6dr7000t6on4b8hf7r6p/#Three-Phases" class="headerlink" title="Three Phases"></a>Three Phases</h4><p>There are three distinct phases: architecture, implementation and realization.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;You can see the results clearly in many object-oriented modeling description. Often they are accompanied by fine wolds about modeling the real world. But when you look closely you can see that they are really descriptions of programming objects, pure and simple. Any similarity to real-world objects, living or dead, is purely coincidental…&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Software Engineering" scheme="/categories/Software-Engineering/"/>
+    
+    
+      <category term="Software Engineering" scheme="/tags/Software-Engineering/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>The Hexo Guide For Hummingbird</title>
+    <link href="/ciwhm6dr8000v6on41r7cdao0/"/>
+    <id>/ciwhm6dr8000v6on41r7cdao0/</id>
+    <published>2016-10-30T09:39:59.000Z</published>
+    <updated>2016-11-07T10:49:54.130Z</updated>
+    
+    <content type="html"><![CDATA[<p>This article describes how I created this site step by step. It’s fun to customize your own UI styles &amp; features. For a good visual experience, you must have sufficient knowledge of frontend, such as CSS, JS and so on. So now let’s begin.</p>
+<a id="more"></a>
+<h4 id="Step-1-Prepare-the-environment"><a href="/ciwhm6dr8000v6on41r7cdao0/#Step-1-Prepare-the-environment" class="headerlink" title="Step 1: Prepare the environment"></a>Step 1: Prepare the environment</h4><p>Hexo is a static blog framework based on Node. So we must install <strong>node.js</strong> first. Click <a href="https://nodejs.org/en/download/" target="_blank" rel="external">this link</a> to download Node.js.<br>For windows:</p>
+<figure class="highlight bash"><figcaption><span>windows bash</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node --version</div></pre></td></tr></table></figure>
+<p>For Ubuntu:</p>
+<figure class="highlight bash"><figcaption><span>ubuntu shell</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ sudo git <span class="built_in">clone</span> https://github.com/nodejs/node.git</div><div class="line">$ sudo chmod -R 755 node</div><div class="line">$ <span class="built_in">cd</span> node</div><div class="line">$ sudo ./configure</div><div class="line">$ sudo make</div><div class="line">$ sudo make install</div><div class="line">$ node --version</div></pre></td></tr></table></figure>
+<p>Usually we use git to build and deploy our Hexo blog. So it’s nessesary to install git in your computer. Click <a href="http://git-scm.com/download/" target="_blank" rel="external">this link</a> to download.<br>For windows:</p>
+<figure class="highlight bash"><figcaption><span>windows bash</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#125;</div><div class="line">git --version</div></pre></td></tr></table></figure>
+<p>For Unbuntu:</p>
+<figure class="highlight bash"><figcaption><span>unbuntu shell</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#125;</div><div class="line">$ sudo yum install git</div><div class="line">$ sudo apt-get install git</div></pre></td></tr></table></figure>
+<h4 id="Step-2-Install-Hexo-amp-Maupassant"><a href="/ciwhm6dr8000v6on41r7cdao0/#Step-2-Install-Hexo-amp-Maupassant" class="headerlink" title="Step 2: Install Hexo &amp; Maupassant"></a>Step 2: Install Hexo &amp; Maupassant</h4><p>Run the following command in Git CMD or Git Bash.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
+<p>Run the following command to install <a href="https://www.haomwei.com/technology/maupassant-hexo.html" target="_blank" rel="external">Maupassant</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/tufu9441/maupassant-hexo.git themes/maupassant</div><div class="line">$ npm install hexo-renderer-jade --save</div><div class="line">$ npm install hexo-renderer-sass --save</div></pre></td></tr></table></figure>
+<h4 id="Step-3-Init-your-blog"><a href="/ciwhm6dr8000v6on41r7cdao0/#Step-3-Init-your-blog" class="headerlink" title="Step 3: Init your blog"></a>Step 3: Init your blog</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">hexo init         # Init hexo blog.</div><div class="line">hexo new page     # Create a new page.</div><div class="line">hexo new post     # Create a new post.</div><div class="line">hexo g            # Generate the blog.</div><div class="line">hexo d            # Deploy your blog.</div><div class="line">hexo s            # Debug your blog locally.</div></pre></td></tr></table></figure>
+<p>Now you have a small demo and can preview your blog via typing <code>localhost:4000</code> in your browser.</p>
+<h4 id="Step-4-Setup-your-site-configuration"><a href="/ciwhm6dr8000v6on41r7cdao0/#Step-4-Setup-your-site-configuration" class="headerlink" title="Step 4: Setup your site configuration."></a>Step 4: Setup your site configuration.</h4><p>Edit <code>_config.yml</code> under your hexo theme path.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="attr">fancybox:</span> <span class="literal">true</span> <span class="comment">## If you want to use fancybox please set the value to true.</span></div><div class="line"><span class="attr">duoshuo:</span> <span class="comment">## Your duoshuo_shortname, e.g. username</span></div><div class="line"><span class="attr">disqus:</span> <span class="comment">## Your disqus_shortname, e.g. username</span></div><div class="line"><span class="attr">google_search:</span> <span class="literal">false</span> <span class="comment">## Use Google search, true/false.</span></div><div class="line"><span class="attr">baidu_search:</span> <span class="literal">false</span> <span class="comment">## Use Baidu search, true/false.</span></div><div class="line"><span class="attr">swiftype:</span> <span class="comment">## Your swiftype_key, e.g. m7b11ZrsT8Me7gzApciT</span></div><div class="line"><span class="attr">tinysou:</span> <span class="comment">## Your tinysou_key, e.g. 4ac092ad8d749fdc6293</span></div><div class="line"><span class="attr">self_search:</span> <span class="literal">true</span> <span class="comment">## Use a jQuery-based local search engine, true/false.</span></div><div class="line"><span class="attr">google_analytics:</span> <span class="comment">## Your Google Analytics tracking id, e.g. UA-42425684-2</span></div><div class="line"><span class="attr">baidu_analytics:</span> <span class="comment">## Your Baidu Analytics tracking id, e.g. 8006843039519956000</span></div><div class="line"><span class="attr">show_category_count:</span> <span class="literal">true</span> <span class="comment">## If you want to show the count of categories in the sidebar widget please set the value to true.</span></div><div class="line"><span class="attr">shareto:</span> <span class="literal">true</span> <span class="comment">## If you want to use the share button please set the value to true.</span></div><div class="line"><span class="attr">busuanzi:</span> <span class="literal">true</span> <span class="comment">## If you want to use Busuanzi page views please set the value to true.</span></div><div class="line"><span class="attr">widgets_on_small_screens:</span> <span class="literal">false</span> <span class="comment">## Set to true to enable widgets on small screens.</span></div><div class="line"></div><div class="line"><span class="attr">menu:</span></div><div class="line"><span class="attr">  - page:</span> Home</div><div class="line"><span class="attr">    directory:</span> .</div><div class="line"><span class="attr">    icon:</span> fa-home</div><div class="line"><span class="attr">  - page:</span> View</div><div class="line"><span class="attr">    directory:</span> archives/</div><div class="line"><span class="attr">    icon:</span> fa-send</div><div class="line"><span class="attr">  - page:</span> Log  </div><div class="line"><span class="attr">    directory:</span> timeline/</div><div class="line"><span class="attr">    icon:</span> fa-history</div><div class="line"><span class="attr">  - page:</span> About</div><div class="line"><span class="attr">    directory:</span> about/</div><div class="line"><span class="attr">    icon:</span> fa-user</div><div class="line">    </div><div class="line"><span class="attr">widgets:</span> <span class="comment">## Six widgets in sidebar provided: search, category, tag, recent_posts, rencent_comments and links.</span></div><div class="line"><span class="bullet">  -</span> search        </div><div class="line"><span class="bullet">  -</span> category</div><div class="line"><span class="bullet">  -</span> tag</div><div class="line"><span class="bullet">  -</span> recent_posts</div><div class="line"><span class="comment"># - recent_comments</span></div><div class="line"><span class="bullet">  -</span> links  </div><div class="line"> </div><div class="line"></div><div class="line"><span class="attr">links:</span></div><div class="line"><span class="attr">  - title:</span> &lt;Hexo&gt; Official Hexo Guide</div><div class="line"><span class="attr">    url:</span> https://hexo.io/zh-cn/docs/asset-folders.html</div><div class="line"></div><div class="line"><span class="attr">timeline:</span></div><div class="line"><span class="attr">  - num:</span> <span class="number">1</span></div><div class="line"><span class="attr">    word:</span> <span class="number">2016</span><span class="bullet">-10</span><span class="bullet">-30</span> <span class="number">17</span>:<span class="number">03</span> The first version of a HummingBird </div><div class="line"></div><div class="line"><span class="comment"># Static files</span></div><div class="line"><span class="attr">js:</span> js</div><div class="line"><span class="attr">css:</span> css</div><div class="line"></div><div class="line"><span class="comment"># Theme version</span></div><div class="line"><span class="attr">version:</span> <span class="number">0.0</span><span class="number">.0</span></div><div class="line"></div><div class="line"><span class="comment"># Search insite</span></div><div class="line"><span class="attr">search:</span> </div><div class="line"><span class="attr"> - path:</span> search.xml</div><div class="line"><span class="attr"> - field:</span> post</div></pre></td></tr></table></figure>
+<p>Please read the following description and finish the configuration.</p>
+<table>
+<thead>
+<tr>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fancybox</td>
+<td>Enable <a href="http://fancyapps.com/fancybox/" target="_blank" rel="external">Fancybox</a></td>
+</tr>
+<tr>
+<td>duoshuo</td>
+<td><a href="http://duoshuo.com" target="_blank" rel="external">Duoshuo</a> shortname</td>
+</tr>
+<tr>
+<td>disqus</td>
+<td><a href="https://disqus.com" target="_blank" rel="external">Disqus</a> shortname</td>
+</tr>
+<tr>
+<td>google_search</td>
+<td>Default search engine</td>
+</tr>
+<tr>
+<td>baidu_search</td>
+<td>Search engine for users in China</td>
+</tr>
+<tr>
+<td>swiftype</td>
+<td><a href="https://swiftype.com" target="_blank" rel="external">Swiftype Search</a> key</td>
+</tr>
+<tr>
+<td>tinysou</td>
+<td><a href="http://tinysou.com" target="_blank" rel="external">Tiny Search</a> key</td>
+</tr>
+<tr>
+<td>self_search</td>
+<td>A jQuery-based <a href="http://hahack.com/codes/local-search-engine-for-hexo" target="_blank" rel="external">local search engine</a>, with the dependency on the plugin <a href="https://github.com/PaicHyperionDev/hexo-generator-search" target="_blank" rel="external">hexo-generator-search</a>.</td>
+</tr>
+<tr>
+<td>google_analytics</td>
+<td><a href="https://www.google.com/analytics/" target="_blank" rel="external">Google Analytics</a> tracking id</td>
+</tr>
+<tr>
+<td>baidu_analytics</td>
+<td><a href="http://tongji.baidu.com" target="_blank" rel="external">Baidu Analytics</a> tracking id</td>
+</tr>
+<tr>
+<td>show_category_count</td>
+<td>Show the count of categories in the sidebar widget.</td>
+</tr>
+<tr>
+<td>shareto</td>
+<td>Enable share button</td>
+</tr>
+<tr>
+<td>busuanzi</td>
+<td>Enable <a href="http://busuanzi.ibruce.info" target="_blank" rel="external">Busuanzi</a> page views</td>
+</tr>
+<tr>
+<td>widgets_on_small_screens</td>
+<td>Show the widgets at the bottom of small screens.</td>
+</tr>
+<tr>
+<td>menu</td>
+<td>Customize your menu of pages here, just follow the format of existied items. Don’t forget to create corresponding folders inlcuding <code>index.md</code> in <code>source</code> folder to ensure the pages will correctly display. <a href="http://fontawesome.io" target="_blank" rel="external">FontAwesome</a> icon fonts have been integrated, and you can choose other icons which you like <a href="http://fontawesome.io/icons/" target="_blank" rel="external">here</a> and use them according to the instruction.</td>
+</tr>
+<tr>
+<td>widgets</td>
+<td>Choose and arrange the widgets in sidebar here.</td>
+</tr>
+<tr>
+<td>links</td>
+<td>Edit your blogroll here.</td>
+</tr>
+<tr>
+<td>timeline</td>
+<td>Show a timeline of the website by setting <code>layout: timeline</code> of a page.</td>
+</tr>
+<tr>
+<td>Static files</td>
+<td>Static files directory, for convenience of CDN usage.</td>
+</tr>
+<tr>
+<td>Theme version</td>
+<td>For automatic refresh of static files on CDN.</td>
+</tr>
+</tbody>
+</table>
+<p>Now all the work has been basically completed.</p>
+<hr>
+<h4 id="Enable-Timeline-Page"><a href="/ciwhm6dr8000v6on41r7cdao0/#Enable-Timeline-Page" class="headerlink" title="Enable Timeline Page"></a>Enable Timeline Page</h4><p>This operation will achieve this effect:</p>
+<p><img src="http://i1.piimg.com/577934/f0cd11fb0ca4d04ds.png" alt="Timeline"></p>
+<p>So first we need setup this feature in site config file(_config.yml), fill the content you want.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">timeline:</span></div><div class="line"><span class="attr">  - num:</span> <span class="number">1</span></div><div class="line"><span class="attr">    word:</span> <span class="number">2016</span><span class="bullet">-10</span><span class="bullet">-30</span> <span class="number">17</span>:<span class="number">03</span> The first version of a HummingBird</div></pre></td></tr></table></figure>
+<p>Then, create a new page and point out the layout property.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page timeline</div></pre></td></tr></table></figure>
+<p>Under timeline folder, edit index.md like this:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">date: 2016-10-30 16:54:26</div><div class="line"><span class="section">layout: timeline</span></div><div class="line">---</div></pre></td></tr></table></figure>
+<p>Done, now you can see your customize timeline feature. Enjoy it!</p>
+<h4 id="Customize-your-own-icons"><a href="/ciwhm6dr8000v6on41r7cdao0/#Customize-your-own-icons" class="headerlink" title="Customize your own icons"></a>Customize your own icons</h4><p>In hexo, all the icons are from <a href="http://fontawesome.io/icon/home/" target="_blank" rel="external">http://fontawesome.io/icon/home/</a>, it means that we can customize the icons by changing some worlds. Every icon can be replaced as you want. So look at the example following:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">menu:</span></div><div class="line"><span class="attr">  - page:</span> Home</div><div class="line"><span class="attr">    directory:</span> .</div><div class="line"><span class="attr">    icon:</span> fa-home    <span class="comment"># fa-home is one of  fontawesome.io and you just need to find another one and replace it.</span></div></pre></td></tr></table></figure>
+<h4 id="Enable-Searching-In-site"><a href="/ciwhm6dr8000v6on41r7cdao0/#Enable-Searching-In-site" class="headerlink" title="Enable Searching In-site"></a>Enable Searching In-site</h4><p>For this theme, it’s easy to implement this feature. Edit your theme config file, and set the following property to true:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">self_search:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
+<p><img src="http://i1.piimg.com/577934/20415a26f1d3ac5d.png" alt="Searching insite"></p>
+<h4 id="Enable-Google-Search-amp-Baidu-Search"><a href="/ciwhm6dr8000v6on41r7cdao0/#Enable-Google-Search-amp-Baidu-Search" class="headerlink" title="Enable Google Search &amp; Baidu Search"></a>Enable Google Search &amp; Baidu Search</h4><p>Same as above, just set them to true:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">google_search:</span> <span class="literal">true</span></div><div class="line"><span class="attr">baidu_search:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
+<h4 id="Enable-Reading-Quantity-Statistical"><a href="/ciwhm6dr8000v6on41r7cdao0/#Enable-Reading-Quantity-Statistical" class="headerlink" title="Enable Reading Quantity Statistical"></a>Enable Reading Quantity Statistical</h4><p>It’s easy. Edit theme config file and set the following property to true.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">busuanzi:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
+<h4 id="Setup-your-blogroll-in-sidebar"><a href="/ciwhm6dr8000v6on41r7cdao0/#Setup-your-blogroll-in-sidebar" class="headerlink" title="Setup your blogroll in sidebar"></a>Setup your blogroll in sidebar</h4><p>Open theme config file and add some content like this:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">links:</span></div><div class="line"><span class="attr">  - title:</span> &lt;Hexo&gt; Official Hexo Guide</div><div class="line"><span class="attr">    url:</span> https://hexo.io/zh-cn/docs/asset-folders.html</div><div class="line"><span class="attr">  - title:</span> &lt;Hexo&gt; Maupassant Guide</div><div class="line"><span class="attr">    url:</span> https://github.com/tufu9441/maupassant-hexo</div></pre></td></tr></table></figure>
+<h4 id="Enable-Math-Editor"><a href="/ciwhm6dr8000v6on41r7cdao0/#Enable-Math-Editor" class="headerlink" title="Enable Math Editor"></a>Enable Math Editor</h4><p>Add the following property to your theme config file.</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
+<p>If you want to display math equation, you need to setup in your post like this:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">title:</span> Demo</div><div class="line"><span class="attr">date:</span> <span class="number">2016</span><span class="bullet">-10</span><span class="bullet">-31</span> <span class="number">19</span>:<span class="number">27</span>:<span class="number">12</span></div><div class="line"><span class="attr">categories:</span> math</div><div class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></div><div class="line"><span class="meta">---</span></div></pre></td></tr></table></figure>
+<p>For block displayed mathematics, use this:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$$...$$</div><div class="line">\\[...\\]</div></pre></td></tr></table></figure>
+<p>For example: <code>$$ h=2*3**$$</code></p>
+<p>$$ h=2*3 $$</p>
+<p>For inline mathematics, use this:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$...$</div></pre></td></tr></table></figure>
+<p>For example: <code>$ h=2*3 $</code> :&nbsp;&nbsp; $ h=2*3 $</p>
+<p>More examples:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$a + b^2$</div><div class="line">$x = &#123;-b \pm \sqrt&#123;b^2-4ac&#125; \over 2a&#125;$</div><div class="line">$$\Delta_A(\lambda)=\det(\lambda I-A)$$</div><div class="line">\begin&#123;equation&#125;</div><div class="line">\Delta_A(\lambda)=\det(\lambda I-A),</div><div class="line">\end&#123;equation&#125;</div><div class="line">\begin&#123;equation&#125;</div><div class="line">[a, b, c]=\left|</div><div class="line">\begin&#123;array&#125;&#123;ccc&#125;</div><div class="line">  a<span class="emphasis">_1&amp; a_</span>2  &amp; a_3  \\\</div><div class="line"> b<span class="emphasis">_1 &amp;b_</span>2   &amp; b_3  \\\</div><div class="line"> c<span class="emphasis">_1 &amp;c_</span>2   &amp;c_3   </div><div class="line">\end&#123;array&#125;</div><div class="line">\right|</div><div class="line">\end&#123;equation&#125;</div></pre></td></tr></table></figure>
+<p>$$a + b^2$$<br>$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$<br>$$\Delta_A(\lambda)=\det(\lambda I-A)$$<br>\begin{equation}<br>\Delta_A(\lambda)=\det(\lambda I-A),<br>\end{equation}<br>\begin{equation}<br>[a, b, c]=\left|<br>\begin{array}{ccc}<br>  a_1&amp; a_2  &amp; a_3  \\<br> b_1 &amp;b_2   &amp; b_3  \\<br> c_1 &amp;c_2   &amp;c_3<br>\end{array}<br>\right|<br>\end{equation}</p>
+<p>Docs for <strong>MathJax</strong> : <a href="http://docs.mathjax.org/en/latest/start.html" target="_blank" rel="external">http://docs.mathjax.org/en/latest/start.html</a></p>
+<h4 id="Code-Block"><a href="/ciwhm6dr8000v6on41r7cdao0/#Code-Block" class="headerlink" title="Code Block"></a>Code Block</h4><p>using this format to customize your own code block style:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% codeblock [title] [lang:language] [url] [link text] %&#125;</div><div class="line">code snippet</div><div class="line">&#123;% endcodeblock %&#125;</div></pre></td></tr></table></figure>
+<h4 id="Enable-different-pagenation-in-different-page"><a href="/ciwhm6dr8000v6on41r7cdao0/#Enable-different-pagenation-in-different-page" class="headerlink" title="Enable different pagenation in different page"></a>Enable different pagenation in different page</h4><p>First, you need to install the following plugins as need:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-index --save</div><div class="line">$ npm install hexo-generator-archive --save</div><div class="line">$ npm install hexo-generator-tag --save</div></pre></td></tr></table></figure>
+<p>Then, Adding the following config as need:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">archive_generator:</span></div><div class="line"><span class="attr">  per_page:</span> <span class="number">40</span></div><div class="line"><span class="attr">  yearly:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  monthly:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  daily:</span> <span class="literal">false</span></div></pre></td></tr></table></figure>
+<p>Done! And now you can have a try.<br><a href="https://github.com/iissnan/hexo-theme-next/issues/30" target="_blank" rel="external">More Details Please Click Here</a></p>
+<h4 id="DNS-Mapping"><a href="/ciwhm6dr8000v6on41r7cdao0/#DNS-Mapping" class="headerlink" title="DNS Mapping"></a>DNS Mapping</h4><ul>
+<li>CNAME<br>Map one host name to another host name.</li>
+<li>A<br>Map one host name to another specific IP address.</li>
+<li>URL Mapping<br>Map one url to another specific url.</li>
+</ul>
+<hr>
+<p>For more help, please read the help doc manually. You can find the document under your theme folder.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This article describes how I created this site step by step. It’s fun to customize your own UI styles &amp;amp; features. For a good visual experience, you must have sufficient knowledge of frontend, such as CSS, JS and so on. So now let’s begin.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>手把手教你设计REST API</title>
+    <link href="/ciwhm6drk001h6on4wzs1j1pa/"/>
+    <id>/ciwhm6drk001h6on4wzs1j1pa/</id>
+    <published>2016-10-08T12:14:43.000Z</published>
+    <updated>2016-11-07T05:01:57.430Z</updated>
+    
+    <content type="html"><![CDATA[<p>API？API是哪厮？可以吃吗？对于开发者行，永远避免不了对API的开发与维护，并根据API写好对应的接口文档。这个时候freshmans就会站出来说话了：只要前端拿到后端传递的数据就好了，何必这么浪费时间、浪费精力呢？曾几何时，我也这样想过，只是在企业中打滚了几个月之后，我再也不这么想，反而对这种想法深恶痛绝。</p>
+<a id="more"></a>
+<p>假设你看到这样的APIs：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[post] http://www.testapi.com/getApis</div><div class="line">[post] http://www.testapi.com/get_apis</div><div class="line">[post] http://www.testapi.com/GetApis</div><div class="line">[post] http://www.testapi.com/getapis</div><div class="line">[post] http://www.testapi.com/apis</div><div class="line">[post] http://www.testapi.com/getallapis</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>很明显在一个团队中，不同的人写出的代码可以说是千差万别。最痛苦的时刻莫过于阅读别人杂乱无章、充满各种无厘头的代码，这种煎熬，相信作为程序猿和攻城狮的你们一定深有感触吧。</p>
+<p>有一次，我写了一个获取全部数据记录的接口，取名为<code>getAllData</code>。后来业务更改，需要对数据进行分页，于是，我又写了一个新的接口，取名为<code>getDataByPage</code>,接收两个参数，一个是<code>page_size</code>，一个是<code>page_index</code>。后来由于业务需要，需要进行对某些数据进行排序，于是，我又写了一个新的接口，取名为<code>getSortedDataByPage</code>,这次又接收了另外一个排序参数<code>sort_by</code>，我去，这不是坑爹么，这么写下去，到底还要多少个接口，还要多少个一大堆copy的代码堆？</p>
+<table>
+<thead>
+<tr>
+<th>接口</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getAllData</td>
+<td>获取所有记录</td>
+</tr>
+<tr>
+<td>getDataByPage</td>
+<td>分页获取数据</td>
+</tr>
+<tr>
+<td>getSortedDataByPage</td>
+<td>获取排好序的数据</td>
+</tr>
+</tbody>
+</table>
+<p>仔细发现之后，我果断的将其归纳为一个接口，这个接口提供可选的参数选项，包括分页，排序。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[post] https://www.testapi.com/api/data</div><div class="line"></div><div class="line">//获取所有记录</div><div class="line">[post] https://www.testapi.com/api/data</div><div class="line"></div><div class="line">//获取部分记录</div><div class="line">[post] https://www.testapi.com/api/data?page_index=1&amp;page_size=2&amp;limit=2&amp;offet=1</div><div class="line"></div><div class="line">//获取排序记录</div><div class="line">[post] https://www.testapi.com/api/data?sort_by=col</div></pre></td></tr></table></figure>
+<h4 id="REST原则一：API提供可扩展参数，用于数据的过滤。"><a href="/ciwhm6drk001h6on4wzs1j1pa/#REST原则一：API提供可扩展参数，用于数据的过滤。" class="headerlink" title="REST原则一：API提供可扩展参数，用于数据的过滤。"></a>REST原则一：API提供可扩展参数，用于数据的过滤。</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>意义</th>
+<th>是否可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>page_size</td>
+<td>记录条数</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>page_index</td>
+<td>记录页数</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>忽略条数</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>最大条数</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>sort_by</td>
+<td>排序规则</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<p>除此之外，你是否发现在最开始列出的几个API，各种命名方式混在一个，搞了个全家桶。看着实在令人发狂，好吧，原谅我强迫症。但是，一个良好的代码生态应当有统一的代码规范，在RESTful中，也是一样。</p>
+<h4 id="REST原则二：-API命名全部使用名词。"><a href="/ciwhm6drk001h6on4wzs1j1pa/#REST原则二：-API命名全部使用名词。" class="headerlink" title="REST原则二： API命名全部使用名词。"></a>REST原则二： API命名全部使用名词。</h4><p>网络中的数据交互其实都是通过资源定位实现的，我们熟悉的URI（Unique Resource Identifier），表示网络上的一个实体，这个实体是一个资源，这个资源通过统一资源定位符来标记。比方说，一张图片，一个视频，都是网络上的一个资源(Resource),获取前后端交互中最熟悉的JSON，也可以看做是一个资源。所以，在API设计中，所有的数据交互都是基于资源的，即API的URL只存在名词。对于上述的接口例子，则可描述为：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https:<span class="regexp">//</span>www.testapi.com<span class="regexp">/api/</span>data</div></pre></td></tr></table></figure>
+<p><strong>OK，说了这么多，那么，什么是REST？说了半天，却怎么听不懂REST API?</strong></p>
+<h4 id="REST-扫盲知识"><a href="/ciwhm6drk001h6on4wzs1j1pa/#REST-扫盲知识" class="headerlink" title="REST 扫盲知识"></a>REST 扫盲知识</h4><p><strong>小红</strong>：什么是REST啊？<br><strong>小明</strong> : REST 是Representation Statue Transfer的英文缩写， 翻译为中文称之为表现层状态转换。</p>
+<p><strong>小红</strong>：那什么是表现层啊？<br><strong>小明</strong>：表现层类似于MVC中视图层的概念。所有的网络资源都是基于视图这个层进行表现的。通俗地说，就是所有的数据交互都是发生在视图层上的。</p>
+<p><strong>小红</strong>：好像有点明白了，那什么是状态转换啊？<br><strong>小明</strong> ： 我们知道，所有的HTTP协议族都是无状态的，但是，我们页面上的数据交互，比如增删改，涉及到了数据的变化，或者说是资源的变化，这种变化是在服务端进行的，数据交互后造成的变化可以笼统地成为状态转化。</p>
+<p><strong>小红</strong>：你说的是什么鬼？我怎么听不懂<br><strong>小明</strong>：听不懂很正常，说明你的还没悟出来其中的精华。</p>
+<p><strong>小红</strong>：那什么是资源啊？<br><strong>小明</strong>：资源就是网络上的一个实体，比如一张图片啊，一个文件啊等等都是一个资源，英文就是Resource啦。</p>
+<p><strong>小红</strong>：那表现层、状态转换、资源都是什么鬼？有啥关系吗？<br><strong>小明</strong>：表现层是资源的载体，状态转换时资源的作用方式，表现层负责状态转换过程中资源的展示。</p>
+<p><strong>小红</strong>：哦哦，小明，你好帅！<br><strong>小明</strong>：谢谢，我知道我很帅啦！</p>
+<p>这样大家应该都知道什么是REST API了吧！</p>
+<h4 id="REST原则三：版本控制"><a href="/ciwhm6drk001h6on4wzs1j1pa/#REST原则三：版本控制" class="headerlink" title="REST原则三：版本控制"></a>REST原则三：版本控制</h4><p>每个API都有相应的版本，一般来说，我们可以将版本号固定在URL中，这样是很直观的。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https:<span class="regexp">//</span>www.testapi.com<span class="regexp">/api/</span>v1_0_1_2<span class="regexp">/data</span></div></pre></td></tr></table></figure>
+<p>当然，还有另外一种比较推荐的方式，就是将版本信息写入在HTTP头信息中。还有，我们熟悉的Github也是采用这种方式的哦。</p>
+<h4 id="REST原则四：状态反馈"><a href="/ciwhm6drk001h6on4wzs1j1pa/#REST原则四：状态反馈" class="headerlink" title="REST原则四：状态反馈"></a>REST原则四：状态反馈</h4><p>状态反馈这个词虽然是我自己说的，但是理解起来简单、易懂（突然有点佩服我的聪明才智了，别骂我臭不要脸）。意思就是说，每个API都应该对处理结果进行处理，在HTTP规范中，如下：</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1xx</td>
+<td>请求已经被接收</td>
+</tr>
+<tr>
+<td>2xx</td>
+<td>请求已经成功被服务器接收、理解并接受</td>
+</tr>
+<tr>
+<td>3xx</td>
+<td>请求重定向</td>
+</tr>
+<tr>
+<td>4xx</td>
+<td>客户端错误</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>服务器错误</td>
+</tr>
+</tbody>
+</table>
+<p>也就是说，在客户端错误中，REST需要将错误信息返还给客户端。对于服务端而言，我们需要向客户端开发4xx的错误，隐藏其他的错误。在返还错误中，我们可以向API中提供error属性。如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">     <span class="attr">"error"</span>:<span class="string">"找不到资源"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>好了，这次关于REST的学习总结到这里就结束了。有什么错误的地方记得提出来啊！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;API？API是哪厮？可以吃吗？对于开发者行，永远避免不了对API的开发与维护，并根据API写好对应的接口文档。这个时候freshmans就会站出来说话了：只要前端拿到后端传递的数据就好了，何必这么浪费时间、浪费精力呢？曾几何时，我也这样想过，只是在企业中打滚了几个月之后，我再也不这么想，反而对这种想法深恶痛绝。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="REST" scheme="/categories/REST/"/>
+    
+    
+      <category term="REST" scheme="/tags/REST/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阅读笔记:《疯狂的程序员》</title>
+    <link href="/ciwhm6dsh00306on43bjo9i0c/"/>
+    <id>/ciwhm6dsh00306on43bjo9i0c/</id>
+    <published>2016-10-07T04:52:17.000Z</published>
+    <updated>2016-11-18T12:13:48.591Z</updated>
+    
+    <content type="html"><![CDATA[<p>本篇文章摘录了绝影的书籍《疯狂的程序员》中的一些个人觉得不错的一些段子。虽然绝影因为游戏外挂的事情弄了一个蓝瘦的下场，但是他的编程经历却也是值得学习的。这本书描述得很接地气，有很多共鸣的地方。非常适合程序猿们阅读。</p>
+<a id="more"></a>
+<blockquote>
+<p>没条件，只好纸上谈兵，他对土匪说：“知道什么是‘DOS’吗？‘DOS’就是‘DiskOperationSystem’，磁盘操作系统。”有时候，你跟别人讲出一个英文简写的全称，会让人对你刮目相看。比如大家都在说“TMD”，“NMD”，你跟他们说：“‘TMD’是‘战区导弹防御系统’，‘NMD’是‘国家导弹防御系统’。”这样保证引起别人的注意。现在的社会就是，谁吸引了眼球，谁就吸引了Money。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>《数据库原理与应用》实际就是《数据库应用》，像“原理”这么高深的东西，不能说，不能说，说了你们也无法理解。这话是宴斌自己说的。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>要么你做第一个，要么你做最好的一个，其他的都没啥大意思。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>人无非有两种方法提高自己，一是真的提高自己，二是打击别人提高自己。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>据说《相对论》刚刚出来的时候世界上只有三个人能看懂它。人生最大的痛苦莫过于没人理解你。绝影没法跟他们讲“技术”，因为他们根本就不懂“技术”。比如你跟猪讲《普通物理学》，要是猪能成功计算出杀猪刀进入身体时力量有多大，压强有多大，能够通过给定的猪皮的厚度和强度计算出自己应该以多大速度向后缓冲才能成功让杀猪刀无法穿透猪皮，那么你就可以跟土匪和王江讲什么是汇编语言，为什么要学汇编语言了。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇文章摘录了绝影的书籍《疯狂的程序员》中的一些个人觉得不错的一些段子。虽然绝影因为游戏外挂的事情弄了一个蓝瘦的下场，但是他的编程经历却也是值得学习的。这本书描述得很接地气，有很多共鸣的地方。非常适合程序猿们阅读。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="阅读" scheme="/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="读书笔记" scheme="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>入职三月</title>
+    <link href="/ciwhm6drl001l6on41fouwoet/"/>
+    <id>/ciwhm6drl001l6on41fouwoet/</id>
+    <published>2016-09-28T11:10:18.000Z</published>
+    <updated>2016-11-04T11:13:42.925Z</updated>
+    
+    <content type="html"><![CDATA[<p>早晨，开始觉得有那么一丁点凉了。说来也奇怪，宿舍一直开着空调，也一直保持着26℃的高温，可就在八点睁开疲惫双眼的瞬间，居然会感受到这细微的变化。原来，不知不觉中，已经临近国庆，而我，也已经工作了三个月了！</p>
+<a id="more"></a>
+<p><img src="http://upload-images.jianshu.io/upload_images/1784374-5de88d68a992d0ce.gif?imageMogr2/auto-orient/strip" alt="请盯着这张图，你会发现有趣的现象"></p>
+<p>三个月的时间似乎消逝得极快，仿佛一瞬便溜过了今天。是的，有种忙透了的感觉。还好，作息规律却正常多了，只是每天周而复始的生活节奏很容易使人陷入这种可以导致麻木的安逸中。每天，八点十五起床，八点四十五搭公司的班车去公司，九点在公司餐厅吃早餐，吃完饭回到自己的工位，开始新的一天的工作。公司的餐饮很好，一种自助式的餐厅，号称八菜一汤，所以每顿饭总可以吃得不错，只是吃多了喜欢的鸡翅、田鸡、牛排、牛腩等肉居然有种腻腻的感觉，以至于到后来总吃剩很多饭菜。中午有一个半钟的休息时间，大部分同事用来休息，有些同事则和我一样，用来玩玩游戏，或者是看看书，刷刷朋友圈。我是一个向来不习惯中午休息的人，因为我中午一觉醒来会更加疲惫。到了晚上六点，伸个懒腰，打个哈欠，又到了吃饭的时间。项目很赶的时候，一般会在十一点后乘坐公司的班车回宿舍，闲暇时则会在十一点前回到宿舍。于是，一天就这样过去了，在短短的睡梦后有开始了几乎一模一样的一天。</p>
+<p>工作是需要激情和动力的。这种激情和动力可以抵消掉一些那些令人麻木的安逸，而如果失去了对工作的激情，丧失了动力，则会显得被动无聊。来到公司，第一个负责的项目是一个CRM项目，项目挺小，但是很赶，而且是Web/Android/IOS同步开发。第二个负责的项目，也是现在开发中的项目，是万恶的工作流项目，而且这个工作流本身不能进行任何的硬编码实现，全部逻辑采用配置式来实现。大三的时候，就曾经接触过市场上一些OA产品，当时就体会到了其业务逻辑上的复杂，现在居然也涉猎到这个区域了，而且作为项目的主程序员，实在是压力上大。工作是有压力的，一方面我觉得自己可以如期完成，一方面，又在为预计的时间内完不成相应的任务而郁郁寡欢。很多时候，总会碰到一些莫名其妙的BUG，这些BUG在你还没有从源头上理解其发生的机理之前你根本无法解决，这也是造成耗时较长的主要原因。都说有压力才有动力，只是有些时候，压力太大了也未必有动力，关键在于怎么维持动力、怎么坚持总结。现在回想起刚入职时给自己定的计划，才发现基本上没有时间完成。所以，奋斗的路是充满坎坷的，想要一片平路，也只有先踏过这篇荆棘。</p>
+<p>转眼间又到九月，我们这一批的校招生试用才刚结束，公司又开始了新一轮的校园招聘了。三个月，认识了很多小伙伴，有广工的，有华师的、有深大、中大、华中大等等的，当然，还有广大的。在这个具有几百号人的大部门里，大家各司其职，相互合作。下班后，找几个小伙伴聊聊天，或者走二十分钟回宿舍，挺好。</p>
+<p>这就是这三个月的生活了，单调而简单。好久没有像大三那会，可以疯狂地玩上一天的LOL了。本想入手一个单反玩玩摄影，而今一拖再拖，到现在也还没有落实。所以得赶紧丰富丰富自己的生活情趣了，因为工作之余，还有生活。转正面谈刚结束，写下此文，权当初入职场的阶段性总结。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;早晨，开始觉得有那么一丁点凉了。说来也奇怪，宿舍一直开着空调，也一直保持着26℃的高温，可就在八点睁开疲惫双眼的瞬间，居然会感受到这细微的变化。原来，不知不觉中，已经临近国庆，而我，也已经工作了三个月了！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 16.04 LTS 问题解决方案</title>
+    <link href="/ciwhm6dra000z6on4jas2pyph/"/>
+    <id>/ciwhm6dra000z6on4jas2pyph/</id>
+    <published>2016-08-28T11:16:09.000Z</published>
+    <updated>2016-11-07T01:28:14.951Z</updated>
+    
+    <content type="html"><![CDATA[<p>有一段时间，心血来潮，想玩一把LINUX。于是，在我自己的笔记本上安装了Ubuntu 16.04，顺带学一学LINUX相关的知识。本篇文章收集了笔者在玩转Ubuntu过程中遇到的一些问题。<br><a id="more"></a></p>
+<h4 id="20160828-无法连接WIFI，显示”设备为就绪”"><a href="/ciwhm6dra000z6on4jas2pyph/#20160828-无法连接WIFI，显示”设备为就绪”" class="headerlink" title="20160828 - 无法连接WIFI，显示”设备为就绪”"></a>20160828 - 无法连接WIFI，显示”设备为就绪”</h4><hr>
+<blockquote>
+<p>1 打开更新管理器，选择附加驱动，选择使用Processor Microcode firmware for intel CPUs</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1784374-247c4668c65a14f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>2 关机重启系统就可以了</p>
+</blockquote>
+<h4 id="20160828-无法直接安装搜狗输入法"><a href="/ciwhm6dra000z6on4jas2pyph/#20160828-无法直接安装搜狗输入法" class="headerlink" title="20160828 - 无法直接安装搜狗输入法"></a>20160828 - 无法直接安装搜狗输入法</h4><blockquote>
+<p>1 添加依赖包，执行一下命令：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get -f install</div></pre></td></tr></table></figure>
+<blockquote>
+<p>2 安装下载好的搜狗输入法安装程序</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb</div></pre></td></tr></table></figure>
+<blockquote>
+<p>3 重启系统就可以了</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有一段时间，心血来潮，想玩一把LINUX。于是，在我自己的笔记本上安装了Ubuntu 16.04，顺带学一学LINUX相关的知识。本篇文章收集了笔者在玩转Ubuntu过程中遇到的一些问题。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="/tags/Linux/"/>
+    
+      <category term="Ubuntu" scheme="/tags/Ubuntu/"/>
+    
+  </entry>
+  
+</feed>

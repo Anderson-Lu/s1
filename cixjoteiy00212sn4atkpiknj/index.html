@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>玩转MongoDB之权限控制 | Hummingman</title><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/4.2.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.0.0/jquery.min.js">   </script><!--script(type='text/javascript',src='/js/bk.js')  --><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><!--link(rel='stylesheet', href='/css/loading.css')--></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">玩转MongoDB之权限控制</h1><a id="logo" href="/.">Hummingman</a><p class="description">Real Developer Ship...</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-send"> 总览</i></a><a href="/timeline/"><i class="fa fa-coffee"> 时光机</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">玩转MongoDB之权限控制</h1><div class="post-meta">Nov 15, 2016<span> | </span><span class="category"><a href="/categories/Database/">Database</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> ℃</span></span><span> | </span><span>529</span><span>字</span><span> | </span><span>预计耗时</span><span>2</span><span>分钟 </span></div><a data-thread-key="cixjoteiy00212sn4atkpiknj/" href="/cixjoteiy00212sn4atkpiknj/#comments" class="ds-thread-count"></a><div class="post-content"><p>在MongoDB中，刚开始安装时是不存在任何用户的，也就是说，是不需要进行安全验证就可以操作数据库中的所有操作。很明显存在一些安全问题，所以需要在安装完成后为MongoDB添加安全验证。MongoDB的权限控制是跟着数据库走的，在创建了一个全局管理员后启用验证模式，然后在各个指定的数据库下创建相应的用户即可。</p>
+<a id="more"></a>
+<h3 id="权限初始化设置"><a href="/cixjoteiy00212sn4atkpiknj/#权限初始化设置" class="headerlink" title="权限初始化设置"></a>权限初始化设置</h3><p>(1)在初始情况下访问数据库，启动数据库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath yourDbPath</div></pre></td></tr></table></figure>
+<p>(2)连接到MongoDB，创建系统管理员账号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mongo</div><div class="line">use admin</div><div class="line">db.createUser(&#123;<span class="string">"user"</span>:<span class="string">"root"</span>,<span class="string">"pwd"</span>:<span class="string">"123456"</span>,<span class="string">"roles"</span>:[<span class="string">"root"</span>]&#125;);</div></pre></td></tr></table></figure>
+<p>(3)重启数据库，加入安全验证参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath yourDbPath --auth</div></pre></td></tr></table></figure>
+<p>(4)验证权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.auth(<span class="string">"username"</span>,<span class="string">"password"</span>);</div></pre></td></tr></table></figure>
+<h3 id="添加用户"><a href="/cixjoteiy00212sn4atkpiknj/#添加用户" class="headerlink" title="添加用户"></a>添加用户</h3><p>MongoDB3.0之前版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.addUser(username,password,isReadOnly);</div></pre></td></tr></table></figure>
+<p>MongoDB3.0+</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.createUser(&#123;<span class="string">"user"</span>:<span class="string">"username"</span>,<span class="string">"pwd"</span>:<span class="string">"password"</span>,<span class="string">"roles"</span>:[<span class="string">"readWrite"</span>,<span class="string">"dbAdmin"</span>]&#125;)</div></pre></td></tr></table></figure>
+<p>关于角色字段，可以用一个空数组给新用户设定空角色，也可以指定内置角色和用户定义的角色。</p>
+<table>
+<thead>
+<tr>
+<th>角色名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read</td>
+<td>允许用户读取指定的数据库</td>
+</tr>
+<tr>
+<td>readWrite</td>
+<td>允许用户读写指定的数据库</td>
+</tr>
+<tr>
+<td>dbAdmin</td>
+<td>允许用户在指定数据库中执行管理函数，如索引创建、删除，查看统计或访问system.profile</td>
+</tr>
+<tr>
+<td>userAdmin</td>
+<td>允许用户向system.users集合写入，可以找指定数据库里创建、删除和管理用户</td>
+</tr>
+<tr>
+<td>clusterAdmin</td>
+<td>只在admin数据库中可用，赋予用户所有分片和复制集相关函数的管理权限</td>
+</tr>
+<tr>
+<td>readAnyDatabase</td>
+<td>只在admin数据库中可用，赋予用户所有数据库的读权限</td>
+</tr>
+<tr>
+<td>readWriteAnyDatabase</td>
+<td>只在admin数据库中可用，赋予用户所有数据库的读写权限</td>
+</tr>
+<tr>
+<td>userAdminAnyDatabase</td>
+<td>只在admin数据库中可用，赋予用户所有数据库的userAdmin权限</td>
+</tr>
+<tr>
+<td>dbAdminAnyDatabase</td>
+<td>只在admin数据库中可用，赋予用户所有数据库的dbAdmin权限</td>
+</tr>
+<tr>
+<td>root</td>
+<td>只在admin数据库中可用。超级账号，超级权限</td>
+</tr>
+</tbody>
+</table>
+<h3 id="为指定数据库添加指定管理用户"><a href="/cixjoteiy00212sn4atkpiknj/#为指定数据库添加指定管理用户" class="headerlink" title="为指定数据库添加指定管理用户"></a>为指定数据库添加指定管理用户</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">use testUser</div><div class="line">db.createUser(&#123;</div><div class="line">  "user":"testUser",</div><div class="line">  "pwd":"123456",</div><div class="line">  "roles":[</div><div class="line">    &#123;</div><div class="line">      "user":"testUser",</div><div class="line">      "db":"testUser"</div><div class="line">    &#125;</div><div class="line">  ]  </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</div><div class="tags"><a href="/tags/MongoDB/">MongoDB</a><a href="/tags/Database/">Database</a></div><div class="post-nav"><a href="/cixjoteit001v2sn4q7j0kc5d/" class="pre">玩转MongoDB之备份与恢复</a><a href="/cixjoteiv001x2sn4lzsekyh7/" class="next">玩转MongoDB之安装与配置</a></div><div data-thread-key="cixjoteiy00212sn4atkpiknj/" data-title="玩转MongoDB之权限控制" data-url="/cixjoteiy00212sn4atkpiknj/" class="ds-share flat"><div class="ds-share-inline"><ul class="ds-share-icons-16"><li data-toggle="ds-share-icons-more"><a href="javascript:void(0);" class="ds-more">分享到：</a></li><li><a href="javascript:void(0);" data-service="weibo" class="ds-weibo">微博</a></li><li><a href="javascript:void(0);" data-service="qzone" class="ds-qzone">QQ空间</a></li><li><a href="javascript:void(0);" data-service="qqt" class="ds-qqt">腾讯微博</a></li><li><a href="javascript:void(0);" data-service="wechat" class="ds-wechat">微信</a></li></ul><div class="ds-share-icons-more"></div></div></div><div data-thread-key="cixjoteiy00212sn4atkpiknj/" data-title="玩转MongoDB之权限控制" data-url="/cixjoteiy00212sn4atkpiknj/" data-author-key="1" class="ds-thread"></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="站内搜索..." type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-globe"> 访问地图</i><div style="padding-top:5px"></div></div><script type="text/javascript" src="//rc.revolvermaps.com/0/0/8.js?i=2ci0ian43hc&amp;m=0&amp;s=220&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-plus-square-o"> 文章分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ASP-Net/">ASP.Net</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/">Front-end</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GWT/">GWT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/REST/">REST</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software-Engineering/">Software Engineering</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tool/">Tool</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏/">游戏</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">5</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-hand-grab-o"> 文章标签</i></div><div class="tagcloud"><a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/ASP-net/" style="font-size: 15px;">ASP.net</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/Front-end/" style="font-size: 15px;">Front-end</a> <a href="/tags/JSON/" style="font-size: 15px;">JSON</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/REST/" style="font-size: 15px;">REST</a> <a href="/tags/Software-Engineering/" style="font-size: 15px;">Software Engineering</a> <a href="/tags/随笔/" style="font-size: 15px;">随笔</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/GWT/" style="font-size: 15px;">GWT</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Game/" style="font-size: 15px;">Game</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/Database/" style="font-size: 15px;">Database</a> <a href="/tags/Tool/" style="font-size: 15px;">Tool</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Redis/" style="font-size: 15px;">Redis</a> <a href="/tags/Fidder/" style="font-size: 15px;">Fidder</a> <a href="/tags/读书笔记/" style="font-size: 15px;">读书笔记</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-code-fork"> 最新发布</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/cixjoteie00162sn4deszq3ft/">X:Rebirth Home Of Light Guide</a></li><li class="post-list-item"><a class="post-list-link" href="/cixjotei7000x2sn4uuq4nfzg/">致X君</a></li><li class="post-list-item"><a class="post-list-link" href="/cixjotf3s00522sn4kfgiraip/">随笔集</a></li><li class="post-list-item"><a class="post-list-link" href="/cixjotejr002x2sn48oskllx3/">软件开发原则</a></li><li class="post-list-item"><a class="post-list-link" href="/cixjotejo002q2sn42rogsexd/">试试Reids之基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/cixjotejn002o2sn4o3o60hvk/">试试Redis之环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/cixjotej300292sn4z1zxtqt5/">WEB系统性能调优之路</a></li><li class="post-list-item"><a class="post-list-link" href="/cixjotej000252sn45g4oilgp/">程序猿百宝箱(持续更新)</a></li><li class="post-list-item"><a class="post-list-link" href="/cixjoteit001v2sn4q7j0kc5d/">玩转MongoDB之备份与恢复</a></li><li class="post-list-item"><a class="post-list-link" href="/cixjoteiy00212sn4atkpiknj/">玩转MongoDB之权限控制</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-link"> 更多链接</i></div><ul></ul><a href="https://hexo.io/zh-cn/docs/asset-folders.html" title="&lt;Hexo&gt; Official Hexo Guide" target="_blank">&lt;Hexo&gt; Official Hexo Guide</a><ul></ul><a href="https://github.com/tufu9441/maupassant-hexo" title="&lt;Hexo&gt; Maupassant Guide" target="_blank">&lt;Hexo&gt; Maupassant Guide</a></div><div class="widget"><div class="widget-title"><i class="fa fa-globe"> 小小天地</i></div><ul><a href="/music/s.html" title="我所以为的音乐&amp;你所以为的音乐">音乐，是另一种深情</a></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© 2016 <a href="/." rel="nofollow">Hummingman.</a> Maintain by Anderson.</div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script>var duoshuoQuery = {short_name:'hummingman'};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

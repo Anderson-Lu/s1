@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2017-01-09T05:29:52.074Z</updated>
+  <updated>2017-01-09T10:46:17.040Z</updated>
   <id>/</id>
   
   <author>
@@ -16,11 +16,432 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>玩转MongoDB之性能调优</title>
+    <link href="/2017/01/09/%E7%8E%A9%E8%BD%ACMongoDB%E4%B9%8B%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98/"/>
+    <id>/2017/01/09/玩转MongoDB之性能调优/</id>
+    <published>2017-01-09T06:14:44.000Z</published>
+    <updated>2017-01-09T10:46:17.040Z</updated>
+    
+    <content type="html"><![CDATA[<p>MongoDB由于是将数据加载到内存后进行操作，所以其速度与并发速度相对于传统的磁盘数据库有巨大的飞跃，但是，并不是所有的场景都适合适用MongoDB数据库来存储。比如，由于MongoDB的事务性很弱，或者说基本没有，所以不适合将MongoDB用于高度事务性质的项目中（当然可以程序控制逻辑事务）。MongoDB对于实时的增删改查操作友好，可以进行分布式的集群、动态的增删节点（网上参考，笔者未实践过）。<br><a id="more"></a></p>
+<h4 id="数据准备"><a href="/2017/01/09/玩转MongoDB之性能调优/#数据准备" class="headerlink" title="数据准备"></a>数据准备</h4><p>每次10万条数据，每次递增10万插入新数据，测试每次数据量下的操作速度，插入脚本如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> count=<span class="number">7500000</span>;count&lt;<span class="number">10000000</span>;count++)&#123;</div><div class="line">   <span class="keyword">var</span> tmp = count%<span class="number">2</span>==<span class="number">0</span>?count:(<span class="number">0</span>-count);</div><div class="line">   <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">   <span class="keyword">var</span> demo = &#123;</div><div class="line">      <span class="string">"a"</span>:<span class="string">"a is a string"</span>,</div><div class="line">      <span class="string">"b"</span>:<span class="string">"123"</span>,</div><div class="line">      <span class="string">"c"</span>: count+<span class="number">1</span>,</div><div class="line">      <span class="string">"d"</span>: &#123;</div><div class="line">         <span class="string">"d1"</span>:<span class="string">"d1 is a string"</span>,</div><div class="line">         <span class="string">"d2"</span>:<span class="string">"123"</span>,</div><div class="line">         <span class="string">"d3"</span>: tmp,</div><div class="line">         <span class="string">"d7"</span>: tmp,</div><div class="line">         <span class="string">"d4"</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>],</div><div class="line">         <span class="string">"d5"</span>:[<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>,<span class="string">"6"</span>,<span class="string">"7"</span>,<span class="string">"8"</span>,<span class="string">"9"</span>,<span class="string">"10"</span>]         </div><div class="line">      &#125;,</div><div class="line">      <span class="string">"d6"</span>: date</div><div class="line">   &#125;;</div><div class="line">   db.TestIndexes.insert(demo);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>数据结构如下所示：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"_id"</span> : ObjectId(<span class="string">"587330f80f5dc508c0b0be13"</span>),</div><div class="line">    <span class="attr">"a"</span> : <span class="string">"a is a string"</span>,</div><div class="line">    <span class="attr">"b"</span> : <span class="string">"123"</span>,</div><div class="line">    <span class="attr">"c"</span> : <span class="number">5.0</span>,</div><div class="line">    <span class="attr">"d"</span> : &#123;</div><div class="line">        <span class="attr">"d1"</span> : <span class="string">"d1 is a string"</span>,</div><div class="line">        <span class="attr">"d2"</span> : <span class="string">"123"</span>,</div><div class="line">        <span class="attr">"d3"</span> : <span class="number">5.0</span>,</div><div class="line">        <span class="attr">"d4"</span> : [ </div><div class="line">            <span class="number">1.0</span>,<span class="number">2.0</span>,<span class="number">3.0</span>,<span class="number">4.0</span>,<span class="number">5.0</span>,<span class="number">6.0</span>,<span class="number">7.0</span>,<span class="number">8.0</span>,<span class="number">9.0</span>,<span class="number">10.0</span></div><div class="line">        ],</div><div class="line">        <span class="attr">"d5"</span> : [ <span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>,<span class="string">"6"</span>,<span class="string">"7"</span>,<span class="string">"8"</span>,<span class="string">"9"</span>,<span class="string">"10"</span></div><div class="line">        ]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="查询实验"><a href="/2017/01/09/玩转MongoDB之性能调优/#查询实验" class="headerlink" title="查询实验"></a>查询实验</h4><p>1、根据_id查询，_id本身具有索引，根据_id查询指定数据</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.TestIndexes.find(&#123;<span class="string">"_id"</span>:ObjectId(<span class="string">"587330f80f5dc508c0b0be13"</span>)&#125;);</div></pre></td></tr></table></figure>
+<p>2、根据无索引字段c查询</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.TestIndexes.find(&#123;<span class="string">"c"</span>:<span class="number">1000</span>&#125;);</div></pre></td></tr></table></figure>
+<p>3、对d.d3加入索引</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.TestIndexes.createIndex(&#123;<span class="string">"d.d3"</span>:<span class="number">1</span>&#125;);</div></pre></td></tr></table></figure>
+<p>查询语句同2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.TestIndexes.find(&#123;<span class="string">"d.d3"</span>:<span class="number">1000</span>&#125;);</div></pre></td></tr></table></figure>
+<p>自动化查询语句</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n=<span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> ret1=<span class="number">0</span>,ret2=<span class="number">0</span>,ret3=<span class="number">0</span>,ret4=<span class="number">0</span>,ret5=<span class="number">0</span>,</div><div class="line">    ret6=<span class="number">0</span>,ret7=<span class="number">0</span>,ret8=<span class="number">0</span>,ret9=<span class="number">0</span>,reta=<span class="number">0</span>,retb=<span class="number">0</span>,retc=<span class="number">0</span>,retd=<span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line"></div><div class="line">    ret1 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">        .find(&#123;<span class="string">"_id"</span>: ObjectId(<span class="string">'587330f80f5dc508c0b0be13'</span>)&#125;)</div><div class="line">        .explain(<span class="string">"executionStats"</span>)</div><div class="line">        .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    ret2 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">        .find(&#123;<span class="string">"c"</span>:<span class="number">1000</span>&#125;)</div><div class="line">        .explain(<span class="string">"executionStats"</span>)</div><div class="line">        .executionStats.executionTimeMillis;</div><div class="line">    </div><div class="line">    ret3 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;<span class="string">"d.d3"</span>:<span class="number">7580</span>&#125;)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    ret4 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;<span class="string">"d.d4"</span>:<span class="number">6.0</span>&#125;)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    ret5 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;<span class="string">"d.d5"</span>:<span class="number">7.0</span>&#125;)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    ret6 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;&#125;)</div><div class="line">       .limit(<span class="number">40</span>)</div><div class="line">       .skip(<span class="number">20</span>)</div><div class="line">       .explain(<span class="string">"executionStats"</span>).executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    ret7 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;<span class="string">"c"</span>:&#123;<span class="string">"$gt"</span>:<span class="number">12</span>&#125;&#125;)</div><div class="line">       .limit(<span class="number">40</span>)</div><div class="line">       .skip(<span class="number">20</span>)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    ret8 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;<span class="string">"c"</span>:&#123;<span class="string">"$gt"</span>:<span class="number">12</span>&#125;,<span class="string">"d.d3"</span>:&#123;<span class="string">"$mod"</span>:[<span class="number">2</span>,<span class="number">0</span>]&#125;&#125;)</div><div class="line">       .limit(<span class="number">40</span>)</div><div class="line">       .skip(<span class="number">20</span>)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    ret9 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;&#125;)</div><div class="line">       .sort(&#123;<span class="string">"d6"</span>:<span class="number">-1</span>&#125;)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line">    </div><div class="line">    reta += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;&#125;)</div><div class="line">       .sort(&#123;<span class="string">"d.d3"</span>:<span class="number">-1</span>&#125;)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line">    </div><div class="line">    retb += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;&#125;)</div><div class="line">       .sort(&#123;<span class="string">"d.d7"</span>:<span class="number">-1</span>&#125;)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    retc += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;&#125;,&#123;<span class="string">"_id"</span>:<span class="number">1</span>,<span class="string">"c"</span>:<span class="number">1</span>&#125;)</div><div class="line">       .limit(<span class="number">10</span>)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    retd += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;&#125;)</div><div class="line">       .limit(<span class="number">10</span>)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;   </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> result = &#123;</div><div class="line">    <span class="string">"查询_id"</span>: ret1/n,</div><div class="line">    <span class="string">"查询c(无索引)"</span>: ret2/n,</div><div class="line">    <span class="string">"查询d.d3(有索引)"</span>: ret3/n,</div><div class="line">    <span class="string">"查询d.d4(无索引)"</span>: ret4/n,</div><div class="line">    <span class="string">"查询d.d5(有索引)"</span>: ret5/n,</div><div class="line">    <span class="string">"分页(0条件)"</span>: ret6/n,</div><div class="line">    <span class="string">"分页(1条件)"</span>: ret7/n,</div><div class="line">    <span class="string">"分页(n条件)"</span>: ret8/n,</div><div class="line">    <span class="string">"排序(时间)"</span>: ret9/n,</div><div class="line">    <span class="string">"排序(字段,无索引)"</span>: reta/n,</div><div class="line">    <span class="string">"排序(字段,有索引)"</span>: retb/n,</div><div class="line">    <span class="string">"查询(无过滤)"</span>: retc/n,</div><div class="line">    <span class="string">"查询(有过滤)"</span>: retd/n</div><div class="line">&#125;</div><div class="line">printjson(result);</div></pre></td></tr></table></figure>
+<h4 id="结果记录"><a href="/2017/01/09/玩转MongoDB之性能调优/#结果记录" class="headerlink" title="结果记录"></a>结果记录</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">检测项目</th>
+<th style="text-align:right">10w</th>
+<th style="text-align:right">20w</th>
+<th style="text-align:right">30w</th>
+<th style="text-align:right">40w</th>
+<th style="text-align:right">50w</th>
+<th style="text-align:right">60w</th>
+<th style="text-align:right">70w</th>
+<th style="text-align:right">80w</th>
+<th style="text-align:right">90w</th>
+<th style="text-align:right">100w</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">查询_id</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">查询c(无索引)</td>
+<td style="text-align:right">52.2</td>
+<td style="text-align:right">101.1</td>
+<td style="text-align:right">120.6</td>
+<td style="text-align:right">127.6</td>
+<td style="text-align:right">130.5</td>
+<td style="text-align:right">154.3</td>
+<td style="text-align:right">149.5</td>
+<td style="text-align:right">165.1</td>
+<td style="text-align:right">135.4</td>
+<td style="text-align:right">157.7</td>
+</tr>
+<tr>
+<td style="text-align:left">查询d.d3(有索引)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">查询d.d4(无索引)</td>
+<td style="text-align:right">124.4</td>
+<td style="text-align:right">248.9</td>
+<td style="text-align:right">317.4</td>
+<td style="text-align:right">376.5</td>
+<td style="text-align:right">326.6</td>
+<td style="text-align:right">327.9</td>
+<td style="text-align:right">342.3</td>
+<td style="text-align:right">325.8</td>
+<td style="text-align:right">443.4</td>
+<td style="text-align:right">324.1</td>
+</tr>
+<tr>
+<td style="text-align:left">查询d.d5(有索引)</td>
+<td style="text-align:right">111.4</td>
+<td style="text-align:right">218</td>
+<td style="text-align:right">261.1</td>
+<td style="text-align:right">267.7</td>
+<td style="text-align:right">272.6</td>
+<td style="text-align:right">260.2</td>
+<td style="text-align:right">283.2</td>
+<td style="text-align:right">262.9</td>
+<td style="text-align:right">294.1</td>
+<td style="text-align:right">269.7</td>
+</tr>
+<tr>
+<td style="text-align:left">分页(0条件)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">分页(1条件)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">分页(n条件))</td>
+<td style="text-align:right">44.7</td>
+<td style="text-align:right">79.3</td>
+<td style="text-align:right">84.7</td>
+<td style="text-align:right">90.6</td>
+<td style="text-align:right">82.3</td>
+<td style="text-align:right">75.9</td>
+<td style="text-align:right">92.2</td>
+<td style="text-align:right">75.2</td>
+<td style="text-align:right">80</td>
+<td style="text-align:right">88.3</td>
+</tr>
+<tr>
+<td style="text-align:left">排序(时间)</td>
+<td style="text-align:right">195.8</td>
+<td style="text-align:right">192.2</td>
+<td style="text-align:right">154.4</td>
+<td style="text-align:right">93.4</td>
+<td style="text-align:right">95.7</td>
+<td style="text-align:right">75.7</td>
+<td style="text-align:right">57.9</td>
+<td style="text-align:right">58.1</td>
+<td style="text-align:right">38.6</td>
+<td style="text-align:right">38.2</td>
+</tr>
+<tr>
+<td style="text-align:left">排序(字段,无索引)</td>
+<td style="text-align:right">136.7</td>
+<td style="text-align:right">263.9</td>
+<td style="text-align:right">263.9</td>
+<td style="text-align:right">240.7</td>
+<td style="text-align:right">307.8</td>
+<td style="text-align:right">290.2</td>
+<td style="text-align:right">248.8</td>
+<td style="text-align:right">290.3</td>
+<td style="text-align:right">214.3</td>
+<td style="text-align:right">241.1</td>
+</tr>
+<tr>
+<td style="text-align:left">排序(字段,有索引)</td>
+<td style="text-align:right">102.7</td>
+<td style="text-align:right">209.9</td>
+<td style="text-align:right">221.2</td>
+<td style="text-align:right">261.6</td>
+<td style="text-align:right">211.4</td>
+<td style="text-align:right">253.8</td>
+<td style="text-align:right">275.4</td>
+<td style="text-align:right">255.4</td>
+<td style="text-align:right">238.1</td>
+<td style="text-align:right">262.3</td>
+</tr>
+<tr>
+<td style="text-align:left">查询(无过滤)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">查询(有过滤)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">检测项目</th>
+<th style="text-align:right">120w</th>
+<th style="text-align:right">140w</th>
+<th style="text-align:right">160w</th>
+<th style="text-align:right">180w</th>
+<th style="text-align:right">200w</th>
+<th style="text-align:right">250w</th>
+<th style="text-align:right">300w</th>
+<th style="text-align:right">500w</th>
+<th style="text-align:right">750w</th>
+<th style="text-align:right">1000w</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">查询_id</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">查询c(无索引)</td>
+<td style="text-align:right">185.2</td>
+<td style="text-align:right">144</td>
+<td style="text-align:right">166.8</td>
+<td style="text-align:right">185.9</td>
+<td style="text-align:right">204.7</td>
+<td style="text-align:right">133.5</td>
+<td style="text-align:right">157.2</td>
+<td style="text-align:right">299.6</td>
+<td style="text-align:right">1477.4</td>
+<td style="text-align:right">1132.3</td>
+</tr>
+<tr>
+<td style="text-align:left">查询d.d3(有索引)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">查询d.d4(无索引)</td>
+<td style="text-align:right">337.3</td>
+<td style="text-align:right">386.9</td>
+<td style="text-align:right">440.4</td>
+<td style="text-align:right">194.7</td>
+<td style="text-align:right">271.5</td>
+<td style="text-align:right">348.9</td>
+<td style="text-align:right">422.1</td>
+<td style="text-align:right">725.3</td>
+<td style="text-align:right">1048.8</td>
+<td style="text-align:right">13584</td>
+</tr>
+<tr>
+<td style="text-align:left">查询d.d5(有索引)</td>
+<td style="text-align:right">261.4</td>
+<td style="text-align:right">302.8</td>
+<td style="text-align:right">349.5</td>
+<td style="text-align:right">196.7</td>
+<td style="text-align:right">217.5</td>
+<td style="text-align:right">270.7</td>
+<td style="text-align:right">326</td>
+<td style="text-align:right">-</td>
+<td style="text-align:right">807.6</td>
+<td style="text-align:right">1346.7</td>
+</tr>
+<tr>
+<td style="text-align:left">分页(0条件)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">分页(1条件)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">分页(n条件))</td>
+<td style="text-align:right">72</td>
+<td style="text-align:right">83.7</td>
+<td style="text-align:right">96.7</td>
+<td style="text-align:right">53.7</td>
+<td style="text-align:right">59.5</td>
+<td style="text-align:right">73.5</td>
+<td style="text-align:right">87.7</td>
+<td style="text-align:right">-</td>
+<td style="text-align:right">1322</td>
+<td style="text-align:right">1350.7</td>
+</tr>
+<tr>
+<td style="text-align:left">排序(时间)</td>
+<td style="text-align:right">38</td>
+<td style="text-align:right">38</td>
+<td style="text-align:right">38.7</td>
+<td style="text-align:right">19.3</td>
+<td style="text-align:right">19.5</td>
+<td style="text-align:right">18.5</td>
+<td style="text-align:right">18.5</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">187.7</td>
+<td style="text-align:right">194.6</td>
+</tr>
+<tr>
+<td style="text-align:left">排序(字段,无索引)</td>
+<td style="text-align:right">280.7</td>
+<td style="text-align:right">321.2</td>
+<td style="text-align:right">183.2</td>
+<td style="text-align:right">205.8</td>
+<td style="text-align:right">227.6</td>
+<td style="text-align:right">283.2</td>
+<td style="text-align:right">321</td>
+<td style="text-align:right">-</td>
+<td style="text-align:right">827.2</td>
+<td style="text-align:right">1057.7</td>
+</tr>
+<tr>
+<td style="text-align:left">排序(字段,有索引)</td>
+<td style="text-align:right">252.4</td>
+<td style="text-align:right">147.6</td>
+<td style="text-align:right">168.4</td>
+<td style="text-align:right">189.7</td>
+<td style="text-align:right">208.6</td>
+<td style="text-align:right">256.2</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">-</td>
+<td style="text-align:right">1484.8</td>
+<td style="text-align:right">1410</td>
+</tr>
+<tr>
+<td style="text-align:left">查询(无过滤)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">查询(有过滤)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="调优总结"><a href="/2017/01/09/玩转MongoDB之性能调优/#调优总结" class="headerlink" title="调优总结"></a>调优总结</h4><ul>
+<li>在查询条件、排序条件、统计条件的字段上选择创建索引,对于不同的索引（比如单键索引，数组索引，复合索引等等）需要分开对待。</li>
+<li>在创建索引操作时，应当后台运行，降低对性能的影响（拥有数据后才创建索引的情况下）。</li>
+<li>使用limit()限定返回结果集的大小，减少数据库服务器的资源消耗，以及网络传输的数据量。</li>
+<li>只查询使用到的字段，而不查询所有字段。</li>
+<li>基于Mongodb分布式集群做数据分析时，MapReduce性能优于count、distinct、group等聚合函数。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MongoDB由于是将数据加载到内存后进行操作，所以其速度与并发速度相对于传统的磁盘数据库有巨大的飞跃，但是，并不是所有的场景都适合适用MongoDB数据库来存储。比如，由于MongoDB的事务性很弱，或者说基本没有，所以不适合将MongoDB用于高度事务性质的项目中（当然可以程序控制逻辑事务）。MongoDB对于实时的增删改查操作友好，可以进行分布式的集群、动态的增删节点（网上参考，笔者未实践过）。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Database" scheme="/categories/Database/"/>
+    
+    
+      <category term="MongoDB" scheme="/tags/MongoDB/"/>
+    
+      <category term="Database" scheme="/tags/Database/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ASP.Net实现页面跳转的方法</title>
     <link href="/2017/01/09/ASP-Net%E5%AE%9E%E7%8E%B0%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>/2017/01/09/ASP-Net实现页面跳转的方法/</id>
     <published>2017-01-09T04:59:59.000Z</published>
-    <updated>2017-01-09T05:29:52.074Z</updated>
+    <updated>2017-01-09T06:16:40.883Z</updated>
     
     <content type="html"><![CDATA[<p>在ASP.NET中，即使用C#编写的WEB项目中，服务端对前端页面的路由控制在不同的情况下使用不同的方式对页面进行跳转控制。总的来说，主要具有七种不同的方式可以实现。</p>
 <a id="more"></a>
@@ -102,7 +523,7 @@
     <published>2016-12-04T01:27:12.000Z</published>
     <updated>2016-12-04T07:28:43.154Z</updated>
     
-    <content type="html"><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><span id="encrypt-message">A correct password is required for this article. Please ask me for more help if you can't get the key! This article is a letter for X.</span><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">确认</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
+    <content type="html"><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><span id="encrypt-message">A correct password is required for this article. Please ask me for more help if you can't get the key! This article is a letter for X.</span><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">确认</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div>]]></content>
     
     <summary type="html">
     
@@ -1249,35 +1670,6 @@
     
     
       <category term="读书笔记" scheme="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>入职三月</title>
-    <link href="/2016/09/28/%E5%85%A5%E8%81%8C%E4%B8%89%E6%9C%88/"/>
-    <id>/2016/09/28/入职三月/</id>
-    <published>2016-09-28T11:10:18.000Z</published>
-    <updated>2016-11-04T11:13:42.925Z</updated>
-    
-    <content type="html"><![CDATA[<p>早晨，开始觉得有那么一丁点凉了。说来也奇怪，宿舍一直开着空调，也一直保持着26℃的高温，可就在八点睁开疲惫双眼的瞬间，居然会感受到这细微的变化。原来，不知不觉中，已经临近国庆，而我，也已经工作了三个月了！</p>
-<a id="more"></a>
-<p><img src="http://upload-images.jianshu.io/upload_images/1784374-5de88d68a992d0ce.gif?imageMogr2/auto-orient/strip" alt="请盯着这张图，你会发现有趣的现象"></p>
-<p>三个月的时间似乎消逝得极快，仿佛一瞬便溜过了今天。是的，有种忙透了的感觉。还好，作息规律却正常多了，只是每天周而复始的生活节奏很容易使人陷入这种可以导致麻木的安逸中。每天，八点十五起床，八点四十五搭公司的班车去公司，九点在公司餐厅吃早餐，吃完饭回到自己的工位，开始新的一天的工作。公司的餐饮很好，一种自助式的餐厅，号称八菜一汤，所以每顿饭总可以吃得不错，只是吃多了喜欢的鸡翅、田鸡、牛排、牛腩等肉居然有种腻腻的感觉，以至于到后来总吃剩很多饭菜。中午有一个半钟的休息时间，大部分同事用来休息，有些同事则和我一样，用来玩玩游戏，或者是看看书，刷刷朋友圈。我是一个向来不习惯中午休息的人，因为我中午一觉醒来会更加疲惫。到了晚上六点，伸个懒腰，打个哈欠，又到了吃饭的时间。项目很赶的时候，一般会在十一点后乘坐公司的班车回宿舍，闲暇时则会在十一点前回到宿舍。于是，一天就这样过去了，在短短的睡梦后有开始了几乎一模一样的一天。</p>
-<p>工作是需要激情和动力的。这种激情和动力可以抵消掉一些那些令人麻木的安逸，而如果失去了对工作的激情，丧失了动力，则会显得被动无聊。来到公司，第一个负责的项目是一个CRM项目，项目挺小，但是很赶，而且是Web/Android/IOS同步开发。第二个负责的项目，也是现在开发中的项目，是万恶的工作流项目，而且这个工作流本身不能进行任何的硬编码实现，全部逻辑采用配置式来实现。大三的时候，就曾经接触过市场上一些OA产品，当时就体会到了其业务逻辑上的复杂，现在居然也涉猎到这个区域了，而且作为项目的主程序员，实在是压力上大。工作是有压力的，一方面我觉得自己可以如期完成，一方面，又在为预计的时间内完不成相应的任务而郁郁寡欢。很多时候，总会碰到一些莫名其妙的BUG，这些BUG在你还没有从源头上理解其发生的机理之前你根本无法解决，这也是造成耗时较长的主要原因。都说有压力才有动力，只是有些时候，压力太大了也未必有动力，关键在于怎么维持动力、怎么坚持总结。现在回想起刚入职时给自己定的计划，才发现基本上没有时间完成。所以，奋斗的路是充满坎坷的，想要一片平路，也只有先踏过这篇荆棘。</p>
-<p>转眼间又到九月，我们这一批的校招生试用才刚结束，公司又开始了新一轮的校园招聘了。三个月，认识了很多小伙伴，有广工的，有华师的、有深大、中大、华中大等等的，当然，还有广大的。在这个具有几百号人的大部门里，大家各司其职，相互合作。下班后，找几个小伙伴聊聊天，或者走二十分钟回宿舍，挺好。</p>
-<p>这就是这三个月的生活了，单调而简单。好久没有像大三那会，可以疯狂地玩上一天的LOL了。本想入手一个单反玩玩摄影，而今一拖再拖，到现在也还没有落实。所以得赶紧丰富丰富自己的生活情趣了，因为工作之余，还有生活。转正面谈刚结束，写下此文，权当初入职场的阶段性总结。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;早晨，开始觉得有那么一丁点凉了。说来也奇怪，宿舍一直开着空调，也一直保持着26℃的高温，可就在八点睁开疲惫双眼的瞬间，居然会感受到这细微的变化。原来，不知不觉中，已经临近国庆，而我，也已经工作了三个月了！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="随笔" scheme="/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

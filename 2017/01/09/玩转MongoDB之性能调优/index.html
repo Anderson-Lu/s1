@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>玩转MongoDB之性能调优 | Hummingman</title><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/4.2.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.0.0/jquery.min.js">   </script><!--script(type='text/javascript',src='/js/bk.js')  --><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><!--link(rel='stylesheet', href='/css/loading.css')--></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">玩转MongoDB之性能调优</h1><a id="logo" href="/.">Hummingman</a><p class="description">Real Developer Ship...</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-send"> 总览</i></a><a href="/timeline/"><i class="fa fa-coffee"> 时光机</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">玩转MongoDB之性能调优</h1><div class="post-meta">Jan 9, 2017<span> | </span><span class="category"><a href="/categories/Database/">Database</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> ℃</span></span><span> | </span><span>1,206</span><span>字</span><span> | </span><span>预计耗时</span><span>6</span><span>分钟 </span></div><a data-thread-key="2017/01/09/玩转MongoDB之性能调优/" href="/2017/01/09/玩转MongoDB之性能调优/#comments" class="ds-thread-count"></a><div class="post-content"><p>MongoDB由于是将数据加载到内存后进行操作，所以其速度与并发速度相对于传统的磁盘数据库有巨大的飞跃，但是，并不是所有的场景都适合适用MongoDB数据库来存储。比如，由于MongoDB的事务性很弱，或者说基本没有，所以不适合将MongoDB用于高度事务性质的项目中（当然可以程序控制逻辑事务）。MongoDB对于实时的增删改查操作友好，可以进行分布式的集群、动态的增删节点（网上参考，笔者未实践过）。<br><a id="more"></a></p>
+<h4 id="数据准备"><a href="/2017/01/09/玩转MongoDB之性能调优/#数据准备" class="headerlink" title="数据准备"></a>数据准备</h4><p>每次10万条数据，每次递增10万插入新数据，测试每次数据量下的操作速度，插入脚本如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> count=<span class="number">7500000</span>;count&lt;<span class="number">10000000</span>;count++)&#123;</div><div class="line">   <span class="keyword">var</span> tmp = count%<span class="number">2</span>==<span class="number">0</span>?count:(<span class="number">0</span>-count);</div><div class="line">   <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">   <span class="keyword">var</span> demo = &#123;</div><div class="line">      <span class="string">"a"</span>:<span class="string">"a is a string"</span>,</div><div class="line">      <span class="string">"b"</span>:<span class="string">"123"</span>,</div><div class="line">      <span class="string">"c"</span>: count+<span class="number">1</span>,</div><div class="line">      <span class="string">"d"</span>: &#123;</div><div class="line">         <span class="string">"d1"</span>:<span class="string">"d1 is a string"</span>,</div><div class="line">         <span class="string">"d2"</span>:<span class="string">"123"</span>,</div><div class="line">         <span class="string">"d3"</span>: tmp,</div><div class="line">         <span class="string">"d7"</span>: tmp,</div><div class="line">         <span class="string">"d4"</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>],</div><div class="line">         <span class="string">"d5"</span>:[<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>,<span class="string">"6"</span>,<span class="string">"7"</span>,<span class="string">"8"</span>,<span class="string">"9"</span>,<span class="string">"10"</span>]         </div><div class="line">      &#125;,</div><div class="line">      <span class="string">"d6"</span>: date</div><div class="line">   &#125;;</div><div class="line">   db.TestIndexes.insert(demo);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>数据结构如下所示：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"_id"</span> : ObjectId(<span class="string">"587330f80f5dc508c0b0be13"</span>),</div><div class="line">    <span class="attr">"a"</span> : <span class="string">"a is a string"</span>,</div><div class="line">    <span class="attr">"b"</span> : <span class="string">"123"</span>,</div><div class="line">    <span class="attr">"c"</span> : <span class="number">5.0</span>,</div><div class="line">    <span class="attr">"d"</span> : &#123;</div><div class="line">        <span class="attr">"d1"</span> : <span class="string">"d1 is a string"</span>,</div><div class="line">        <span class="attr">"d2"</span> : <span class="string">"123"</span>,</div><div class="line">        <span class="attr">"d3"</span> : <span class="number">5.0</span>,</div><div class="line">        <span class="attr">"d4"</span> : [ </div><div class="line">            <span class="number">1.0</span>,<span class="number">2.0</span>,<span class="number">3.0</span>,<span class="number">4.0</span>,<span class="number">5.0</span>,<span class="number">6.0</span>,<span class="number">7.0</span>,<span class="number">8.0</span>,<span class="number">9.0</span>,<span class="number">10.0</span></div><div class="line">        ],</div><div class="line">        <span class="attr">"d5"</span> : [ <span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>,<span class="string">"6"</span>,<span class="string">"7"</span>,<span class="string">"8"</span>,<span class="string">"9"</span>,<span class="string">"10"</span></div><div class="line">        ]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="查询实验"><a href="/2017/01/09/玩转MongoDB之性能调优/#查询实验" class="headerlink" title="查询实验"></a>查询实验</h4><p>1、根据_id查询，_id本身具有索引，根据_id查询指定数据</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.TestIndexes.find(&#123;<span class="string">"_id"</span>:ObjectId(<span class="string">"587330f80f5dc508c0b0be13"</span>)&#125;);</div></pre></td></tr></table></figure>
+<p>2、根据无索引字段c查询</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.TestIndexes.find(&#123;<span class="string">"c"</span>:<span class="number">1000</span>&#125;);</div></pre></td></tr></table></figure>
+<p>3、对d.d3加入索引</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.TestIndexes.createIndex(&#123;<span class="string">"d.d3"</span>:<span class="number">1</span>&#125;);</div></pre></td></tr></table></figure>
+<p>查询语句同2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db.TestIndexes.find(&#123;<span class="string">"d.d3"</span>:<span class="number">1000</span>&#125;);</div></pre></td></tr></table></figure>
+<p>自动化查询语句</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n=<span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> ret1=<span class="number">0</span>,ret2=<span class="number">0</span>,ret3=<span class="number">0</span>,ret4=<span class="number">0</span>,ret5=<span class="number">0</span>,</div><div class="line">    ret6=<span class="number">0</span>,ret7=<span class="number">0</span>,ret8=<span class="number">0</span>,ret9=<span class="number">0</span>,reta=<span class="number">0</span>,retb=<span class="number">0</span>,retc=<span class="number">0</span>,retd=<span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line"></div><div class="line">    ret1 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">        .find(&#123;<span class="string">"_id"</span>: ObjectId(<span class="string">'587330f80f5dc508c0b0be13'</span>)&#125;)</div><div class="line">        .explain(<span class="string">"executionStats"</span>)</div><div class="line">        .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    ret2 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">        .find(&#123;<span class="string">"c"</span>:<span class="number">1000</span>&#125;)</div><div class="line">        .explain(<span class="string">"executionStats"</span>)</div><div class="line">        .executionStats.executionTimeMillis;</div><div class="line">    </div><div class="line">    ret3 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;<span class="string">"d.d3"</span>:<span class="number">7580</span>&#125;)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    ret4 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;<span class="string">"d.d4"</span>:<span class="number">6.0</span>&#125;)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    ret5 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;<span class="string">"d.d5"</span>:<span class="number">7.0</span>&#125;)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    ret6 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;&#125;)</div><div class="line">       .limit(<span class="number">40</span>)</div><div class="line">       .skip(<span class="number">20</span>)</div><div class="line">       .explain(<span class="string">"executionStats"</span>).executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    ret7 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;<span class="string">"c"</span>:&#123;<span class="string">"$gt"</span>:<span class="number">12</span>&#125;&#125;)</div><div class="line">       .limit(<span class="number">40</span>)</div><div class="line">       .skip(<span class="number">20</span>)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    ret8 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;<span class="string">"c"</span>:&#123;<span class="string">"$gt"</span>:<span class="number">12</span>&#125;,<span class="string">"d.d3"</span>:&#123;<span class="string">"$mod"</span>:[<span class="number">2</span>,<span class="number">0</span>]&#125;&#125;)</div><div class="line">       .limit(<span class="number">40</span>)</div><div class="line">       .skip(<span class="number">20</span>)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    ret9 += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;&#125;)</div><div class="line">       .sort(&#123;<span class="string">"d6"</span>:<span class="number">-1</span>&#125;)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line">    </div><div class="line">    reta += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;&#125;)</div><div class="line">       .sort(&#123;<span class="string">"d.d3"</span>:<span class="number">-1</span>&#125;)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line">    </div><div class="line">    retb += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;&#125;)</div><div class="line">       .sort(&#123;<span class="string">"d.d7"</span>:<span class="number">-1</span>&#125;)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    retc += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;&#125;,&#123;<span class="string">"_id"</span>:<span class="number">1</span>,<span class="string">"c"</span>:<span class="number">1</span>&#125;)</div><div class="line">       .limit(<span class="number">10</span>)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;</div><div class="line"></div><div class="line">    retd += db.getCollection(<span class="string">'TestIndexes'</span>)</div><div class="line">       .find(&#123;&#125;)</div><div class="line">       .limit(<span class="number">10</span>)</div><div class="line">       .explain(<span class="string">"executionStats"</span>)</div><div class="line">       .executionStats.executionTimeMillis;   </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> result = &#123;</div><div class="line">    <span class="string">"查询_id"</span>: ret1/n,</div><div class="line">    <span class="string">"查询c(无索引)"</span>: ret2/n,</div><div class="line">    <span class="string">"查询d.d3(有索引)"</span>: ret3/n,</div><div class="line">    <span class="string">"查询d.d4(无索引)"</span>: ret4/n,</div><div class="line">    <span class="string">"查询d.d5(有索引)"</span>: ret5/n,</div><div class="line">    <span class="string">"分页(0条件)"</span>: ret6/n,</div><div class="line">    <span class="string">"分页(1条件)"</span>: ret7/n,</div><div class="line">    <span class="string">"分页(n条件)"</span>: ret8/n,</div><div class="line">    <span class="string">"排序(时间)"</span>: ret9/n,</div><div class="line">    <span class="string">"排序(字段,无索引)"</span>: reta/n,</div><div class="line">    <span class="string">"排序(字段,有索引)"</span>: retb/n,</div><div class="line">    <span class="string">"查询(无过滤)"</span>: retc/n,</div><div class="line">    <span class="string">"查询(有过滤)"</span>: retd/n</div><div class="line">&#125;</div><div class="line">printjson(result);</div></pre></td></tr></table></figure>
+<h4 id="结果记录"><a href="/2017/01/09/玩转MongoDB之性能调优/#结果记录" class="headerlink" title="结果记录"></a>结果记录</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">检测项目</th>
+<th style="text-align:right">10w</th>
+<th style="text-align:right">20w</th>
+<th style="text-align:right">30w</th>
+<th style="text-align:right">40w</th>
+<th style="text-align:right">50w</th>
+<th style="text-align:right">60w</th>
+<th style="text-align:right">70w</th>
+<th style="text-align:right">80w</th>
+<th style="text-align:right">90w</th>
+<th style="text-align:right">100w</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">查询_id</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">查询c(无索引)</td>
+<td style="text-align:right">52.2</td>
+<td style="text-align:right">101.1</td>
+<td style="text-align:right">120.6</td>
+<td style="text-align:right">127.6</td>
+<td style="text-align:right">130.5</td>
+<td style="text-align:right">154.3</td>
+<td style="text-align:right">149.5</td>
+<td style="text-align:right">165.1</td>
+<td style="text-align:right">135.4</td>
+<td style="text-align:right">157.7</td>
+</tr>
+<tr>
+<td style="text-align:left">查询d.d3(有索引)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">查询d.d4(无索引)</td>
+<td style="text-align:right">124.4</td>
+<td style="text-align:right">248.9</td>
+<td style="text-align:right">317.4</td>
+<td style="text-align:right">376.5</td>
+<td style="text-align:right">326.6</td>
+<td style="text-align:right">327.9</td>
+<td style="text-align:right">342.3</td>
+<td style="text-align:right">325.8</td>
+<td style="text-align:right">443.4</td>
+<td style="text-align:right">324.1</td>
+</tr>
+<tr>
+<td style="text-align:left">查询d.d5(有索引)</td>
+<td style="text-align:right">111.4</td>
+<td style="text-align:right">218</td>
+<td style="text-align:right">261.1</td>
+<td style="text-align:right">267.7</td>
+<td style="text-align:right">272.6</td>
+<td style="text-align:right">260.2</td>
+<td style="text-align:right">283.2</td>
+<td style="text-align:right">262.9</td>
+<td style="text-align:right">294.1</td>
+<td style="text-align:right">269.7</td>
+</tr>
+<tr>
+<td style="text-align:left">分页(0条件)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">分页(1条件)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">分页(n条件))</td>
+<td style="text-align:right">44.7</td>
+<td style="text-align:right">79.3</td>
+<td style="text-align:right">84.7</td>
+<td style="text-align:right">90.6</td>
+<td style="text-align:right">82.3</td>
+<td style="text-align:right">75.9</td>
+<td style="text-align:right">92.2</td>
+<td style="text-align:right">75.2</td>
+<td style="text-align:right">80</td>
+<td style="text-align:right">88.3</td>
+</tr>
+<tr>
+<td style="text-align:left">排序(时间)</td>
+<td style="text-align:right">195.8</td>
+<td style="text-align:right">192.2</td>
+<td style="text-align:right">154.4</td>
+<td style="text-align:right">93.4</td>
+<td style="text-align:right">95.7</td>
+<td style="text-align:right">75.7</td>
+<td style="text-align:right">57.9</td>
+<td style="text-align:right">58.1</td>
+<td style="text-align:right">38.6</td>
+<td style="text-align:right">38.2</td>
+</tr>
+<tr>
+<td style="text-align:left">排序(字段,无索引)</td>
+<td style="text-align:right">136.7</td>
+<td style="text-align:right">263.9</td>
+<td style="text-align:right">263.9</td>
+<td style="text-align:right">240.7</td>
+<td style="text-align:right">307.8</td>
+<td style="text-align:right">290.2</td>
+<td style="text-align:right">248.8</td>
+<td style="text-align:right">290.3</td>
+<td style="text-align:right">214.3</td>
+<td style="text-align:right">241.1</td>
+</tr>
+<tr>
+<td style="text-align:left">排序(字段,有索引)</td>
+<td style="text-align:right">102.7</td>
+<td style="text-align:right">209.9</td>
+<td style="text-align:right">221.2</td>
+<td style="text-align:right">261.6</td>
+<td style="text-align:right">211.4</td>
+<td style="text-align:right">253.8</td>
+<td style="text-align:right">275.4</td>
+<td style="text-align:right">255.4</td>
+<td style="text-align:right">238.1</td>
+<td style="text-align:right">262.3</td>
+</tr>
+<tr>
+<td style="text-align:left">查询(无过滤)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">查询(有过滤)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">检测项目</th>
+<th style="text-align:right">120w</th>
+<th style="text-align:right">140w</th>
+<th style="text-align:right">160w</th>
+<th style="text-align:right">180w</th>
+<th style="text-align:right">200w</th>
+<th style="text-align:right">250w</th>
+<th style="text-align:right">300w</th>
+<th style="text-align:right">500w</th>
+<th style="text-align:right">750w</th>
+<th style="text-align:right">1000w</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">查询_id</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">查询c(无索引)</td>
+<td style="text-align:right">185.2</td>
+<td style="text-align:right">144</td>
+<td style="text-align:right">166.8</td>
+<td style="text-align:right">185.9</td>
+<td style="text-align:right">204.7</td>
+<td style="text-align:right">133.5</td>
+<td style="text-align:right">157.2</td>
+<td style="text-align:right">299.6</td>
+<td style="text-align:right">1477.4</td>
+<td style="text-align:right">1132.3</td>
+</tr>
+<tr>
+<td style="text-align:left">查询d.d3(有索引)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">查询d.d4(无索引)</td>
+<td style="text-align:right">337.3</td>
+<td style="text-align:right">386.9</td>
+<td style="text-align:right">440.4</td>
+<td style="text-align:right">194.7</td>
+<td style="text-align:right">271.5</td>
+<td style="text-align:right">348.9</td>
+<td style="text-align:right">422.1</td>
+<td style="text-align:right">725.3</td>
+<td style="text-align:right">1048.8</td>
+<td style="text-align:right">13584</td>
+</tr>
+<tr>
+<td style="text-align:left">查询d.d5(有索引)</td>
+<td style="text-align:right">261.4</td>
+<td style="text-align:right">302.8</td>
+<td style="text-align:right">349.5</td>
+<td style="text-align:right">196.7</td>
+<td style="text-align:right">217.5</td>
+<td style="text-align:right">270.7</td>
+<td style="text-align:right">326</td>
+<td style="text-align:right">-</td>
+<td style="text-align:right">807.6</td>
+<td style="text-align:right">1346.7</td>
+</tr>
+<tr>
+<td style="text-align:left">分页(0条件)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">分页(1条件)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">分页(n条件))</td>
+<td style="text-align:right">72</td>
+<td style="text-align:right">83.7</td>
+<td style="text-align:right">96.7</td>
+<td style="text-align:right">53.7</td>
+<td style="text-align:right">59.5</td>
+<td style="text-align:right">73.5</td>
+<td style="text-align:right">87.7</td>
+<td style="text-align:right">-</td>
+<td style="text-align:right">1322</td>
+<td style="text-align:right">1350.7</td>
+</tr>
+<tr>
+<td style="text-align:left">排序(时间)</td>
+<td style="text-align:right">38</td>
+<td style="text-align:right">38</td>
+<td style="text-align:right">38.7</td>
+<td style="text-align:right">19.3</td>
+<td style="text-align:right">19.5</td>
+<td style="text-align:right">18.5</td>
+<td style="text-align:right">18.5</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">187.7</td>
+<td style="text-align:right">194.6</td>
+</tr>
+<tr>
+<td style="text-align:left">排序(字段,无索引)</td>
+<td style="text-align:right">280.7</td>
+<td style="text-align:right">321.2</td>
+<td style="text-align:right">183.2</td>
+<td style="text-align:right">205.8</td>
+<td style="text-align:right">227.6</td>
+<td style="text-align:right">283.2</td>
+<td style="text-align:right">321</td>
+<td style="text-align:right">-</td>
+<td style="text-align:right">827.2</td>
+<td style="text-align:right">1057.7</td>
+</tr>
+<tr>
+<td style="text-align:left">排序(字段,有索引)</td>
+<td style="text-align:right">252.4</td>
+<td style="text-align:right">147.6</td>
+<td style="text-align:right">168.4</td>
+<td style="text-align:right">189.7</td>
+<td style="text-align:right">208.6</td>
+<td style="text-align:right">256.2</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">-</td>
+<td style="text-align:right">1484.8</td>
+<td style="text-align:right">1410</td>
+</tr>
+<tr>
+<td style="text-align:left">查询(无过滤)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">查询(有过滤)</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="调优总结"><a href="/2017/01/09/玩转MongoDB之性能调优/#调优总结" class="headerlink" title="调优总结"></a>调优总结</h4><ul>
+<li>在查询条件、排序条件、统计条件的字段上选择创建索引,对于不同的索引（比如单键索引，数组索引，复合索引等等）需要分开对待。</li>
+<li>在创建索引操作时，应当后台运行，降低对性能的影响（拥有数据后才创建索引的情况下）。</li>
+<li>使用limit()限定返回结果集的大小，减少数据库服务器的资源消耗，以及网络传输的数据量。</li>
+<li>只查询使用到的字段，而不查询所有字段。</li>
+<li>基于Mongodb分布式集群做数据分析时，MapReduce性能优于count、distinct、group等聚合函数。</li>
+</ul>
+</div><div class="tags"><a href="/tags/MongoDB/">MongoDB</a><a href="/tags/Database/">Database</a></div><div class="post-nav"><a href="/2017/01/09/ASP-Net实现页面跳转的方法/" class="next">ASP.Net实现页面跳转的方法</a></div><div data-thread-key="2017/01/09/玩转MongoDB之性能调优/" data-title="玩转MongoDB之性能调优" data-url="/2017/01/09/玩转MongoDB之性能调优/" class="ds-share flat"><div class="ds-share-inline"><ul class="ds-share-icons-16"><li data-toggle="ds-share-icons-more"><a href="javascript:void(0);" class="ds-more">分享到：</a></li><li><a href="javascript:void(0);" data-service="weibo" class="ds-weibo">微博</a></li><li><a href="javascript:void(0);" data-service="qzone" class="ds-qzone">QQ空间</a></li><li><a href="javascript:void(0);" data-service="qqt" class="ds-qqt">腾讯微博</a></li><li><a href="javascript:void(0);" data-service="wechat" class="ds-wechat">微信</a></li></ul><div class="ds-share-icons-more"></div></div></div><div data-thread-key="2017/01/09/玩转MongoDB之性能调优/" data-title="玩转MongoDB之性能调优" data-url="/2017/01/09/玩转MongoDB之性能调优/" data-author-key="1" class="ds-thread"></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="站内搜索..." type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-globe"> 访问地图</i><div style="padding-top:5px"></div></div><script type="text/javascript" src="//rc.revolvermaps.com/0/0/8.js?i=2ci0ian43hc&amp;m=0&amp;s=220&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-plus-square-o"> 文章分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ASP-Net/">ASP.Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/">Front-end</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GWT/">GWT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/REST/">REST</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software-Engineering/">Software Engineering</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tool/">Tool</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏/">游戏</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">5</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-hand-grab-o"> 文章标签</i></div><div class="tagcloud"><a href="/tags/随笔/" style="font-size: 15px;">随笔</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/GWT/" style="font-size: 15px;">GWT</a> <a href="/tags/ASP-net/" style="font-size: 15px;">ASP.net</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/Front-end/" style="font-size: 15px;">Front-end</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/JSON/" style="font-size: 15px;">JSON</a> <a href="/tags/REST/" style="font-size: 15px;">REST</a> <a href="/tags/Software-Engineering/" style="font-size: 15px;">Software Engineering</a> <a href="/tags/Game/" style="font-size: 15px;">Game</a> <a href="/tags/ASP-Net/" style="font-size: 15px;">ASP.Net</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/Database/" style="font-size: 15px;">Database</a> <a href="/tags/Tool/" style="font-size: 15px;">Tool</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Redis/" style="font-size: 15px;">Redis</a> <a href="/tags/Fidder/" style="font-size: 15px;">Fidder</a> <a href="/tags/读书笔记/" style="font-size: 15px;">读书笔记</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-code-fork"> 最新发布</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/09/玩转MongoDB之性能调优/">玩转MongoDB之性能调优</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/09/ASP-Net实现页面跳转的方法/">ASP.Net实现页面跳转的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/05/X-Rebirth-Home-Of-Light-Guide/">X:Rebirth Home Of Light Guide</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/04/To-Li/">致X君</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/25/随笔集/">随笔集</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/24/软件开发原则/">软件开发原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/试试Reids之基础知识/">试试Reids之基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/试试Redis之环境搭建/">试试Redis之环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/19/网站性能调优总结/">WEB系统性能调优之路</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/19/程序猿百宝箱-持续更新/">程序猿百宝箱(持续更新)</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-link"> 更多链接</i></div><ul></ul><a href="https://hexo.io/zh-cn/docs/asset-folders.html" title="&lt;Hexo&gt; Official Hexo Guide" target="_blank">&lt;Hexo&gt; Official Hexo Guide</a><ul></ul><a href="https://github.com/tufu9441/maupassant-hexo" title="&lt;Hexo&gt; Maupassant Guide" target="_blank">&lt;Hexo&gt; Maupassant Guide</a></div><div class="widget"><div class="widget-title"><i class="fa fa-globe"> 小小天地</i></div><ul><a href="/music/s.html" title="我所以为的音乐&amp;你所以为的音乐">音乐，是另一种深情</a></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© 2016 <a href="/." rel="nofollow">Hummingman.</a> Maintain by Anderson.</div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script>var duoshuoQuery = {short_name:'hummingman'};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

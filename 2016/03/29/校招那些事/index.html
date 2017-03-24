@@ -1,35 +1,424 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>校招那些事 | Hummingman</title><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/4.2.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.0.0/jquery.min.js">   </script><!--script(type='text/javascript',src='/js/bk.js')  --><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><style>.li-box ul,li{ margin:0; padding:0; }
-.li-box li{ list-style:none; }
-.container{ display:block; background:#fff; padding:10px;font-family:"Microsoft YaHei"; }
-.container .li-box{ height:20px; overflow:hidden; }
-.container ul{ position:relative; animation: moveUp 8s 0.6s infinite; -webkit-animation: moveUp 8s 0.6s infinite; }
-@keyframes moveUp
-{
-  0% {top:0px;}
-  18% {top:0px;}
-  20% {top:-25px;}
-  38% {top:-25px;}
-  40% {top:-50px;}
-  58% {top:-50px;}
-  60% {top:-75px;}
-  78% {top:-75px;}
-  80% {top:-90px;}
-  98% {top:-90px;}
-}
-@-webkit-keyframes moveUp /*Safari and Chrome*/
-{
-  0% {top:0px;}
-  18% {top:0px;}
-  20% {top:-25px;}
-  38% {top:-25px;}
-  40% {top:-50px;}
-  58% {top:-50px;}
-  60% {top:-78px;}
-  78% {top:-78px;}
-  80% {top:-105px;}
-  98% {top:-105px;}
-}
-.container li{ line-height:1.7; color:#666; } </style><!--link(rel='stylesheet', href='/css/loading.css')--></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">校招那些事</h1><a id="logo" href="/.">Hummingman</a><!--p.description= config.subtitle 这里替换为滚动字幕--><div class="container"><div class="li-box"><ul><li>Real Developer Ship...</li><li>You type it, we post it</li><li>简单不先于复杂，而是在复杂之后</li><li>Welcome to http://www.hummingman.cc</li><li>没有绝世神功               </li></ul></div></div></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-send"> 总览</i></a><a href="/timeline/"><i class="fa fa-coffee"> 时光机</i></a><a href="/download/"><i class="fa fa-cloud-download"> 下载</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">校招那些事</h1><div class="post-meta">Mar 29, 2016<span> | </span><span class="category"><a href="/categories/随笔/">随笔</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> ℃</span></span><span> | </span><span>2,280</span><span>字</span><span> | </span><span>预计耗时</span><span>8</span><span>分钟 </span></div><a data-thread-key="2016/03/29/校招那些事/" href="/2016/03/29/校招那些事/#comments" class="ds-thread-count"></a><div class="post-content"><h4 id="实习"><a href="/2016/03/29/校招那些事/#实习" class="headerlink" title="实习"></a>实习</h4><p>因为在某外资知名企业实习了半年，没有去参加各种校园招聘而错过了秋招的机会，有时候心里想想还真是可惜啊，但是却不后悔。实习之于我是一个提升自己能力的好机会，很荣幸，能够在半年中提升了自己的视野，思考能力和专业技术水准，以及认识一些人，学会一些事。也许很多人会说：”你这是在浪费时间，既然你实习完后不在原公司待下来，又何必白白耗费大半年的时间呢？”，他们说的，有些地方确实是对的，对于很多人来说，也许早早就开溜了。然而我想得更多的，一是在这半年光景里努力提升自己的能力，二是我并不想半途而废或者知难而进，很多时候我想退出，然而每次出现这样的思绪时，我就反问自己：“难道是因为自己的能力不行而退出吗？”，“不，我不认为”，“难道要在这半途中放弃这个实习的机会吗？”，“不，我不想”，于是在无限的挣扎过后，我顺利地坚持到了最后，当然，最后依旧没有留在某企业。</p>
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!-- 
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.0 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            校招那些事 | 
+        
+        Hummingman
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/favicon.ico">
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Anderson">
+    <meta name="description" content="Real Developer Ship">
+    <meta name="keywords" content="Hummingman,随笔">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Hummingman">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="校招那些事 | Hummingman">
+    <meta property="og:description" content="Real Developer Ship">
+    <meta property="og:article:tag" content="随笔"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/queue.js"></script>
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实习"><span class="post-toc-number">1.</span> <span class="post-toc-text">实习</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#春招-amp-宣讲会"><span class="post-toc-number">2.</span> <span class="post-toc-text">春招 & 宣讲会</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#面试一：广州某通信公司"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">面试一：广州某通信公司</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#面试二：深圳某软件企业"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">面试二：深圳某软件企业</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#面试三：广州某网络集团"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">面试三：广州某网络集团</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#其他网申：无反应"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">其他网申：无反应</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#选择-amp-犹豫从症患者-amp-面试就是为了拒绝"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">选择 & 犹豫从症患者 & 面试就是为了拒绝</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#反思：为何不满足"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">反思：为何不满足</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                校招那些事
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Anderson</strong>
+        <span>3月 29, 2016</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAAB2ElEQVR42u3aQVIDMQwEwPz/03DlEhhJBhKrfdoi2ZSbg8pj6fFxxXpgYGBgYGBgYLwM4xGvZ299/2tf//7s3eYeMDAwljF+KG2DDUWls7gHDAyMzYykXCa8Z9/MfyfZAwYGBkbOSA6IP2wIAwMD4yhjvnUMDAyMCaMaMvPrtsmxEgMDA6N6Kf97z3/a38DAwHgrxmjcYRBWX2hmBAMD4+UZ1eLYC6I5qfBNDAyMNYx5pEzak/mnORsDA2Mbo1dM83ZmHpu/52FgYOxkVEe7qu9Wx8UKox4YGBjLGJMGwKnhsGqUxcDA2MPolcv8Yi4vr2UYBgbGMsY8cM6bBMnFHAYGxk5GtSUwL6DVg2Zhug0DA+NqRi9wVtuWvfGLZhbHwMC4iDE5Jk5ibXV0DAMDYzOj1wDolebqQMaBEIuBgXEFIx9xyONlXlIL5RUDA2MxYzIkMTkCHijiGBgYaxjVVW0GzK/qosYABgbG1Yxq+csPhUmToPeMgYGxk1FtEuTFN//XHCi4GBgYCxhng+ucioGBgdFjVEcxcuqfFlwMDIyrGaee8+u85swIBgbGpYxeiO3F2mrjodyJxcDAuI4xiZR5QD11qYeBgbGN8b4LAwMDAwMDA+Nf1yd5KyvwbrdBjgAAAABJRU5ErkJggg==">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/随笔/">随笔</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=校招那些事&url=//2016/03/29/校招那些事/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=校招那些事&url=//2016/03/29/校招那些事/index.html&via=Anderson" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=//2016/03/29/校招那些事/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=//2016/03/29/校招那些事/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=//2016/03/29/校招那些事/index.html&title=校招那些事" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hummingman&title=校招那些事&summary=Real Developer Ship&pics=/img/favicon.ico&url=/2016/03/29/校招那些事/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=//2016/03/29/校招那些事/index.html&text=校招那些事" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h4 id="实习"><a href="/2016/03/29/校招那些事/#实习" class="headerlink" title="实习"></a>实习</h4><p>因为在某外资知名企业实习了半年，没有去参加各种校园招聘而错过了秋招的机会，有时候心里想想还真是可惜啊，但是却不后悔。实习之于我是一个提升自己能力的好机会，很荣幸，能够在半年中提升了自己的视野，思考能力和专业技术水准，以及认识一些人，学会一些事。也许很多人会说：”你这是在浪费时间，既然你实习完后不在原公司待下来，又何必白白耗费大半年的时间呢？”，他们说的，有些地方确实是对的，对于很多人来说，也许早早就开溜了。然而我想得更多的，一是在这半年光景里努力提升自己的能力，二是我并不想半途而废或者知难而进，很多时候我想退出，然而每次出现这样的思绪时，我就反问自己：“难道是因为自己的能力不行而退出吗？”，“不，我不认为”，“难道要在这半途中放弃这个实习的机会吗？”，“不，我不想”，于是在无限的挣扎过后，我顺利地坚持到了最后，当然，最后依旧没有留在某企业。</p>
 <a id="more"></a>
 <h4 id="春招-amp-宣讲会"><a href="/2016/03/29/校招那些事/#春招-amp-宣讲会" class="headerlink" title="春招 &amp; 宣讲会"></a>春招 &amp; 宣讲会</h4><p>2016年的三月，都说阳春三月，然而在祖国的南方沿海省份并没有，我依旧记得那十多天的回南天外出计划增添了多少阻碍，忽冷忽热，还夹杂着90%以上的空气湿度，这是多么影响心情的天气！然而春招依然在这段糟糕的时间开始了。<br>我面试过的企业并不算太多，确切地说是很少，每次我在中山大学的就业指导中心查看宣讲会信息，会把非互联网企业排除，会把初创公司排除，加上像BAT这种程序员所羡慕的国内大企早就在秋招中招满结束了，于是留下来的看得顺眼的企业就很少很少了。总的来说，到目前为止，参加了三次宣讲会。</p>
 <h5 id="面试一：广州某通信公司"><a href="/2016/03/29/校招那些事/#面试一：广州某通信公司" class="headerlink" title="面试一：广州某通信公司"></a>面试一：广州某通信公司</h5><p>记得这是在广工参加的宣讲会，主要介绍了什么大致已经忘光了，很快在宣讲会结束之后便进行笔试。当时看到笔试题(笔试题是关于JAVA的)，我嘴角微微上扬，成了全场第二个交卷的人。一是感觉题目简单得离谱，而且全部是关于编程语言的，连算法和数据结构这样的专业题都没有。很快，我就收到了面试通知，这场面试，三个面试官，一个是HR，一个是老总，一个应该是高技术的，让你自我介绍，然后问了一堆乱七八糟的问题，索性我都答完了，答得还算不错。于是乎就这样通过了面试，公司向我的邮箱发放了Offer。</p>
@@ -44,19 +433,503 @@
 <li>认为能找到更好的。</li>
 </ul>
 <p>说到底，就是自己的要求太高了。其实作为应届生来说，薪水真的很重要吗？我理想中的企业是BAT，然而好像目前而言不太可能了，退而求其次，前几年先攒攒工作经验，学习专业技能，拓宽职场上的人脉也就够了。至于福利方面，工作时长方面，我觉得就是自己的态度问题，很多企业你去百度一下，基本上没有好的评论，只要态度够好就不用在乎这些。我们身处在即将步入职场的阶段，不拼一把，怎么对得起自己？</p>
-</div><div class="tags"><a href="/tags/随笔/">随笔</a></div><div class="post-nav"><a href="/2016/03/31/Hexo-NexT主题优化/" class="pre">Hexo NexT主题优化</a><a href="/2016/03/28/Hexo-vs-JekyII/" class="next">Hexo vs JekyII</a></div><div data-thread-key="2016/03/29/校招那些事/" data-title="校招那些事" data-url="/2016/03/29/校招那些事/" class="ds-share flat"><div class="ds-share-inline"><ul class="ds-share-icons-16"><li data-toggle="ds-share-icons-more"><a href="javascript:void(0);" class="ds-more">分享到：</a></li><li><a href="javascript:void(0);" data-service="weibo" class="ds-weibo">微博</a></li><li><a href="javascript:void(0);" data-service="qzone" class="ds-qzone">QQ空间</a></li><li><a href="javascript:void(0);" data-service="qqt" class="ds-qqt">腾讯微博</a></li><li><a href="javascript:void(0);" data-service="wechat" class="ds-wechat">微信</a></li></ul><div class="ds-share-icons-more"></div></div></div><div data-thread-key="2016/03/29/校招那些事/" data-title="校招那些事" data-url="/2016/03/29/校招那些事/" data-author-key="1" class="ds-thread"></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="站内搜索..." type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-globe"> 访问地图</i><div style="padding-top:5px"></div></div><script type="text/javascript" src="//rc.revolvermaps.com/0/0/8.js?i=2ci0ian43hc&amp;m=0&amp;s=220&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-plus-square-o"> 文章分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ASP-Net/">ASP.Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/">Front-end</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/GWT/">GWT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Gradle/">Gradle</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ionic/">Ionic</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/REST/">REST</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Software-Engineering/">Software Engineering</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tool/">Tool</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tool/">tool</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/作品/">作品</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/">杂项</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/杂项/安全/">安全</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/游戏/">游戏</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">5</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-hand-grab-o"> 文章标签</i></div><div class="tagcloud"><a href="/tags/随笔/" style="font-size: 15px;">随笔</a> <a href="/tags/Software-Engineering/" style="font-size: 15px;">Software Engineering</a> <a href="/tags/ASP-Net/" style="font-size: 15px;">ASP.Net</a> <a href="/tags/GWT/" style="font-size: 15px;">GWT</a> <a href="/tags/Security/" style="font-size: 15px;">Security</a> <a href="/tags/Gradle/" style="font-size: 15px;">Gradle</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/ASP-net/" style="font-size: 15px;">ASP.net</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/Front-end/" style="font-size: 15px;">Front-end</a> <a href="/tags/JSON/" style="font-size: 15px;">JSON</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/Ionic/" style="font-size: 15px;">Ionic</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/Database/" style="font-size: 15px;">Database</a> <a href="/tags/REST/" style="font-size: 15px;">REST</a> <a href="/tags/读书笔记/" style="font-size: 15px;">读书笔记</a> <a href="/tags/Game/" style="font-size: 15px;">Game</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/作品/" style="font-size: 15px;">作品</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/Performance-Optimization/" style="font-size: 15px;">Performance Optimization</a> <a href="/tags/性能优化/" style="font-size: 15px;">性能优化</a> <a href="/tags/VS-Code/" style="font-size: 15px;">VS Code</a> <a href="/tags/Tool/" style="font-size: 15px;">Tool</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Redis/" style="font-size: 15px;">Redis</a> <a href="/tags/Databse/" style="font-size: 15px;">Databse</a> <a href="/tags/Fidder/" style="font-size: 15px;">Fidder</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-code-fork"> 最新发布</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/离线安装VS-CODE扩展/">离线安装VS CODE扩展</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/11/Ionic开发环境搭建/">Ionic开发环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/试试Reids之Linux环境安装/">试试Reids之Linux环境安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/PostgreSQL之Linux下环境安装/">PostgreSQL之Linux下环境安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/25/转-Real-Developers-Ship/">[转]Real Developers Ship</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/试试Redis之启动服务1067错误/">试试Redis之启动服务1067错误</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/试试Reids之安装服务1073错误/">试试Reids之安装服务1073错误</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/09/NET-Core之基本配置/">.NET Core之基本配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/Google搜索被劫持的解决办法/">Google搜索被劫持的解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/06/Gradle构建之compileJava-failed/">Gradle构建之compileJava failed</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-link"> 更多链接</i></div><ul></ul><a href="https://hexo.io/zh-cn/docs/asset-folders.html" title="&lt;Hexo&gt; Official Hexo Guide" target="_blank">&lt;Hexo&gt; Official Hexo Guide</a><ul></ul><a href="https://github.com/tufu9441/maupassant-hexo" title="&lt;Hexo&gt; Maupassant Guide" target="_blank">&lt;Hexo&gt; Maupassant Guide</a></div><div class="widget"><div class="widget-title"><i class="fa fa-globe"> 小小天地</i></div><ul><li> <a href="/music/s.html" title="我所以为的音乐&amp;你所以为的音乐">音乐，是另一种深情</a></li><li> <a href="/music/a.html" title="loading...">也许，注定要开始  </a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© 2016 <a href="/." rel="nofollow">Hummingman.</a> Maintain by Anderson.</div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script>var duoshuoQuery = {short_name:'hummingman'};
-(function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0]
-        || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
-</script><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
-if (search_path.length == 0) {
-   search_path = 'search.xml';
-}
-var path = '/' + search_path;
-searchFunc(path, 'local-search-input', 'local-search-result');
-</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key="2016/03/29/校招那些事/"
+        data-url="/2016/03/29/校招那些事/"
+        data-title="校招那些事">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2016/03/31/Hexo-NexT主题优化/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2016/03/28/Hexo-vs-JekyII/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Anderson's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        jieshiluxueyan@163.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/10/">十月 2015<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/09/">九月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/12/">十二月 2014<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/timeline" title="时光机">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                时光机
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/download" title="下载">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                下载
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Forward2015/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Hummingman
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">            
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    <script src="/js/smoothscroll.js"></script>
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        queue.offer(function(){
+            var duoshuoQuery = {
+                short_name: 'hummingman'
+            };
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';
+                ds.async = true;
+                ds.src = 'https://static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                 || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        });
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+    <script>
+    var searchFunc = function(path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: 'xml',
+            success: function( xmlResponse ) {
+                // get the contents from search data
+                var datas = $( 'entry', xmlResponse ).map(function() {
+                    return {
+                        title: $( 'title', this ).text(),
+                        content: $('content',this).text(),
+                        url: $( 'url' , this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function() {
+                    var str='<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = '';
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function(data) {
+                        var isMatch = true;
+                        var content_index = [];
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g,'').toLowerCase();
+                        var data_url = data.url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if(data_title !== '' && data_content !== '') {
+                            keywords.forEach(function(keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if( index_title < 0 && index_content < 0 ) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += '<li><a href="'+ data_url +'" class="search-result-title" target="_blank">'+ data_title;
+                            var content = data.content.trim().replace(/<[^>]+>/g, '');
+                            if (first_occur >= 0) {
+                                // cut out characters
+                                var start = first_occur - 6;
+                                var end = first_occur + 6;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 10;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, 'gi');
+                                    match_content = match_content.replace(regS, '<em class="search-keyword">'+keyword+'</em>');
+                                })
+                                str += '<p class="search-result">' + match_content + '...</p>' +'</a>';
+                            }
+                        }
+                    });
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    }
+</script>
+
+
+    <script>
+        var inputArea = document.querySelector('#search');
+        var getSearchFile = function() {
+            var path = 'search.xml';
+            searchFunc(path, 'search', 'local-search-result');
+        }
+
+        if(inputArea) {
+            inputArea.onfocus = function() {
+                getSearchFile();
+            }
+        }
+    </script>
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+
+                </main>
+            </div>
+        </body>
+    
+</html>

@@ -1,1 +1,0 @@
-function setup(){createCanvas(windowWidth,windowHeight),angleMode(DEGREES),ellipseMode(CENTER),colorMode(HSL),noStroke()}function draw(){var e=random(20,75),i=random(30,sqrt(width*width+height*height)/2),o=frameCount%360,t=cos(o)*i+width/2,n=sin(o)*i+height/2;fill(o+random(-15,15),75,50,.1),ellipse(t,n,e,e)}

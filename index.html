@@ -22,7 +22,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0097A7">
+    <meta name="theme-color" content="#0099CC">
     <meta name="author" content="Anderson">
     <meta name="description" content="Real Developer Ship">
     <meta name="keywords" content="Hummingman">
@@ -71,7 +71,7 @@
   }
 
   a {
-    color: #00838F;
+    color: #0099CC;
   }
 
   .mdl-card__media,
@@ -81,13 +81,13 @@
   #scheme-Paradox .sidebar_archives-count,
   #scheme-Paradox .sidebar-colored .sidebar-header,
   #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #0097A7 !important;
+    background-color: #0099CC !important;
   }
 
   /* Sidebar User Drop Down Menu Text Color */
   #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
   #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #0097A7 !important;
+    color: #0099CC !important;
   }
 
   #post_entry-right-info,
@@ -100,7 +100,7 @@
   .sidebar-colored .sidebar-nav > .open > a:hover,
   .sidebar-colored .sidebar-nav > .open > a:focus,
   #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #0097A7 !important;
+    color: #0099CC !important;
   }
 
   .toTop {
@@ -122,7 +122,7 @@
   }
 
   .post-toc a:hover {
-    color: #00838F;
+    color: #0099CC;
     text-decoration: underline;
   }
 </style>
@@ -306,9 +306,9 @@
                     </li>
                 </a>
             
-                <a class="index_share-link" href="/links" title="链接">
+                <a class="index_share-link" href="/logs" title="日志">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
-                        链接
+                        日志
                     </li>
                 </a>
             
@@ -394,8 +394,65 @@
 
     <!-- Pin on top -->
     
+        
+    
 
     <!-- Normal Post -->
+    
+        
+        
+            <!-- Paradox Thumbnail -->
+            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/anderson/011.jpg)">
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/03/31/Net-Core之配置详解/">.Net Core之配置详解</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            本篇文章主要介绍了.Net core CLI的相关命令和配置.
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/03/31/Net-Core之配置详解/" target="_self">继续阅读</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="Anderson's avatar">
+            </div>
+            <div>
+                <strong>Anderson</strong>
+                <span>3月 31, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/ASP-Net/">ASP.Net</a>
+            </span>
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+        
+        
+        
     
         
         
@@ -436,7 +493,7 @@
         <div id="post_entry-right-info">
             <!-- Category -->
             <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/tool/">tool,</a>
+                <a class="post_category-link" href="/categories/Tool/">Tool</a>
             </span>
 
             
@@ -821,7 +878,7 @@
         <div id="post_entry-right-info">
             <!-- Category -->
             <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/ASP-net/">ASP.net</a>
+                <a class="post_category-link" href="/categories/ASP-Net/">ASP.Net</a>
             </span>
 
             
@@ -877,61 +934,6 @@
             <!-- Category -->
             <span class="post_entry-category">
                 <a class="post_category-link" href="/categories/杂项/">杂项</a>, <a class="post_category-link" href="/categories/杂项/安全/">安全</a>
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/anderson/018.jpg)">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/06/Gradle构建之compileJava-failed/">Gradle构建之compileJava failed</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            这个问题在使用Gradle构建开发依赖环境时碰到的，也算是一个比较基本常见的问题。在执行到compileJava这个任务时失败了，提示不是有效的JDK版本，或者提示找不到tools.jar。于是尝试到JRE的安装目录下查找是否具有tools.jar，找了一下，发现没有，再到JDK的安装目录下查看，发现也没有。这TM就坑爹了。根据提示：
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/06/Gradle构建之compileJava-failed/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Anderson's avatar">
-            </div>
-            <div>
-                <strong>Anderson</strong>
-                <span>2月 06, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Gradle/">Gradle</a>
             </span>
 
             
@@ -1042,7 +1044,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/10/">十月 2015<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/09/">九月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/12/">十二月 2014<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/11/">十一月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/10/">十月 2015<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/09/">九月 2015<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/12/">十二月 2014<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -1060,7 +1062,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/ASP-Net/">ASP.Net<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/ASP-net/">ASP.net<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Database/">Database<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/Front-end/">Front-end<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/GWT/">GWT<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Gradle/">Gradle<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ionic/">Ionic<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/JQuery/">JQuery<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/REST/">REST<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Software-Engineering/">Software Engineering<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/tool/">tool,<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/作品/">作品<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂项/">杂项<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂项/安全/">安全<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/游戏/">游戏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/阅读/">阅读<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/categories/ASP-Net/">ASP.Net<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/Database/">Database<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/categories/Front-end/">Front-end<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/GWT/">GWT<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Gradle/">Gradle<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Hexo/">Hexo<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/Ionic/">Ionic<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/JQuery/">JQuery<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Linux/">Linux<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/REST/">REST<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Software-Engineering/">Software Engineering<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Tool/">Tool<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/作品/">作品<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂项/">杂项<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂项/安全/">安全<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/游戏/">游戏<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/阅读/">阅读<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">5</span></a>
             </ul>
         </li>
         
@@ -1109,11 +1111,11 @@
         
     
         <li>
-            <a href="/links" title="链接">
+            <a href="/logs" title="日志">
                 
                     <i class="material-icons sidebar-material-icons">link</i>
                 
-                链接
+                日志
             </a>
         </li>
         
@@ -1124,7 +1126,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">55</span>
+                <span class="sidebar-badge">56</span>
             </a>
         </li>
         

@@ -10,7 +10,7 @@
     
     <title>
         
-            .Net Core之配置详解 | 
+            .Net知识整理 | 
         
         Hummingman
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content=".Net Core之配置详解 | Hummingman">
+    <meta property="og:title" content=".Net知识整理 | Hummingman">
     <meta property="og:description" content="Real Developer Ship">
     <meta property="og:article:tag" content="ASP.Net"> 
 
@@ -234,7 +234,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Global-json配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">Global.json配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#dotnet命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">dotnet命令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Net架构设计"><span class="post-toc-number">3.</span> <span class="post-toc-text">.Net架构设计</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Net运行时之-Net-Core"><span class="post-toc-number">4.</span> <span class="post-toc-text">.Net运行时之 .Net Core</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Net运行时之-Net-Framework"><span class="post-toc-number">5.</span> <span class="post-toc-text">.Net运行时之 .Net Framework</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Net运行时之-Mono"><span class="post-toc-number">6.</span> <span class="post-toc-text">.Net运行时之 Mono</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Net-平台支持"><span class="post-toc-number">7.</span> <span class="post-toc-text">.Net 平台支持</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Net-Framework与CLI"><span class="post-toc-number">8.</span> <span class="post-toc-text">.Net Framework与CLI</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#using语法糖"><span class="post-toc-number">9.</span> <span class="post-toc-text">using语法糖</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#try-catch-finally捕获异常"><span class="post-toc-number">10.</span> <span class="post-toc-text">try/catch/finally捕获异常</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自定义异常"><span class="post-toc-number">11.</span> <span class="post-toc-text">自定义异常</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#垃圾回收"><span class="post-toc-number">12.</span> <span class="post-toc-text">垃圾回收</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Global-json配置"><span class="post-toc-number">1.</span> <span class="post-toc-text">Global.json配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#dotnet命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">dotnet命令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Net架构设计"><span class="post-toc-number">3.</span> <span class="post-toc-text">.Net架构设计</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Net运行时之-Net-Core"><span class="post-toc-number">4.</span> <span class="post-toc-text">.Net运行时之 .Net Core</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Net运行时之-Net-Framework"><span class="post-toc-number">5.</span> <span class="post-toc-text">.Net运行时之 .Net Framework</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Net运行时之-Mono"><span class="post-toc-number">6.</span> <span class="post-toc-text">.Net运行时之 Mono</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Net-平台支持"><span class="post-toc-number">7.</span> <span class="post-toc-text">.Net 平台支持</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Net-Framework与CLI"><span class="post-toc-number">8.</span> <span class="post-toc-text">.Net Framework与CLI</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#using语法糖"><span class="post-toc-number">9.</span> <span class="post-toc-text">using语法糖</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#try-catch-finally捕获异常"><span class="post-toc-number">10.</span> <span class="post-toc-text">try/catch/finally捕获异常</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自定义异常"><span class="post-toc-number">11.</span> <span class="post-toc-text">自定义异常</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#垃圾回收"><span class="post-toc-number">12.</span> <span class="post-toc-text">垃圾回收</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Generic-Types"><span class="post-toc-number">13.</span> <span class="post-toc-text">Generic Types</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Base-Types"><span class="post-toc-number">14.</span> <span class="post-toc-text">Base Types</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Class的修饰符"><span class="post-toc-number">15.</span> <span class="post-toc-text">Class的修饰符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Interface"><span class="post-toc-number">16.</span> <span class="post-toc-text">Interface</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Delegates"><span class="post-toc-number">17.</span> <span class="post-toc-text">Delegates</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#字符串格式化"><span class="post-toc-number">18.</span> <span class="post-toc-text">字符串格式化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#集合"><span class="post-toc-number">19.</span> <span class="post-toc-text">集合</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#LINQ"><span class="post-toc-number">20.</span> <span class="post-toc-text">LINQ</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -262,7 +262,7 @@
         <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/anderson/011.jpg)">
     
             <p class="article-headline-p">
-                .Net Core之配置详解
+                .Net知识整理
             </p>
         </div>
 
@@ -341,7 +341,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=.Net Core之配置详解&url=//2017/03/31/Net-Core之配置详解/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=.Net知识整理&url=//2017/03/31/Net-Core之配置详解/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -350,7 +350,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=.Net Core之配置详解&url=//2017/03/31/Net-Core之配置详解/index.html&via=Anderson" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=.Net知识整理&url=//2017/03/31/Net-Core之配置详解/index.html&via=Anderson" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -377,7 +377,7 @@
 
     <!-- Share LinkedIn -->
     
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=//2017/03/31/Net-Core之配置详解/index.html&title=.Net Core之配置详解" target="_blank">
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=//2017/03/31/Net-Core之配置详解/index.html&title=.Net知识整理" target="_blank">
             <li class="mdl-menu__item">
                 分享到 LinkedIn
             </li>
@@ -386,7 +386,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hummingman&title=.Net Core之配置详解&summary=Real Developer Ship&pics=/img/favicon.ico&url=/2017/03/31/Net-Core之配置详解/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hummingman&title=.Net知识整理&summary=Real Developer Ship&pics=/img/favicon.ico&url=/2017/03/31/Net-Core之配置详解/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -395,7 +395,7 @@
 
     <!-- Share Telegram -->
     
-        <a class="post_share-link" href="https://telegram.me/share/url?url=//2017/03/31/Net-Core之配置详解/index.html&text=.Net Core之配置详解" target="_blank">
+        <a class="post_share-link" href="https://telegram.me/share/url?url=//2017/03/31/Net-Core之配置详解/index.html&text=.Net知识整理" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Telegram
             </li>
@@ -550,6 +550,115 @@
 <p>GC具有三代，第0代是对象被第一次申请的时候，对象通常活不过第0代，因为通常情况下在这段时间内就会被GC回收，第0代回收很快，因为引用的栈的数据基本上很少。第1代是指在第0代中存活下来得那部分，第0代和第1代的栈数据都比较小，这是因为对象通常在低代级别就被回收，或者被移动到了高代级别，而第2代都是存活了很长时间的对象，在第1代和第2代中都存活下来的对象，这一代的栈数据可能会非常大。</p>
 <p>GC有额外的专门用于存储大对象的地方称之为LOH（Large Object Heap,大对象栈），LOH专门用于超过85,000字节的对象。一个超过85K个元素的对象会被存储在LOH上。这种大对象不会被送往GC三代空间，而是直接被送往LOH。</p>
 <p>GC2代和LOH一般用于运行了很长时间的应用成程序或者处理非常大数据量的数据的时候。大型服务端应用程序通常情况下每10s就有上GB的栈数据。GC提供了大量的技术去缩减由此造成的程序阻塞。GC一般都是后台运行的，当然也提供了一定的显式设置和调用，从而最大限度地提高应用的性能。</p>
+<h4 id="Generic-Types"><a href="/2017/03/31/Net-Core之配置详解/#Generic-Types" class="headerlink" title="Generic Types"></a>Generic Types</h4><p>在C#中，如果使用的是LINQ，那么被作用的对象一定是IEnumerable,如果使用Entity Framework，那么所有的方法都返回的是IQueryable的对象。在Generic Types中，很多地方都使用了泛型T。</p>
+<p>在.Net1.0中所有泛型集合都只能是object类型的对象，也就是说，当要转化为特定类型的数据时，就不可避免地进行装箱和拆箱，这是一个很坑爹的地方，如果类型转错了，还会抛出异常。所以在.Net 2.0开始就支持泛型集合，允许集合中存储特定类型对象的数据。</p>
+<p>使用泛型集合List<t>和非泛型集合ArrayList对数据的处理的耗费时间差别是很大的。这是因为，如果使用了泛型，那么Runtime知道数据是什么类型的，直接根据类型对数据进行操作，否则，就必须在内存中存储每个对象，然后将对象装化为特定类型后再处理。</t></p>
+<h4 id="Base-Types"><a href="/2017/03/31/Net-Core之配置详解/#Base-Types" class="headerlink" title="Base Types"></a>Base Types</h4><p>.Net中的数据类型不是值类型就是引用数据类型。值类型即变量与数据存储在一起的类型，引用数据类型则是变量存储的只是数据的一个引用，真正的数据存放在另外一个地方的数据类型。</p>
+<p>.Net中有五个基本的归类：</p>
+<ul>
+<li>Classes </li>
+<li>Structures</li>
+<li>Enumerations</li>
+<li>Interfaces</li>
+<li>Delegates</li>
+</ul>
+<h4 id="Class的修饰符"><a href="/2017/03/31/Net-Core之配置详解/#Class的修饰符" class="headerlink" title="Class的修饰符"></a>Class的修饰符</h4><p><strong>sealed</strong>:指定该类无法被继承<br><strong>implements</strong>:指定该类实现另外一个类<br><strong>abstract</strong>:指定该类为抽象类，且不能被实例化，需要继承这个类，然后重写其中定义的方法<br><strong>inherits</strong>:继承类可以使用任意的基类公有数据，且可以直接重写或覆盖基类的公有方法<br><strong>exported</strong>:指定类在程序集外可见<br><strong>not exported</strong>:指定类在程序集外不可见</p>
+<h4 id="Interface"><a href="/2017/03/31/Net-Core之配置详解/#Interface" class="headerlink" title="Interface"></a>Interface</h4><ul>
+<li>一个接口可以可以被声明为任意的可访问性，但是接口的成员都必须是public的</li>
+<li>接口不能定义构造函数</li>
+<li>接口不能定义字段</li>
+<li>接口只能被实例化而不能定义静态变量</li>
+</ul>
+<p>也就是说，接口只是定义行为而不实现行为，具体的逻辑实现由实现类重写。</p>
+<h4 id="Delegates"><a href="/2017/03/31/Net-Core之配置详解/#Delegates" class="headerlink" title="Delegates"></a>Delegates</h4><p>委托和C++的函数指针相似，主要用着事件处理和回调。和函数指针不同的是，委托是安全的，可验证的和类型安全的。一个委托类型可以表现具任意的实例化方法或者静态方法。</p>
+<h4 id="字符串格式化"><a href="/2017/03/31/Net-Core之配置详解/#字符串格式化" class="headerlink" title="字符串格式化"></a>字符串格式化</h4><ul>
+<li>十进制装化为十六进制</li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> a = <span class="number">12</span>;</div><div class="line"><span class="keyword">string</span> hex = a.ToString(<span class="string">"X"</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>装化为货币格式</li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> cost = <span class="number">1111.23</span>;</div><div class="line"><span class="keyword">string</span> money = cost.ToString(<span class="string">"C"</span>,<span class="keyword">new</span> System.Globalization.CultureInfo(<span class="string">"en-US"</span>));</div><div class="line"><span class="comment">//money = $1,111.23</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">格式标识符</th>
+<th style="text-align:left">全称</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">“C” or “C”</td>
+<td style="text-align:left">Currency</td>
+<td style="text-align:left">支持所有数字类型，<br>将数字转化为货币格式</td>
+<td style="text-align:left">123.456(“C”,en-US)<span style="color:green">$123.456</span><br>123.456 (“C”, fr-FR)<span style="color:green">123,46 €</span><br>123.456 (“C”, ja-JP)<span style="color:green">¥123</span><br>-123.456 (“C3”, en-US)<span style="color:green">($123.456)</span><br>-123.456 (“C3”, fr-FR)<span style="color:green">-123,456 €</span><br>-123.456 (“C3”, ja-JP)<span style="color:green">-¥123.456</span></td>
+</tr>
+<tr>
+<td style="text-align:left">“D” or “d”</td>
+<td style="text-align:left">Decimal</td>
+<td style="text-align:left">支持所有整型数字</td>
+<td style="text-align:left">1234 (“D”)<span style="color:green">1234</span><br>-1234 (“D6”)<span style="color:green">-001234</span></td>
+</tr>
+<tr>
+<td style="text-align:left">“E” or “e”</td>
+<td style="text-align:left">Exponential (scientific)</td>
+<td style="text-align:left">支持所有数字类型，<br>将数字幻化为科学计数法</td>
+<td style="text-align:left">1052.0329112756 (“E”, en-US)<span style="color:green">1.052033E+003</span><br>1052.0329112756 (“e”, fr-FR)<span style="color:green">1,052033e+003</span><br>-1052.0329112756 (“e2”,en-US)<span style="color:green">-1.05e+003</span><br>-1052.0329112756 (“E2”,fr_FR)<span style="color:green">-1,05E+003</span></td>
+</tr>
+<tr>
+<td style="text-align:left">“F” or “f”</td>
+<td style="text-align:left">Fixed-point</td>
+<td style="text-align:left">支持整数和任意的负数，<br>精度调整</td>
+<td style="text-align:left">1234.567 (“F”, en-US)<span style="color:green">1234.57</span><br>1234.567 (“F”, de-DE)<span style="color:green">1234,57</span><br>1234 (“F1”, en-US)<span style="color:green">1234.0</span><br>1234 (“F1”, de-DE)<span style="color:green">1234,0</span><br>-1234.56 (“F4”, en-US)<span style="color:green"> -1234.5600</span><br>-1234.56 (“F4”, de-DE)<span style="color:green"> -1234,5600</span></td>
+</tr>
+<tr>
+<td style="text-align:left">“G” or “g”</td>
+<td style="text-align:left">General</td>
+<td style="text-align:left">所有数字类型</td>
+<td style="text-align:left">-123.456 (“G”, en-US)<span style="color:green">-123.456</span><br>-123.456 (“G”, sv-SE)<span style="color:green">-123,456</span><br>123.4546 (“G4”, en-US)<span style="color:green">123.5</span><br>123.4546 (“G4”, sv-SE)<span style="color:green">123,5</span><br>-1.234567890e-25 (“G”, en-US)<span style="color:green"> 1.23456789E-25</span><br>-1.234567890e-25 (“G”, sv-SE)<span style="color:green"> -1,23456789E-25</span></td>
+</tr>
+<tr>
+<td style="text-align:left">“N” or “n”</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">支持整数和大整数，<br>将数组转化为带有分隔符的格式</td>
+<td style="text-align:left">1234.567 (“N”, en-US)<span style="color:green">1,234.57</span><br>1234.567 (“N”, ru-RU)<span style="color:green"> 1234,57</span><br>1234 (“N1”, en-US)<span style="color:green">1,234.0</span><br>1234 (“N1”, ru-RU)<span style="color:green"> 1234,0</span><br>-1234.56 (“N3”, en-US)<span style="color:green"> -1,234.560</span><br>-1234.56 (“N3”, ru-RU)<span style="color:green"> -1 234,560</span></td>
+</tr>
+<tr>
+<td style="text-align:left">“P” or “p”</td>
+<td style="text-align:left">Percent</td>
+<td style="text-align:left">支持所有的数字类型，<br>将数字转化为百分比</td>
+<td style="text-align:left">1 (“P”, en-US)<span style="color:green"> 100.00 %</span><br>1 (“P”, fr-FR)<span style="color:green"> 100,00 %</span><br>-0.39678 (“P1”, en-US)<span style="color:green"> -39.7 %</span><br>-0.39678 (“P1”, fr-FR)<span style="color:green"> -39,7 %</span></td>
+</tr>
+<tr>
+<td style="text-align:left">“R” or “r”</td>
+<td style="text-align:left">Round-trip</td>
+<td style="text-align:left">支持单精度，双精度和大整数，<br>将数字转化为字符串<br>并保证从字符串转化为数字时可以还原到原来的值</td>
+<td style="text-align:left">123456789.12345678 (“R”)<span style="color:green">123456789.12345678</span><br>-1234567890.12345678(“R”)<span style="color:green"> -1234567890.1234567</span></td>
+</tr>
+<tr>
+<td style="text-align:left">“X” or “x”</td>
+<td style="text-align:left">Hexadecimal</td>
+<td style="text-align:left">只支持整数，<br>将数字转化为十六进制字符串</td>
+<td style="text-align:left">255 (“X”)<span style="color:green"> FF</span><br>-1 (“x”)<span style="color:green"> ff</span><br>255 (“x4”)<span style="color:green"> 00ff</span><br>-1 (“X4”)<span style="color:green">00FF</span></td>
+</tr>
+</tbody>
+</table>
+<h4 id="集合"><a href="/2017/03/31/Net-Core之配置详解/#集合" class="headerlink" title="集合"></a>集合</h4><ul>
+<li>List<t>是ArrayList的支持泛型版本</t></li>
+<li>Dictionary<tkey,tvalue>是Hashtable的支持泛型版本</tkey,tvalue></li>
+<li>Collection<t>是CollectionBase的支持泛型版本</t></li>
+<li>ReadOnlyCollection<t>是ReadOnlyCollectionBase的支持泛型版本</t></li>
+<li>LinkedList<t> 支持泛型的链表</t></li>
+<li>SortedDictionary<tkey, tvalue="">支持排序的泛型集合</tkey,></li>
+<li>BlockingCollection<t>是提供了实现bounding和blocking等原型的集合</t></li>
+<li>ConcurrentBag<t>支持并发的集合</t></li>
+</ul>
+<p><strong>SortedList</strong>和<strong>SortedList<tkey,tvalue></tkey,tvalue></strong>以及<strong>SortedDictionary<tkey,tvalue></tkey,tvalue></strong>这三中集合和<strong>Hashtable</strong>以及<strong>Dictionary<tkey,tvalue></tkey,tvalue></strong>比较相似，都实现了IDictionary这个接口，但是前三者是有序的，且排序的时间复杂度为O(1)。前两个泛型类还实现了System.Collections.Generic.IDictionary<tkey, tvalue="">接口。</tkey,></p>
+<p><strong>Hashtable</strong>和<strong>HashSet</strong>的区别是HashSet是无序的且键值唯一的。</p>
+<p>在多线程下，并发处理集合是不安全的，这称之为线程非安全集合，否则为线程安全集合。在.NET中，所有的线程安全集合都在System.Collections.Concurrent命名空间下面。实现线程安全就要是加上锁机制，从而防止在并发下被非法修改共享的集合数据。</p>
+<h4 id="LINQ"><a href="/2017/03/31/Net-Core之配置详解/#LINQ" class="headerlink" title="LINQ"></a>LINQ</h4><p>使用LINQ的集合必须实现System.Collections.IEnumerable或者System.Collections.Generic.IEnumrable<t>接口，LINQ的数据将直接存放在内存中，所以操作的速度是极快的。</t></p>
 
     
 

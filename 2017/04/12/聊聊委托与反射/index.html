@@ -10,7 +10,7 @@
     
     <title>
         
-            分类: Gradle | 
+            兰陵王聊反射 | 
         
         Hummingman
     </title>
@@ -27,7 +27,7 @@
     <meta name="theme-color" content="#0099CC">
     <meta name="author" content="Anderson">
     <meta name="description" content="Real Developer Ship">
-    <meta name="keywords" content="Hummingman">
+    <meta name="keywords" content="Hummingman,ASP.Net">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -48,9 +48,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: Gradle | Hummingman">
+    <meta property="og:title" content="兰陵王聊反射 | Hummingman">
     <meta property="og:description" content="Real Developer Ship">
-    
+    <meta property="og:article:tag" content="ASP.Net"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -208,93 +208,276 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-        
-    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
-    
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
         
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+        <!--
+        <li class="mdl-menu__item">
+            
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/anderson/018.jpg)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/anderson/兰陵王.jpg)">
+    
+            <p class="article-headline-p">
+                兰陵王聊反射
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Anderson</strong>
+        <span>2017年04月12日</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">crop free</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYklEQVR42u3aQY7DMAgF0Nz/0jMHqJp+wHHS6nk10jSJnxcGAcffT68DDw8PDw8PDw/vYbwjXq9PvXvP62+Sd+ZPfdgbHh4e3hbeh6v2lHf+yXP2uzeM9oaHh4e3kZd8Jt9cb+t5aMHDw8P7Ll6ecJ8zkqCCh4eH9xu8JMHNSxiPjnt4eHh442JEHhjy31SDyoW1Fjw8PLyYlzeZ9v+9tb+Hh4eHF/DKI02DkkFSur15pgwPDw8v4OUX8apU+/yYJvvBw8PDu4uXt/YnJdpe0TYqFuPh4eFt4SVtrfzzveCRl3rLKTUeHh7exbxeeKhe673EPRpfwMPDw9vCm1zNq5LsBBkdPR4eHt4WXqExP2j5V2HNp/Dw8PC28PLPJClyXtSYB5tmfw8PDw9vwJtczXkanafOCbs8roqHh4e3lJcXbfMjqAaGSTEXDw8P715er9xwvsVC+TUOIc0GGB4eHt4WXg6rljOqg6r5cAMeHh7eXbwk/Z0HjOqblwUGPDw8vMt4kyS7V+DIDwgPDw/vXt680VXddF6orQ4Z4OHh4e3hVRtU+Yd7gWR0THh4eHgbeVGRdFEbbD5kgIeHh/c03vmm898kKXgSGBYPXeHh4eENeNWVp9dr0+W8sIuHh4d3Ne+IV57aVgdSq/8tD13h4eHhXcDLm0y9lLpazqg+hYeHh3cXL7l8k0S51xLLA9WHg8DDw8P7El4vPFTT92QwCw8PD++ZvF5Tvxdm8oEDPDw8vP28ZEPVAkF17KDX9MLDw8Pbz6uWAKotrknIKR86Hh4e3sW831t4eHh4eHh4eHgPWP8MDAw3PucNUgAAAABJRU5ErkJggg==">
+        </ul>
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/06/Gradle构建之compileJava-failed/">Gradle构建之compileJava failed</a></p>
-    </div>
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark_border</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/ASP-Net/">ASP.Net</a>
+    </ul>
+    
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">more_horiz</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
         
-            这个问题在使用Gradle构建开发依赖环境时碰到的，也算是一个比较基本常见的问题。在执行到compileJava这个任务时失败了，提示不是有效的JDK版本，或者提示找不到tools.jar。于是尝试到JRE的安装目录下查找是否具有tools.jar，找了一下，发现没有，再到JDK的安装目录下查看，发现也没有。这TM就坑爹了。根据提示：
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
         
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/06/Gradle构建之compileJava-failed/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Anderson's avatar">
-            </div>
-            <div>
-                <strong>Anderson</strong>
-                <span>2月 06, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Gradle/">Gradle</a>
-            </span>
+    
 
-            
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=兰陵王聊反射&url=//2017/04/12/聊聊委托与反射/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=兰陵王聊反射&url=//2017/04/12/聊聊委托与反射/index.html&via=Anderson" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=//2017/04/12/聊聊委托与反射/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=//2017/04/12/聊聊委托与反射/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=//2017/04/12/聊聊委托与反射/index.html&title=兰陵王聊反射" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hummingman&title=兰陵王聊反射&summary=Real Developer Ship&pics=/img/favicon.ico&url=/2017/04/12/聊聊委托与反射/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=//2017/04/12/聊聊委托与反射/index.html&text=兰陵王聊反射" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
 </div>
 
-        
-        
-        
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
+        <p>本篇文章将以一个兰陵王的角度深入剖析委托、事件以及回调函数和反射之间藕断丝连的传奇故事。请各位先备好瓜子，且听兰陵王娓娓道来。</p>
+<a id="more"></a>
+<p>在.Net的世界中，变量、函数、类、接口等逐渐强大，占据着.Net生态上的一席之地。它们各司其职，相互协作，以变幻万千的协作，让.Net王国变得格外强大。完善的军事设施保卫着CLI的百姓不受战乱，良好的司法制度和公安防卫，让其轻而易举地处理各种突发的异常事件，还有勤劳的拾荒者，使每条街道都荡涤干净。在代码的星球上，.Net与Java和一样，是代码星上最为强大的两个国家之一。</p>
+<p>故事就发生在这个时期。兰陵王作为当朝大祭司，统管着大大小小的官员。时值中午，炎炎夏日，兰陵王从大殿下来，准备吃个番茄炒鸡蛋。走在路上，突然听见不远处一老一少再大声地嚷嚷，像是在吵架。本来心想早点去虞姬家吃饭，但作为大祭司，还是得去管一管，说不定还要给他们赏几个巴掌，于是就过去逛了逛。走近一看，原来是两个函数官在吵架，一个是宫本武藏，一个是黄忠。</p>
+<p>“哼哼，你俩嘛呢，有饭不吃在这烈日下放屁?”,兰陵王皱了皱眉头，提了提嗓子，“怎么回事？”。<br>两人见状，不好，是大祭司兰陵王，兰陵王主持大权，又是著名的刺客，说不定一怒就把他俩抹了喉咙，两人不禁一颤。</p>
+<p>“启禀大祭司”，黄忠双手作揖，一副欺软怕硬的样子，“宫本武藏他完成不了的事情要塞给我做，还要我待在她家里，一直等他处理完了再将剩下的事情扔给我，等我处理完了还跟他回报结果”。黄忠很不服气，都是函数官，凭什么我只能在这跟个擦屁股的似的。</p>
+<p>“一起做不好吗，顺便搞搞基”，兰陵王耐烦地说道。</p>
+<p>“打死我也不搞基”，宫本武藏大声说道。</p>
+<p>“我也不要”,黄忠补刀。</p>
+<p>兰陵王觉得这俩人脾气确实对不上，是该想想办法来解决这个问题。眼见已经快一点了，虞姬还在家里等我呢。但是没办法啊，该解决的还是要解决。</p>
+<p>“那要不这样，我给黄忠派个信使，等宫本这边处理完了，再委托信息把要处理的东西带回给黄忠这边，黄忠你处理完了再通过信使给宫本，你俩以为如何?”</p>
+<p>“好像是个办法，可以试试”，黄忠说道。</p>
+<p>“好，那现在开始对外招聘信使官”，兰陵王心里微微一喜，不是想出了这个绝妙的方法，而是……</p>
+<p>兰陵王开了个大，隐身后消失在这炎炎烈日下。</p>
+<p>后来，.Net王国每年都举行科举，选拔信使，信使官也越分越细，最后分为委托官和事件官。两者却别在于，委托官可以做事件官的事情，而事件官却不一定能做委托官能够的事,在其职责中，事件官是不允许将委托后的处理结果偷偷告诉委托者的。这两种官员都是为函数官服务的，也是为了能够使函数官门能够更好的协作完成一件更为复杂的事情。</p>
+<p>原本以为可以圆满解决这件事情，然而，好景不长，又出现新的问题了。</p>
+<p>德玛西亚的以为函数官，叫盖伦，身高七尺，有事没有就“嗲嗲”一声。他对现有的委托机制提出不满：“每次我做完自己的事情，拖了个委托官，让他把我处理完的奏章交给诺克萨斯的诺克萨斯之手，我并不知道他能处理我哪些奏章啊，我也不知道要给多少个奏章给他，每次都要大老远地跑去和他打个招呼，喝杯茶，然后笑眯眯的问他，你能处理多少奏章啊，那种类型的奏章啊？这和我自己做这件事情有什么区别？”</p>
+<p>这样想想，确实是的，很快，这股改革声浪就传到了兰陵王的耳中。这次，兰陵王正在去貂蝉家的路上，“xx的，真不会挑时候”，兰陵王自言自语道，于是只好移步到泉水池，开会。</p>
+<p>“嗯，现在的问题是，每个委托官或者事件官都只能处理特定的已知的事务，很明显不能圆满解决目前出现的这个问题，那大家有什么想法呢？”，兰陵王呵呵一声，笑得有点贱。</p>
+<p>“虽然我是瞎子，但是我可以成就你的梦想啊，区区小事，算得了什么”，李青双手举拳，手舞足蹈，声音压得很沉。</p>
+<p>“MB的，装逼就装逼，装的出来你倒是说啊?”,蛮子暴怒，也不知道为什么，可能是上次团战的时候，蛮子五秒男人后被瞎子干了的缘故。</p>
+<p>“主要是放权，有一个中间人，他可以知道各个官员能处理什么奏折，能一起处理多少个奏折，需要招一种新的官员，我想了下，就叫反射”，李青嘴角微微上扬，双手缓缓举起，显然已准备好接收大家的鼓掌。</p>
+<p>寒冰首先鼓掌，然后是亚瑟，然后是荆轲，最后大家一致同意。</p>
+<p>至此，新的官员品种，反射官，就出来了，专门协助此类事情。反射官知晓函数官的各项内容，知根知底，所以能够快速地将某些奏章迅速的交给某个函数官让其处理。</p>
+<p>终于尘埃落定，兰陵王开了个大，不慎冲动了些，多开了一次，一秒的隐身术立马失效，“我去找貂蝉了”。</p>
+<p>故事胡编乱凑,精华还在…<br>未完不待续…</p>
 
     
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')')
-
-        locatePost = locatePost.next();
-    }
-</script>
 
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/04/06/Net-Core知识整理/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
